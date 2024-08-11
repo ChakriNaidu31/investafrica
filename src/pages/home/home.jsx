@@ -35,6 +35,8 @@ import insta from "../../assets/insta.png";
 import x from "../../assets/x.png";
 import youtube from "../../assets/youtube.png";
 import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 function Home() {
   return (
     <div>
