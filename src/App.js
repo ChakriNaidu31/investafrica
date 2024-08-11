@@ -1,13 +1,12 @@
 import "./App.css";
 import Navbar from "./component/Navbar";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
 import Home from "./pages/home/home";
+import Country from "./pages/country/country";
 function App() {
   return (
     <div className="container-fluid">
       <Navbar />
-      <Home />
+      <Country />
     </div>
   );
 }
