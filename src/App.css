@@ -382,3 +382,156 @@ text-align: left;
   shape-margin: 7%;
 }
 
+
+.nav-bar{
+  position: fixed !important;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  padding: 0 !important;
+}
+.mt-100{
+  margin-top: 100px;
+}
+
+/* login button */
+.login-btn{
+  background-color: #25DD6E !important;
+  border: #25DD6E !important;
+  width: 80px;
+}
+.nav-menu{
+  padding-right: 0 !important;
+  padding-left: 20px;
+  font-weight: 500;
+}
+.justify-content-space-between{
+  justify-content: space-between;
+}
+.ml-10{
+  margin-left: 10px;
+}
+
+
+/* search  */
+.search{
+  padding-top: 2px;
+  padding-left: 42px;
+  position: absolute;
+  max-width: 95%;
+}
+
+.search #sticky{
+  z-index: 100;
+  max-width: 130vh;
+  min-width: 130vh;
+}
+.w-130{
+  width: 130px;
+}
+
+#table{
+  background-color: white;
+  margin-top: 60px;
+  border-radius: 8px;
+  height: 74px;
+  width: 700px;
+  padding: 8px 16px;
+}
+
+.suggestion{
+  max-height: 0px;
+  width: 800px;
+  background-color: #FFFFFF;
+  margin-left: 90px;
+  overflow: auto;
+  position: absolute;
+  z-index: 100;
+  transition: max-height 0.3s ease;
+}
+
+.suggestion#part{
+  max-height: 300px;
+}
+
+.suggestion #part{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-family: Inter;
+  font-size: 20px;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.suggestion #part:hover{
+  background-color: rgba(0,0,0,0.3);
+}
+
+.suggestion #part p{
+  margin-left: 10px;
+}
+
+#drop{
+  border-right: 1px solid black;
+  width: 159px;
+  font-size: 16px;
+}
+
+#drop img{
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+#searchbar{
+  font-size: 30px;
+  padding-left: 12px;
+  margin-right: 0;
+}
+
+#searchbox #input{
+  width: 100%;
+  height: 35px;
+  border: none;
+  font-size: 20px;
+}
+
+#searchbox #input:focus{
+  outline: none;
+}
+
+#button{
+  width: 128px;
+  text-align: center;
+}
+
+#rbutton{
+  width: 128px;
+  height: 52px;
+  padding: 14px 24px 14px 24px;
+  gap: 8px;
+  border-radius: 20px;
+  background: #008E39;
+  box-shadow: 0px 1px 2px 0px #0000000D;
+  font-family: Inknut Antiqua;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 3px;
+  color: white;
+}
+
+#suggest{
+  margin-left: 90px;
+  color: white;
+  border-spacing: 13px;
+  font-family: Inter;
+}
+
+#suggest #just{
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 6px 8px;
+}

@@ -35,17 +35,84 @@ import insta from "../../assets/insta.png";
 import x from "../../assets/x.png";
 import youtube from "../../assets/youtube.png";
 import OwlCarousel from "react-owl-carousel";
+import React, { useEffect,useState } from 'react';
+
+
 function Home() {
+    const [search, setSearch] = useState("");
+    const [suggest, setSuggest] = useState(false);
+    const [company, setCompany] = useState([]);
+    useEffect(() => {
+        const element = document.querySelector(".search");
+        if (element) {
+            const realelement = element.querySelector("#sticky");
+            if (realelement) {
+                const tab = realelement.querySelector("#table");
+                if (tab) {
+                    const pos = tab.getBoundingClientRect().top + window.scrollY;
+
+                    window.onscroll = () => {
+                        if (window.scrollY > pos) {
+                            realelement.style.position = "fixed";
+                            realelement.style.top = "-50px";
+                            realelement.style.marginleft = "50px";
+
+                            tab.style.border = "1px solid #E0E0E0";
+                        } else {
+                            realelement.style.position = "";
+                            realelement.style.top = "";
+                            tab.style.border = "";
+                        }
+                    };
+                } else {
+                    console.error("Table element not found");
+                }
+            } else {
+                console.error("Sticky element not found");
+            }
+        } else {
+            console.error("Search element not found");
+        }
+    }, []);
+
+
   return (
     <div>
       <main class="">
-        <div class="p-4 text-body-emphasis bg-body-secondary banner">
+        <div class="p-4 text-body-emphasis bg-body-secondary banner ">
           <div class="">
             <h1 class="text-white banner-head">INVEST IN AFRICA</h1>
             <p class="banner-text my-3 text-white">
               Shaping Tomorrow Together,
               <br /> Invest in Africa's Potential.
             </p>
+            <div className="search">
+         
+            <div id="sticky">
+            <table id="table">
+                    <tbody>
+                        <tr>
+                            <td id="searchbar" className="w-130">
+                                <select className="form-select border-0" aria-label="Default select example">
+                                    <option defaultValue>Countries</option>
+                                    <option value="1">Industries</option>
+                                    <option value="2">Technology</option>
+                                    <option value="3">Countries</option>
+                                </select>
+                            </td>
+                            <td id="searchbox">
+                                <input type="text" id="input" placeholder="Search" value={search}  onFocus={()=>setSuggest(true)} onBlur={()=>setSuggest(false)}/>
+                            </td>
+                            <td id="button">
+                                <button id="rbutton" onClick={()=>{console.log(search)}}>Search</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+            
+            
           </div>
         </div>
       </main>

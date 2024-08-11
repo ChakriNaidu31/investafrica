@@ -5,9 +5,11 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import Home from "./pages/home/home";
 function App() {
   return (
-    <div className="container-fluid">
+    <div>
       <Navbar />
-      <Home />
+      <div className=" mt-100">
+        <Home />
+      </div>
     </div>
   );
 }
