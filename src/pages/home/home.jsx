@@ -36,8 +36,9 @@ import x from "../../assets/x.png";
 import youtube from "../../assets/youtube.png";
 import OwlCarousel from "react-owl-carousel";
 import React, { useEffect,useState } from 'react';
-
-
+import "../home/home.css"
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 function Home() {
     const [search, setSearch] = useState("");
     const [suggest, setSuggest] = useState(false);
