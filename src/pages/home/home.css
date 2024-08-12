@@ -23,6 +23,16 @@
     margin: 0 60px;
     border-radius: 30px;
   }
+  .m-l-50{
+    margin-left: 50px;
+  }
+  .footer-btn{
+    background-color: #25DD6E !important;
+    border: #25DD6E !important;
+  }
+  .mb-50{
+    margin-bottom: 50px;
+  }
   .country-img {
     position: absolute;
       height: auto;
@@ -51,7 +61,7 @@
     font-size: 2.5rem;
   }
   .bg-green {
-    background: #138541;
+    background: #008E39;
    
   }
   .card {

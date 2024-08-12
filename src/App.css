@@ -113,6 +113,13 @@
 #searchbar:focus{
   box-shadow: 0 0 0 .25rem rgb(13 110 253 / 0%) !important;
 }
+
+input:focus{
+  box-shadow: 0 0 0 .25rem rgb(13 110 253 / 0%) !important;
+}
+.btn:active{
+  border: none !important;
+}
 #searchbox #input{
   width: 100%;
   height: 35px;

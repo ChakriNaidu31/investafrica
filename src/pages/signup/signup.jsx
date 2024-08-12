@@ -11,7 +11,10 @@ function SignUp() {
     const handleOptionChange = (event) => {
         setSelectedOption(event.target.value);
     };
-
+    const handleLogin = (e) => {
+        e.preventDefault();
+        navigate("/home");
+      };
     const navigatetoLogin= () => {
         navigate("/");
       };
@@ -44,7 +47,7 @@ function SignUp() {
                 <div className="col-12 p-0">
                     <body class="signup-body d-flex align-items-center py-4 bg-body-tertiary">
                         <main class="form-signup w-100 m-auto">
-                            <form>
+                            <form onSubmit={handleLogin}> 
                                 <h1 class="mb-3 login-head">Sign Up</h1>
                                 <form>
                                     <div className="row">
