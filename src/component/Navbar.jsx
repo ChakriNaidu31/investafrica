@@ -5,6 +5,10 @@ import map from "../assets/map.png";
 import dropmap from "../assets/dropmap.png";
 import carrow from "../assets/carrow.png";
 import list from "../assets/list.png";
+import crop from "../assets/crop.jpg";
+import horti from "../assets/horti.jpg";
+import ques from "../assets/ques.png";
+import livestock from "../assets/livestock.jpg";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
@@ -222,12 +226,12 @@ function Navbar() {
                     >
                       Industries
                     </button>
-                    <div className="dropdown-menu p-4 text-body-secondary w-100">
+                    <div className="dropdown-menu px-4 pt-0 pb-0 text-body-secondary w-100">
                       <div className="container">
                         <div className="row">
                           <div className="col-12">
                             <div className="row">
-                              <div className="col-lg-3 col-sm-12 bg-danger p-3">
+                              <div className="col-lg-3 col-sm-12  p-3">
                                 <div className="row">
                                   <div className="col-12 mb-4">
                                     <h1 className="nav-menu-header">Industry</h1>
@@ -243,9 +247,9 @@ function Navbar() {
                                   </div>
                                 </div>
                               </div>
-                              <div className="col-lg-4 col-sm-12 bg-secondary p-3">
+                              <div className="col-lg-4 col-sm-12  p-3 b-l-r">
                                 <div className="row">
-                                  <div className="col-12">
+                                  <div className="col-12 px-3">
                                     <form className="d-flex" role="search">
                                       <input
                                         className="form-control py-3"
@@ -258,12 +262,14 @@ function Navbar() {
 
                                   <div className="col-12 mt-2">
                                     <div>
+                                      <div className="px-3">
                                       <span className="table-head">Name</span><span className="table-head float-end">Result</span>
                                       <hr className="my-2 hrline"/>
-
+                                      </div>
+                                    
                                       {/* ----------------- */}
                                       <div className="min-scroll">
-                                      <span className="table-head">Agriculture</span><span className="table-data float-end">1000</span>
+                                      <span className="table-data">Agriculture</span><span className="table-data float-end">1000</span>
                                       <hr className="my-2 hrline"/>
                                       <span className="table-data">Tourism</span><span className="table-data float-end">1000</span>
                                       <hr className="my-2 hrline"/>
@@ -296,8 +302,73 @@ function Navbar() {
                                 </div>
 
                               </div>
-                              <div className="col-lg-5 col-sm-12 bg-danger">
-                                f
+                              <div className="col-lg-5 col-sm-12 ">
+                                <div className="row p-3 indus-scroll">
+                                  <div className="col-3 text-center">
+                                    <img src={crop} className="ind-img"/>
+                                    <p className="ind-img-cap">Crop Production</p>
+                                  </div>
+                                  <div className="col-3 text-center">
+                                    <img src={livestock} className="ind-img"/>
+                                    <p className="ind-img-cap">Livestock Farming</p>
+                                  </div>
+                                  <div className="col-3 text-center">
+                                    <img src={horti} className="ind-img"/>
+                                    <p className="ind-img-cap">Horticulture</p>
+                                  </div>
+                                  <div className="col-3 text-center">
+                                    <img src={ques} className="ind-img"/>
+                                    <p className="ind-img-cap">???</p>
+                                  </div>
+                                  <div className="col-3 text-center">
+                                    <img src={ques} className="ind-img"/>
+                                    <p className="ind-img-cap">???</p>
+                                  </div>
+                                  <div className="col-3 text-center">
+                                    <img src={ques} className="ind-img"/>
+                                    <p className="ind-img-cap">???</p>
+                                  </div>
+                                  <div className="col-3 text-center">
+                                    <img src={ques} className="ind-img"/>
+                                    <p className="ind-img-cap">???</p>
+                                  </div>
+                                  <div className="col-3 text-center">
+                                    <img src={ques} className="ind-img"/>
+                                    <p className="ind-img-cap">???</p>
+                                  </div>
+                                  <div className="col-3 text-center">
+                                    <img src={ques} className="ind-img"/>
+                                    <p className="ind-img-cap">???</p>
+                                  </div>
+                                  <div className="col-3 text-center">
+                                    <img src={ques} className="ind-img"/>
+                                    <p className="ind-img-cap">???</p>
+                                  </div>
+                                  <div className="col-3 text-center">
+                                    <img src={ques} className="ind-img"/>
+                                    <p className="ind-img-cap">???</p>
+                                  </div>
+                                  <div className="col-3 text-center">
+                                    <img src={ques} className="ind-img"/>
+                                    <p className="ind-img-cap">???</p>
+                                  </div>
+                                  <div className="col-3 text-center">
+                                    <img src={ques} className="ind-img"/>
+                                    <p className="ind-img-cap">???</p>
+                                  </div>
+                                  <div className="col-3 text-center">
+                                    <img src={ques} className="ind-img"/>
+                                    <p className="ind-img-cap">???</p>
+                                  </div>
+                                  <div className="col-3 text-center">
+                                    <img src={ques} className="ind-img"/>
+                                    <p className="ind-img-cap">???</p>
+                                  </div>
+                                  <div className="col-3 text-center">
+                                    <img src={ques} className="ind-img"/>
+                                    <p className="ind-img-cap">???</p>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
