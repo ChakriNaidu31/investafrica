@@ -39,10 +39,15 @@ import React, { useEffect,useState } from 'react';
 import "../home/home.css"
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import { useNavigate } from "react-router-dom";
 function Home() {
     const [search, setSearch] = useState("");
     const [suggest, setSuggest] = useState(false);
     const [company, setCompany] = useState([]);
+    const navigate = useNavigate();
+    const navigatetoRegister = () => {
+      navigate("/signup");
+    };
     useEffect(() => {
         const element = document.querySelector(".search");
         if (element) {
@@ -239,7 +244,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="px-3 py-4 shadow-lg invest-caro">
+      <div className="px-3 py-4 shadow-lg invest-caro mb-50">
         <div className="col-12 mb-4">
           <h1>Top Industries</h1>
         </div>
@@ -349,14 +354,14 @@ function Home() {
         </OwlCarousel>
       </div>
 
-      <div className="discoverafrica p-3 invest-container">
+      <div className="discoverafrica mt-3">
         <div className="col-12">
           <div className="row">
             <div className="col-12 pb-4 bg-gold ">
               <h1 className="text-white mt-4 invest-container">Discover Africa</h1>
             </div>
             <div className="col-lg-5 col-sm-12 p-0 bg-gold py-auto invest-container">
-              <div className="bg-white m-3 pb-3 rounded">
+              <div className="bg-white pb-3 rounded m-l-50">
                 <form className="d-flex p-3" role="search">
                   <input
                     className="form-control"
@@ -436,7 +441,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="crafting">
+      <div className="crafting mb-50" >
         <div className="col-12 ">
           <img
             src={banner}
@@ -478,9 +483,9 @@ function Home() {
         </div>
       </div>
 
-      <div className="success p-5 bg-blue">
-        <div className="col-12 ">
-          <h1 className="mb-5 font-gold">Success Stories</h1>
+      <div className="success p-5 bg-blue mt-3">
+        <div className="col-12 mt-3">
+          <h1 className="mb-5 font-gold mt-3">Success Stories</h1>
         </div>
 
         <div id="carouselExample" class="carousel slide">
@@ -587,7 +592,7 @@ function Home() {
         <p className="text-white mt-4">
           Invest in the future of Africa by signing up today!
         </p>
-        <button className="btn btn-success mt-5 px-3 py-2">SIGN IN</button>
+        <button className="btn btn-success mt-5 px-3 py-2 footer-btn" onClick={navigatetoRegister}>SIGN UP</button>
       </div>
 
       <div className="col-12 p-4 bg-green">

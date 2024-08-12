@@ -22,7 +22,12 @@ function Navbar() {
   const ToCountry = () => {
     navigate("/country");
   };
-
+  const navigatetoRegister = () => {
+    navigate("/signup");
+  };
+  const navigatetoLogin= () => {
+    navigate("/");
+  };
 
   return (
     <nav className="nav-bar navbar-expand-lg">
@@ -42,10 +47,10 @@ function Navbar() {
                     <img src={globe} className="img-fluid" alt="Globe" />
                   </div>
                   <div>
-                    <button className="btn nav-signup">SignUp</button>
+                    <button className="btn nav-signup" onClick={navigatetoRegister} >SignUp</button>
                   </div>
                   <div>
-                    <button className="btn btn-success nav-login-btn px-3">Login</button>
+                    <button className="btn btn-success nav-login-btn px-3" onClick={navigatetoLogin}>Login</button>
                   </div>
                 </div>
                 <div className="d-flex justify-content-space-between">
