@@ -411,10 +411,10 @@ function Navbar() {
                     <div className="dropdown-menu p-4 text-body-secondary w-100">
                       <div className="container">
                         <div className="row">
-                          <div className="col-12 mb-4">
+                          <div className="col-12 mb-4 text-center">
                             <h1 className="nav-menu-header">About</h1>
                           </div>
-                          <div className="col-lg-3 col-sm-12">
+                          <div className="col-lg-3 col-sm-12 text-center">
                             <button className="btn nav-about-btn">About</button>
 
                           </div>
