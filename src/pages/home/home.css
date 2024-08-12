@@ -19,12 +19,23 @@
     margin-left: 20px;
     margin-top: 10px;
   }
+  .invest-caro{
+    margin: 0 60px;
+    border-radius: 30px;
+  }
   .country-img {
     position: absolute;
       height: auto;
   }
   .ht-200 {
     height: 200px;
+  }
+  .m-l-10{
+    margin-left: 10px;
+  }
+  .btn-outline-secondary {
+    color: #ffffff !important;
+   border-color: #ffffff !important;
   }
   .banner {
     background-image: url("../../assets/banner.png");

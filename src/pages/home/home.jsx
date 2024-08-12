@@ -114,6 +114,21 @@ function Home() {
                         </tr>
                     </tbody>
                 </table>
+             
+            </div>
+            <div className="mt-3">
+                <table id="suggest">
+                    <tbody>
+                        <tr>
+                            <td>Frequently search:</td>
+                        
+                            <button type="button" class="btn btn-outline-secondary m-l-10">Agriculture</button>
+                            <button type="button" class="btn btn-outline-secondary m-l-10">Infrastructure</button>
+                            <button type="button" class="btn btn-outline-secondary m-l-10">Tourism</button>
+                               
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             </div>
             
@@ -122,8 +137,8 @@ function Home() {
         </div>
       </main>
 
-      <div className="col-12 bg-green p-3">
-        <div className="row">
+      <div className="col-12 bg-green p-3 invest-container">
+        <div className="row ">
           <div className="col-sm-6 col=-md-6 col-lg-3">
             <div class="card my-3">
               <div class="card-body position-relative">
@@ -138,7 +153,7 @@ function Home() {
           <div className="col-sm-6 col-md-6 col-lg-3">
             <div class="card my-3">
               <div class="card-body position-relative">
-                <h5 class="card-title text-center">WORLD OF AFRICA</h5>
+                <h5 class="card-title text-center">WORLD OF <br></br> AFRICA</h5>
                 <p class="card-text">
                   A continent of diversity and beauty where cultures collide,
                   nature flourishes, and business opportunities abound.
@@ -173,12 +188,12 @@ function Home() {
         </div>
       </div>
 
-      <div className="blog-section p-3">
-        <div className="col-12 my-5">
+      <div className="blog-section p-3 invest-container">
+        <div className="col-12 my-5 invest-container">
           <h1>Why invest in africa</h1>
         </div>
-        <div className="col-12">
-          <div className="row">
+        <div className="col-12 invest-container">
+          <div className="row invest-container">
             <div className="col-lg-4 col-sm-12">
               <img src={cp1} className="img-fluid mb-3" />
             </div>
@@ -192,8 +207,8 @@ function Home() {
           </div>
           <p></p>
         </div>
-        <div className="col-12 sm-d-g">
-          <div className="row">
+        <div className="col-12 sm-d-g invest-container">
+          <div className="row invest-container">
             <div className="col-lg-8 col-sm-12 my-auto sm-o-2">
               <p className="content-text">
                 Tap into a burgeoning youth market brimming with 1.46 billion
@@ -207,8 +222,8 @@ function Home() {
           </div>
           <p></p>
         </div>
-        <div className="col-12">
-          <div className="row">
+        <div className="col-12 invest-container">
+          <div className="row invest-container">
             <div className="col-lg-4 col-sm-12">
               <img src={cp3} className="img-fluid mb-3" />
             </div>
@@ -224,7 +239,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="px-3 py-4 shadow-lg ">
+      <div className="px-3 py-4 shadow-lg invest-caro">
         <div className="col-12 mb-4">
           <h1>Top Industries</h1>
         </div>
@@ -334,13 +349,13 @@ function Home() {
         </OwlCarousel>
       </div>
 
-      <div className="discoverafrica p-3">
+      <div className="discoverafrica p-3 invest-container">
         <div className="col-12">
           <div className="row">
-            <div className="col-12 pb-4 bg-gold">
-              <h1 className="text-white mt-4">Discover Africa</h1>
+            <div className="col-12 pb-4 bg-gold ">
+              <h1 className="text-white mt-4 invest-container">Discover Africa</h1>
             </div>
-            <div className="col-lg-5 col-sm-12 p-0 bg-gold py-auto">
+            <div className="col-lg-5 col-sm-12 p-0 bg-gold py-auto invest-container">
               <div className="bg-white m-3 pb-3 rounded">
                 <form className="d-flex p-3" role="search">
                   <input
@@ -421,7 +436,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="crafting d-none">
+      <div className="crafting">
         <div className="col-12 ">
           <img
             src={banner}
