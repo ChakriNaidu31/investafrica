@@ -2,16 +2,19 @@ import "../signup/signup.css";
 import logo from "../../assets/logo.svg";
 import globe from "../../assets/globe.png";
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
-
+    const navigate = useNavigate();
     const [selectedOption, setSelectedOption] = useState('company');
 
     const handleOptionChange = (event) => {
         setSelectedOption(event.target.value);
     };
 
-
+    const navigatetoLogin= () => {
+        navigate("/");
+      };
     return (
         <div className="container-fluid">
             <div className="row">
@@ -32,7 +35,7 @@ function SignUp() {
                                     <b>Eng</b>
                                     <img src={globe} className="img-fluid me-2" alt="Globe" />
                                 </div>
-                                <button class="btn btn-secondary px-3" type="submit">Back</button>
+                                <button class="btn btn-secondary px-3" type="submit" onClick={navigatetoLogin}>Back</button>
                             </form>
                         </div>
                     </div>

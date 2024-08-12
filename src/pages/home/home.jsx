@@ -56,7 +56,7 @@ function Home() {
                         if (window.scrollY > pos) {
                             realelement.style.position = "fixed";
                             realelement.style.top = "-50px";
-                            realelement.style.marginleft = "50px";
+                            tab.style.borderRadius = "10px";
 
                             tab.style.border = "1px solid #E0E0E0";
                         } else {
@@ -81,7 +81,7 @@ function Home() {
     <div>
       <main class="">
         <div class="p-4 text-body-emphasis bg-body-secondary banner ">
-          <div class="">
+          <div class="invest-container">
             <h1 class="text-white banner-head">INVEST IN AFRICA</h1>
             <p class="banner-text my-3 text-white">
               Shaping Tomorrow Together,
@@ -94,18 +94,22 @@ function Home() {
                     <tbody>
                         <tr>
                             <td id="searchbar" className="w-130">
+                              
                                 <select className="form-select border-0" aria-label="Default select example">
-                                    <option defaultValue>Countries</option>
+                                    <option defaultValue>COUNTRIES</option>
                                     <option value="1">Industries</option>
                                     <option value="2">Technology</option>
                                     <option value="3">Countries</option>
                                 </select>
                             </td>
-                            <td id="searchbox">
+                            <td id="searchbox" className="d-flex mt-3">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search search-icon-style" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+</svg>
                                 <input type="text" id="input" placeholder="Search" value={search}  onFocus={()=>setSuggest(true)} onBlur={()=>setSuggest(false)}/>
                             </td>
                             <td id="button">
-                                <button id="rbutton" onClick={()=>{console.log(search)}}>Search</button>
+                                <button id="rbutton" onClick={()=>{console.log(search)}}> SEARCH</button>
                             </td>
                         </tr>
                     </tbody>

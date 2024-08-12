@@ -14,6 +14,11 @@
     text-align: left;
     
   }
+  .search-icon-style{
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
   .country-img {
     position: absolute;
       height: auto;
@@ -36,6 +41,7 @@
   }
   .bg-green {
     background: #138541;
+   
   }
   .card {
     height: 385px !important;
