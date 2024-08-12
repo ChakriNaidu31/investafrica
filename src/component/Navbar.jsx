@@ -268,40 +268,57 @@ function Navbar() {
                                   <div className="col-12 mt-2">
                                     <div>
                                       <div className="px-3">
-                                      <span className="table-head">Name</span><span className="table-head float-end">Result</span>
-                                      <hr className="my-2 hrline"/>
+                                        <span className="table-head">Name</span><span className="table-head float-end">Result</span>
+                                        <hr className="my-2 hrline" />
                                       </div>
-                                    
+
                                       {/* ----------------- */}
                                       <div className="min-scroll">
-                                      <span className="table-data">Agriculture</span><span className="table-data float-end">1000</span>
-                                      <hr className="my-2 hrline"/>
-                                      <span className="table-data">Tourism</span><span className="table-data float-end">1000</span>
-                                      <hr className="my-2 hrline"/>
-                                      <span className="table-data">Infrastructure</span><span className="table-data float-end">1000</span>
-                                      <hr className="my-2 hrline"/>
-                                      <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
-                                      <hr className="my-2 hrline"/>
-                                      <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
-                                      <hr className="my-2 hrline"/>
-                                      <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
-                                      <hr className="my-2 hrline"/>
-                                      <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
-                                      <hr className="my-2 hrline"/>
-                                      <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
-                                      <hr className="my-2 hrline"/>
-                                      <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
-                                      <hr className="my-2 hrline"/>
-                                      <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
-                                      <hr className="my-2 hrline"/>
-                                      <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
-                                      <hr className="my-2 hrline"/>
-                                      <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
-                                      <hr className="my-2 hrline"/>
-                                      <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
-                                      <hr className="my-2 hrline"/>
+                                        <div className="in-data active">
+                                          <span className="table-data">Agriculture</span><span className="table-data float-end">1000</span>
+                                        </div>
+                                        <hr className="my-2 hrline" />
+                                        <div className="in-data">
+                                          <span className="table-data">Tourism</span><span className="table-data float-end">1000</span>
+
+                                        </div>
+                                        <hr className="my-2 hrline" />
+                                        <div className="in-data">
+                                          <span className="table-data">Infrastructure</span><span className="table-data float-end">1000</span>
+
+                                        </div>
+                                        <hr className="my-2 hrline" />
+                                        <div className="in-data">
+                                          <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
+
+                                        </div>
+                                        <hr className="my-2 hrline" />
+                                        <div className="in-data">
+                                           <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
+                                        </div>
+                                        <hr className="my-2 hrline"/>
+                                        <div className="in-data">                                      
+                                          <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
+                                        </div>
+                                        <hr className="my-2 hrline"/>
+                                        <div className="in-data">                                      
+                                          <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
+                                        </div>
+                                        <hr className="my-2 hrline"/>
+                                        <div className="in-data">                                      
+                                          <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
+                                        </div>
+                                        <hr className="my-2 hrline"/>
+                                        <div className="in-data">                                      
+                                          <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
+                                        </div>
+                                        <hr className="my-2 hrline"/>
+                                        <div className="in-data">    
+                                          <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
+                                        </div>
+                                        <hr className="my-2 hrline"/>
                                       </div>
-                                      
+
                                     </div>
                                   </div>
                                 </div>
@@ -310,67 +327,67 @@ function Navbar() {
                               <div className="col-lg-5 col-sm-12 ">
                                 <div className="row p-3 indus-scroll">
                                   <div className="col-3 text-center">
-                                    <img src={crop} className="ind-img"/>
+                                    <img src={crop} className="ind-img" />
                                     <p className="ind-img-cap">Crop Production</p>
                                   </div>
                                   <div className="col-3 text-center">
-                                    <img src={livestock} className="ind-img"/>
+                                    <img src={livestock} className="ind-img" />
                                     <p className="ind-img-cap">Livestock Farming</p>
                                   </div>
                                   <div className="col-3 text-center">
-                                    <img src={horti} className="ind-img"/>
+                                    <img src={horti} className="ind-img" />
                                     <p className="ind-img-cap">Horticulture</p>
                                   </div>
                                   <div className="col-3 text-center">
-                                    <img src={ques} className="ind-img"/>
+                                    <img src={ques} className="ind-img" />
                                     <p className="ind-img-cap">???</p>
                                   </div>
                                   <div className="col-3 text-center">
-                                    <img src={ques} className="ind-img"/>
+                                    <img src={ques} className="ind-img" />
                                     <p className="ind-img-cap">???</p>
                                   </div>
                                   <div className="col-3 text-center">
-                                    <img src={ques} className="ind-img"/>
+                                    <img src={ques} className="ind-img" />
                                     <p className="ind-img-cap">???</p>
                                   </div>
                                   <div className="col-3 text-center">
-                                    <img src={ques} className="ind-img"/>
+                                    <img src={ques} className="ind-img" />
                                     <p className="ind-img-cap">???</p>
                                   </div>
                                   <div className="col-3 text-center">
-                                    <img src={ques} className="ind-img"/>
+                                    <img src={ques} className="ind-img" />
                                     <p className="ind-img-cap">???</p>
                                   </div>
                                   <div className="col-3 text-center">
-                                    <img src={ques} className="ind-img"/>
+                                    <img src={ques} className="ind-img" />
                                     <p className="ind-img-cap">???</p>
                                   </div>
                                   <div className="col-3 text-center">
-                                    <img src={ques} className="ind-img"/>
+                                    <img src={ques} className="ind-img" />
                                     <p className="ind-img-cap">???</p>
                                   </div>
                                   <div className="col-3 text-center">
-                                    <img src={ques} className="ind-img"/>
+                                    <img src={ques} className="ind-img" />
                                     <p className="ind-img-cap">???</p>
                                   </div>
                                   <div className="col-3 text-center">
-                                    <img src={ques} className="ind-img"/>
+                                    <img src={ques} className="ind-img" />
                                     <p className="ind-img-cap">???</p>
                                   </div>
                                   <div className="col-3 text-center">
-                                    <img src={ques} className="ind-img"/>
+                                    <img src={ques} className="ind-img" />
                                     <p className="ind-img-cap">???</p>
                                   </div>
                                   <div className="col-3 text-center">
-                                    <img src={ques} className="ind-img"/>
+                                    <img src={ques} className="ind-img" />
                                     <p className="ind-img-cap">???</p>
                                   </div>
                                   <div className="col-3 text-center">
-                                    <img src={ques} className="ind-img"/>
+                                    <img src={ques} className="ind-img" />
                                     <p className="ind-img-cap">???</p>
                                   </div>
                                   <div className="col-3 text-center">
-                                    <img src={ques} className="ind-img"/>
+                                    <img src={ques} className="ind-img" />
                                     <p className="ind-img-cap">???</p>
                                   </div>
                                 </div>
