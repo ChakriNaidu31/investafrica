@@ -1,17 +1,17 @@
-.banner {
+.country-banner {
     background-image: url("../../assets/country/countrybanner.png");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
     min-height: 540px;
   }
-  .banner-head {
+  .country-banner-head {
     font-size: 6rem;
   }
-  .banner-text {
+  .country-banner-text {
     font-size: 2.5rem;
   }
-  .nav-link {
+  .country-nav-link {
 font-size: 24px !important;
 font-weight: 700 !important;
 line-height: 21px;
@@ -21,12 +21,12 @@ padding: 1.5rem !important;
 color: #8A7D61 !important;
 background-color: #fff !important;
   }
-  .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  .country-nav-pills .country-nav-link.active, .country-nav-pills .show>.country-nav-link {
     color: black !important;
     background-color: #fff !important;
     font-weight: 700 !important;
   }
-  .overview-head {
+  .country-overview-head {
     margin-top: 3rem;
     font-family: Inter;
 font-size: 24px;
@@ -36,7 +36,7 @@ text-align: center;
 color: #9C804A;
 text-decoration: underline;
   }
-  .overview-content {
+  .country-overview-content {
     font-family: Inter;
 font-size: 20px;
 font-weight: 400;
@@ -44,14 +44,14 @@ line-height: 21px;
 text-align: center;
 color: #000;
   }
-.card-title {
+.country-card-title > .card-title {
     font-family: Inter;
 font-size: 20px;
 font-weight: 500;
 line-height: 21px;
 text-align: left;
 }
-.card-body {
+.country-card-body > .card-body {
     font-family: Inter;
 font-size: 14px;
 font-weight: 500;
@@ -59,31 +59,31 @@ line-height: 21px;
 text-align: left;
 height: 145px;
 }
-.success > button.owl-next {
+.country > .success > button.owl-next {
     position: absolute;
     right: 0;
     top: 50%;
     font-size: 55px !important;
   }
-  button.owl-next {
+  .country > button.owl-next {
     position: absolute;
     right: 0;
     top: 45%;
     font-size: 0 !important;
   }
-  button.owl-prev {
+  .country > button.owl-prev {
     position: absolute;
     left: 0;
     top: 45%;
     font-size: 0 !important;
   }
   
-  .owl-theme .owl-nav [class*='owl-']:hover {
+ .country >  .owl-theme .owl-nav [class*='owl-']:hover {
     background: transparent !important;
     color: #000 !important;
   }
 
-  .owl-next > span {
+ .country >  .owl-next > span {
    
     height: 60px !important;
     width: 60px !important;
@@ -92,7 +92,7 @@ height: 145px;
     background-image: url("../../assets/country/rightarrow.png");
   }
 
-  .owl-prev > span {
+ .country >  .owl-prev > span {
    
     height: 60px !important;
     width: 60px !important;
@@ -100,14 +100,14 @@ height: 145px;
     border-radius: 50%;
     background-image: url("../../assets/country/leftarrow.png");
   }
-.bg-green {
+.country-bg-green {
     font-family: Inter;
 font-size: 48px;
 font-weight: 500;
 line-height: 21px;
 color: #008E39;
 }
-.circle {
+.country-circle {
     height: 201px;
     width: 200px;
     border-radius: 50%;
@@ -123,7 +123,7 @@ color: #008E39;
     line-height: 32px;
     text-align: center;
 }
-.circle-content {
+.country-circle-content {
     font-family: Inter;
 font-size: 20px;
 font-weight: 500;
