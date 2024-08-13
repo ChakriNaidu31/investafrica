@@ -485,7 +485,7 @@ function Home() {
 
       <div className="success p-5 bg-blue mt-3">
         <div className="col-12 mt-3">
-          <h1 className="mb-5 font-gold mt-3">Success Stories</h1>
+          <h1 className="mb-5 font-gold mt-5">Success Stories</h1>
         </div>
 
         <div id="carouselExample" class="carousel slide">
