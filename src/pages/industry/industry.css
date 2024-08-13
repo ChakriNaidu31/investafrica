@@ -1,0 +1,14 @@
+.industry-banner {
+    background-image: url("../../assets/industry/industry-banner.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    min-height: 380px;
+  }
+
+.inv-tmr {
+    background-image: url("../../assets/industry/invt.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
