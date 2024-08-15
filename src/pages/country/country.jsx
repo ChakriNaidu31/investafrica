@@ -12,68 +12,64 @@ import services from "../../assets/country/services.png"
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import { Chart } from 'react-google-charts';
 import fb from "../../assets/fb.png";
 import insta from "../../assets/insta.png";
 import x from "../../assets/x.png";
+import ship from "../../assets/industry/ship.png";
+import nigeria from "../../assets/africacountries/nigeria.svg";
 import youtube from "../../assets/youtube.png";
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { PieChart, Pie, Legend, Tooltip } from "recharts";
 
 function Country() {
 
+
+    const data01 = [
+        { value: 44.4, name: 'Agriculture', fill: '#006401' },
+        { value: 31.9, name: 'Industry', fill: '#fe6347' },
+        { value: 23.7, name: 'Service', fill: '#87ceea' },
+    ];
+
+    // Data for the second pie chart with 10 entries
+    const data02 = [
+        { value: 38.4, name: 'China', fill: '#ff9999' },
+        { value: 14.3, name: 'Belgium', fill: '#66b2ff' },
+        { value: 10.0, name: 'India', fill: '#99ff99' },
+        { value: 9.7, name: 'Netherlands', fill: '#ffcc99' },
+        { value: 7.9, name: 'United States', fill: '#ffd700' },
+        { value: 5.7, name: 'Norway', fill: '#ff69b4' },
+        { value: 4.5, name: 'Ukraine', fill: '#7fffd4' },
+        { value: 3.2, name: 'France', fill: '#b0e0e6' },
+        { value: 3.2, name: 'Germany', fill: '#ff6347' },
+        { value: 3.1, name: 'Brazil', fill: '#00fa9a' }
+    ];
+
+    // Data for the third pie chart with 10 entries (different values)
+    const data03 = [
+        { value: 19.40, name: 'Spain', fill: '#7fff00' },
+        { value: 21.49, name: 'India', fill: '#ff6347' },
+        { value: 5.43, name: 'Canada', fill: '#00ffff' },
+        { value: 5.51, name: 'United States', fill: '#ffa07a' },
+        { value: 5.99, name: 'China', fill: '#dda0dd' },
+        { value: 6.19, name: 'South Africa', fill: '#ffff66' },
+        { value: 6.52, name: 'Namibia', fill: '#ffa07a' },
+        { value: 7.08, name: 'Indosea', fill: '#87cefa' },
+        { value: 10.46, name: 'Netherland', fill: '#ff69b4' },
+        { value: 11.93, name: 'France', fill: '#ffd700' }
+    ];
+
+
+
+
     const [search, setSearch] = useState("");
-   
+
     const navigate = useNavigate();
     const navigatetoRegister = () => {
-      navigate("/signup");
-    };
-    const data = [
-        ['Economy', 'Hours per Day'],
-        ['Agriculture', 44.4],
-        ['Industry', 31.39],
-        ['Services', 23.7],
-    ];
-
-    const options = {
-        title: '',
+        navigate("/signup");
     };
 
 
-    const data1 = [
-        ['Economy', 'Hours per Day'],
-        ['China', 38.4],
-        ['Belgium', 14.3],
-        ['India', 10.0],
-        ['Netherlands', 9.7],
-        ['United States', 7.9],
-        ['Norway', 5.7],
-        ['Ukraine', 4.5],
-        ['France', 3.2],
-        ['Germany', 3.2],
-        ['Brazil', 3.1],
-    ];
 
-    const options1 = {
-        title: '',
-    };
-
-    const data2 = [
-        ['Economy', 'Hours per Day'],
-        ['India', 21.49],
-        ['Spain', 19.40],
-        ['France', 11.93],
-        ['Netherlands', 10.46],
-        ['Indonesia', 7.08],
-        ['Namibia', 6.52],
-        ['South Africa', 6.19],
-        ['China', 5.99],
-        ['United States', 5.51],
-        ['Canada', 5.4],
-    ];
-
-    const options2 = {
-        title: '',
-    };
     return (
         <main class="">
             <div class="p-4 text-body-emphasis bg-body-secondary country-banner">
@@ -136,8 +132,8 @@ function Country() {
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-overview" role="tabpanel" aria-labelledby="pills-overview-tab" tabindex="0">
                         <div className="container-fluid">
-                            <div className="row">
-                                <div className="col-sm-12 col-lg-6">
+                            <div className="row ">
+                                <div className="col-sm-12 col-lg-6 p-4 pt-0">
                                     <div className="row">
                                         <div className="col-sm-12 col-lg-6 p-5">
                                             <div className="country-overview-detail">
@@ -181,19 +177,20 @@ function Country() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-sm-12 col-lg-6">
-                                    <img src={countrymap} className="img-fluid w-100" />
+                                <div className="col-sm-12 col-lg-6 p-4 my-auto pt-0">
+                                  <img src={nigeria} className="img-fluid"/>
                                 </div>
 
 
-                                <div className="col-12 pb-4">
+                                <div className="col-12 px-5">
                                     <h1 className=" my-4 country-heading">LEADING SECTORS</h1>
                                 </div>
 
 
-                                <div className="col-12 bg-ce px-2 py-3 rounded ">
+                                <div className="col-12 bg p-5 py-4 rounded ">
+                                    <div className="bg-ce p-3 rounded">
                                     <OwlCarousel
-                                        className="owl-theme country"
+                                        className="owl-theme country bg-ce"
                                         loop
                                         margin={10}
                                         nav
@@ -259,15 +256,17 @@ function Country() {
                                         </div>
 
                                     </OwlCarousel>
+                                    </div>
+                                   
                                 </div>
 
 
-                                <div className="col-12 my-5">
+                                <div className="col-12 px-5 my-5">
                                     <h1 className=" country-heading ">WHY NIGERIA?</h1>
                                 </div>
 
 
-                                <div className="col-12 rounded">
+                                <div className="col-12 rounded px-5">
                                     <OwlCarousel
                                         className="owl-theme country"
                                         loop
@@ -326,7 +325,7 @@ function Country() {
                                     </OwlCarousel>
                                 </div>
 
-                                <div className="col-12">
+                                <div className="col-12 p-0">
                                     <div className="py-5 bg-db">
                                         <h1 className="text-center font-gold">Investment Support and Resources </h1>
                                         <p className="country-inves mt-4">Nigerian Investment Promotion Commission (NIPC): <br />
@@ -352,13 +351,17 @@ function Country() {
                             <div className="row">
                                 <div className="col-12 p-0">
                                     <div className="bg-ce">
-                                        <h1 className="country-eco-head py-4">ECONOMY</h1>
+                                        <h1 className="country-eco-head mb-0 py-4">ECONOMY</h1>
                                     </div>
                                 </div>
 
-                                <div className="col-12 bg-ce px-2 py-3 rounded ">
+                                <div className="col-12 px-5 my-4">
+                                    <h1 className=" country-heading ">Insights</h1>
+                                </div>
+
+                                <div className="col-12  rounded px-5">
                                     <OwlCarousel
-                                        className="owl-theme country"
+                                        className="owl-theme country bg-ce p-2 rounded"
                                         loop
                                         margin={10}
                                         nav
@@ -416,39 +419,68 @@ function Country() {
                                     </OwlCarousel>
                                 </div>
 
-                                <div className="col-12 ">
-                                    <h1 className=" country-heading my-4 ">Distribution of GDP Across<br /> Economic Sectors</h1>
+                                <div className="col-12 px-5 my-4">
+                                    <h1 className=" country-heading  ">Distribution of GDP Across<br /> Economic Sectors</h1>
                                 </div>
-                                <div className="col-12">
-                                    <div style={{ width: '100%', height: '100%' }}>
-                                        <Chart
-                                            chartType="PieChart"
-                                            data={data}
-                                            options={options}
-                                            width="100%"
-                                            height="700px"
+                                <div className="col-7">
+
+                                    <PieChart width={1000} height={600}>
+                                        <Pie
+                                            dataKey="value"
+                                            isAnimationActive={false}
+                                            data={data01}
+                                            cx={400} // Adjusted x-coordinate for spacing
+                                            cy={300} // Adjusted y-coordinate for spacing
+                                            outerRadius={200} // Larger radius for bigger pie chart
+                                            label
+                                            labelLine={false} // Optionally hide label lines
                                         />
+
+                                        <Tooltip
+                                            formatter={(value, name, props) => [`${value}`, `${props.payload.name}`]}
+                                        />
+                                    </PieChart>
+
+
+                                </div>
+                                <div className="col-5 my-auto">
+                                    <div>
+                                        {data01.map((item) => (
+                                            <div key={item.name} style={{ display: 'flex', alignItems: 'center', marginBottom: '8px' }}>
+                                                <div
+                                                    style={{
+                                                        width: '30px',
+                                                        height: '30px',
+                                                        backgroundColor: item.fill,
+                                                        marginRight: '10px',
+                                                    }}
+                                                ></div>
+                                                <span style={{ fontSize: '25px' }}>{item.name}</span>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
-                                <div className="col-12">
+                                <div className="col-12 p-0">
                                     <div className="p-5 bg-db">
-                                        <h1 className="text-start text-white">Imports and Exports </h1>
-                                        <h3 className="font-gold text-start fw-bold mt-4">Nigeria Robust Trade Growth</h3>
-                                        <p className="country-inves text-start mt-4">In 2021, Nigeria's Intra-African trade surged hy 21.75 to US$9.65 billion, <br />
+                                        <h1 className="text-center text-white">Imports and Exports </h1>
+                                        <h3 className="font-gold text-center fw-bold mt-4">Nigeria Robust Trade Growth</h3>
+                                        <p className="country-inves text-center mt-4">In 2021, Nigeria's Intra-African trade surged hy 21.75 to US$9.65 billion, <br />
                                             elevatting its status as the 3rd largest Intra-African trading nation.<br />
                                             Despite crude oil dominating exports to African partners,only 3.3% of<br />
                                             nigeria's total imports came from the continent.</p>
-                                        <button type="button" class="btn btn-outline-white mt- px-4 py-2">LEARN MORE</button>
+                                        <div className="text-center">
+                                        <button type="button" class="btn btn-outline-white text-center mx-auto px-4 py-2">LEARN MORE</button>
+                                        </div>
                                     </div>
 
                                 </div>
 
-                                <div className="col-12 ">
-                                    <h1 className=" country-heading my-4 ">Major Imports</h1>
+                                <div className="col-12 px-5 my-4">
+                                    <h1 className=" country-heading ">Major Imports</h1>
                                 </div>
 
-                                <div className="col-12 text-center">
-                                    <div className="row">
+                                <div className="col-12 text-center px-5 my-4">
+                                    <div className="text-center d-flex justify-content-center">
                                         <div className="col-2 text-center">
                                             <button className="country-circle ">
                                                 $ 11.3 B
@@ -487,34 +519,57 @@ function Country() {
 
                                     </div>
                                 </div>
-                                <div className="col-12">
-                                    <div style={{ width: '100%', height: '100%' }}>
-                                        <Chart
-                                            chartType="PieChart"
-                                            data={data1}
-                                            options={options1}
-                                            width="100%"
-                                            height="700px"
+                                <div className="col-7">
+                                    <PieChart width={1000} height={600}>
+                                        <Pie
+                                            dataKey="value"
+                                            isAnimationActive={false}
+                                            data={data02}
+                                            cx={400}
+                                            cy={300}
+                                            outerRadius={200}
+                                            fill="#8884d8"
+                                            label
                                         />
+
+                                        <Tooltip />
+                                    </PieChart>
+
+                                </div>
+                                <div className="col-5 my-auto">
+                                    <div>
+                                        {data02.map((item) => (
+                                            <div key={item.name} style={{ display: 'flex', alignItems: 'center', marginBottom: '8px' }}>
+                                                <div
+                                                    style={{
+                                                        width: '30px',
+                                                        height: '30px',
+                                                        backgroundColor: item.fill,
+                                                        marginRight: '10px',
+                                                    }}
+                                                ></div>
+                                                <span style={{ fontSize: '25px' }}>{item.name}</span>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
-                                <div className="col-12">
+                                <div className="col-12 p-0">
                                     <div className="p-5 bg-db">
-                                        <h1 className="text-start text-white">Import Substitution </h1>
-                                        <h3 className="font-gold text-start fw-bold mt-4">Backward integration Option</h3>
-                                        <p className="country-inves text-start mt-4">The Central Bank of Nigeria (CBN) in July 2019 rolled<br />
+                                        <h1 className="text-center text-white">Import Substitution </h1>
+                                        <h3 className="font-gold text-center fw-bold mt-4">Backward integration Option</h3>
+                                        <p className="country-inves text-center mt-4">The Central Bank of Nigeria (CBN) in July 2019 rolled<br />
                                             out a new policy to encourage backward integration<br />
                                             for the local production of select items.<br /></p>
                                     </div>
 
                                 </div>
 
-                                <div className="col-12 ">
-                                    <h1 className=" country-heading my-4 ">Major Imports</h1>
+                                <div className="col-12 px-5 my-4">
+                                    <h1 className=" country-heading ">Major Imports</h1>
                                 </div>
 
                                 <div className="col-12 text-center">
-                                    <div className="row">
+                                    <div className="text-center d-flex justify-content-center">
                                         <div className="col-2 text-center">
                                             <button className="country-circle ">
                                                 $ 41.8 B
@@ -553,18 +608,42 @@ function Country() {
 
                                     </div>
                                 </div>
-                                <div className="col-12">
-                                    <div style={{ width: '100%', height: '100%' }}>
-                                        <Chart
-                                            chartType="PieChart"
-                                            data={data2}
-                                            options={options2}
-                                            width="100%"
-                                            height="700px"
+                                <div className="col-7">
+                                    <PieChart width={1500} height={600}>
+
+                                        <Pie
+                                            dataKey="value"
+                                            isAnimationActive={false}
+                                            data={data03}
+                                            cx={400}
+                                            cy={300}
+                                            outerRadius={200}
+
+                                            fill="#8884d8"
+                                            label
                                         />
+                                        <Tooltip />
+                                    </PieChart>
+
+                                </div>
+                                <div className="col-5 my-auto">
+                                    <div>
+                                        {data03.map((item) => (
+                                            <div key={item.name} style={{ display: 'flex', alignItems: 'center', marginBottom: '8px' }}>
+                                                <div
+                                                    style={{
+                                                        width: '30px',
+                                                        height: '30px',
+                                                        backgroundColor: item.fill,
+                                                        marginRight: '10px',
+                                                    }}
+                                                ></div>
+                                                <span style={{ fontSize: '25px' }}>{item.name}</span>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
-                                <div className="col-12">
+                                <div className="col-12 p-0">
                                     <div className="pt-5 bg-db">
                                         <h1 className="text-start font-gold px-5">Nigeria's Commitment to <br />Regional Trade </h1>
                                         <div className="crafting-content  p-5 text-white">
@@ -610,17 +689,20 @@ function Country() {
                                         <h1 className="country-eco-head py-4">Connectivity</h1>
                                     </div>
                                 </div>
-                                <div className="col-12 ">
-                                    <h1 className=" country-heading my-4 ">Airports & Seaports</h1>
+                                <div className="col-12 px-5 my-4">
+                                    <h1 className=" country-heading ">Airports & Seaports</h1>
                                 </div>
-                                <div className="col-12 ">
-                                    <h1 className=" country-heading my-4 ">Nigeria’s standing in Africa</h1>
+                                <div className="col-12 px-5 my-4 text-center">
+                                    <img src={ship} className="img-fluid"/>
+                                </div>
+                                <div className="col-12 px-5 my-4">
+                                    <h1 className=" country-heading ">Nigeria’s standing in Africa</h1>
                                 </div>
 
 
-                                <div className="col-12 bg-ce px-2 py-3 rounded ">
+                                <div className="col-12  px-5 rounded  mb-5">
                                     <OwlCarousel
-                                        className="owl-theme country"
+                                        className="owl-theme country  bg-ce p-2 rounded"
                                         loop
                                         margin={10}
                                         nav
@@ -641,7 +723,7 @@ function Country() {
                                         <div className="item">
                                             <div class="country-card">
                                                 <img src={gdp} alt="Avatar" className="country-card-img" height={250} />
-                                                <p className="text-center eco-card-text">GDP Growth rate in African Countries in 2021</p>
+                                                <p className="text-center eco-card-text" id="cont">GDP Growth rate in African Countries in 2021</p>
 
                                             </div>
                                         </div>
@@ -649,36 +731,36 @@ function Country() {
                                         <div className="item">
                                             <div class="country-card" >
                                                 <img src={gdp} class="country-card-img" alt="..." height={250} />
-                                                <p className="text-center eco-card-text">African Countries with highest GDPs, 2021</p>
+                                                <p className="text-center eco-card-text" id="cont">African Countries with highest GDPs, 2021</p>
 
                                             </div>
                                         </div>
                                         <div className="item">
                                             <div class="country-card" >
                                                 <img src={gdpcapita} class="country-card-img" alt="..." height={250} />
-                                                <p className="text-center eco-card-text">Highest Per Capita GDPs in</p>
+                                                <p className="text-center eco-card-text" id="cont">Highest Per Capita GDPs in</p>
 
                                             </div>
                                         </div>
                                         <div className="item">
                                             <div class="country-card" >
                                                 <img src={fdi} class="country-card-img" alt="..." height={250} />
-                                                <p className="text-center eco-card-text">FDI Net Inflow in Africa, 2022</p>
+                                                <p className="text-center eco-card-text" id="cont">FDI Net Inflow in Africa, 2022</p>
 
                                             </div>
                                         </div>
                                         <div className="item">
                                             <div class="country-card" >
                                                 <img src={fdi} class="country-card-img" alt="..." height={250} />
-                                                <p className="text-center eco-card-text">FDI Net Inflow</p>
+                                                <p className="text-center eco-card-text" id="cont">FDI Net Inflow</p>
 
                                             </div>
                                         </div>
 
                                     </OwlCarousel>
                                 </div>
-                                
-                                
+
+
                             </div>
                         </div>
                     </div>
@@ -686,54 +768,54 @@ function Country() {
             </div>
 
             <div className="col-12 ready text-center py-5">
-        <h1 className="text-white fw-bold mt-5">READY TO GET STARTED?</h1>
-        <p className="text-white mt-4">
-          Invest in the future of Africa by signing up today!
-        </p>
-        <button className="btn btn-success mt-5 px-3 py-2 footer-btn" onClick={navigatetoRegister}>SIGN UP</button>
-      </div>
-
-      <div className="col-12 p-4 bg-green">
-        <div className="row">
-          <div className="col-lg-3 col-sm-12">
-            <div className="social text-white">
-              <div className="media mt-3">
-                <img src={fb} className="social-media-img me-3" />
-                <span>Facebook</span>
-              </div>
-              <div className="media mt-3">
-                <img src={insta} className="social-media-img me-3" />
-                <span>Instagram</span>
-              </div>
-              <div className="media mt-3">
-                <img src={x} className="social-media-img me-3" />
-                <span>X</span>
-              </div>
-              <div className="media mt-3">
-                <img src={youtube} className="social-media-img me-3" />
-                <span>Youtube</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-9 col-sm-12 my-auto">
-            <div className="address float-end ">
-              <div className="mt-3">
-                <p className="mt-4">Global IT Park1188-2, Urusa, Minami</p>
-
-                <p className="mt-4">UonumaNiigata 9497302 Japan</p>
-
-                <p className="mt-4">Tel: (+81)25-788-0665</p>
-
-                <p className="mt-4">Email:info@adam-i.jp</p>
-
-                <p className="copy mt-4">
-                  Copyright ©2023 Invest Africa. All rights reserved.
+                <h1 className="text-white fw-bold mt-5">READY TO GET STARTED?</h1>
+                <p className="text-white mt-4">
+                    Invest in the future of Africa by signing up today!
                 </p>
-              </div>
+                <button className="btn btn-success mt-5 px-3 py-2 footer-btn" onClick={navigatetoRegister}>SIGN UP</button>
             </div>
-          </div>
-        </div>
-      </div>
+
+            <div className="col-12 p-4 bg-green">
+                <div className="row">
+                    <div className="col-lg-3 col-sm-12">
+                        <div className="social text-white">
+                            <div className="media mt-3">
+                                <img src={fb} className="social-media-img me-3" />
+                                <span>Facebook</span>
+                            </div>
+                            <div className="media mt-3">
+                                <img src={insta} className="social-media-img me-3" />
+                                <span>Instagram</span>
+                            </div>
+                            <div className="media mt-3">
+                                <img src={x} className="social-media-img me-3" />
+                                <span>X</span>
+                            </div>
+                            <div className="media mt-3">
+                                <img src={youtube} className="social-media-img me-3" />
+                                <span>Youtube</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-9 col-sm-12 my-auto">
+                        <div className="address float-end ">
+                            <div className="mt-3">
+                                <p className="mt-4">Global IT Park1188-2, Urusa, Minami</p>
+
+                                <p className="mt-4">UonumaNiigata 9497302 Japan</p>
+
+                                <p className="mt-4">Tel: (+81)25-788-0665</p>
+
+                                <p className="mt-4">Email:info@adam-i.jp</p>
+
+                                <p className="copy mt-4">
+                                    Copyright ©2023 Invest Africa. All rights reserved.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     );
 }

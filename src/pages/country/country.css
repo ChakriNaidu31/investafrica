@@ -25,7 +25,16 @@ background-color: #fff !important;
     color: black !important;
     background-color: #fff !important;
     font-weight: 700 !important;
+    border: 0 !important;
+    border-bottom: 1px solid #cdcdcd !important;
   }
+  button#pills-overview-tab,button#pills-economy-tab, button#pills-connect-tab {
+    border: 0 !important;
+    border-bottom: 1px solid #cdcdcd !important;
+  }
+  ul#pills-tab {
+    margin-bottom: 0 !important;
+}
   .country-overview-head {
     margin-top: 3rem;
     font-family: Inter;
@@ -61,8 +70,11 @@ color: #000;
     border-bottom-right-radius: 20px;
     height: 170px;
   }
+  #cont.eco-card-text {
+    height: 164px !important;
+  }
   .bg-ce {
-    background-color: #CDCDCD;
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0.4) 0%, rgba(115, 115, 115, 0.16) 100%);
   }
 .country-inves {
   font-family: Inter;
@@ -196,3 +208,5 @@ button.btn.btn-outline-white {
   color: #fff;
   font-weight: 600;
 }
+
+

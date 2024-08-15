@@ -12,3 +12,52 @@
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
 }
+.ind-head {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 48px;
+    text-align: left;
+    
+}
+.ind-des{
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: left;
+    
+}
+.inds-card {
+    height: 186px !important;
+}
+.br {
+    border: 2px solid #00000099;
+}
+#f-owl {
+    top: -157px;
+    position: relative;
+    background: #fff;
+}
+#s-owl {
+    top: -70px;
+    position: relative;
+    background: #fff;
+}
+.backToTopButton{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #fff;
+    border: 5px solid #00000080;
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.3s ease-in-out;
+    height: 90px;
+    width: 90px;
+}
