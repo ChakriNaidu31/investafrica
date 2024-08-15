@@ -384,52 +384,47 @@ function Home() {
 
                   <div class="contain">
                     <img src={con3} alt="flag" id="flag" />
-                    <p id="name">Nigeria</p>
+                    <p id="name">Morocco</p>
                   </div>
 
                   <div class="contain">
                     <img src={con4} alt="flag" id="flag" />
-                    <p id="name">Nigeria</p>
+                    <p id="name">Ghana</p>
                   </div>
 
                   <div class="contain">
                     <img src={con5} alt="flag" id="flag" />
-                    <p id="name">Nigeria</p>
+                    <p id="name">Kenya</p>
                   </div>
 
                   <div class="contain">
                     <img src={con6} alt="flag" id="flag" />
-                    <p id="name">Nigeria</p>
+                    <p id="name">Libya</p>
                   </div>
 
                   <div class="contain">
                     <img src={con7} alt="flag" id="flag" />
-                    <p id="name">Nigeria</p>
+                    <p id="name">Mali</p>
                   </div>
 
                   <div class="contain">
                     <img src={con8} alt="flag" id="flag" />
-                    <p id="name">Nigeria</p>
+                    <p id="name">Nigera</p>
                   </div>
 
                   <div class="contain">
                     <img src={con9} alt="flag" id="flag" />
-                    <p id="name">Nigeria</p>
+                    <p id="name">Senegal</p>
                   </div>
 
                   <div class="contain">
                     <img src={con10} alt="flag" id="flag" />
-                    <p id="name">Nigeria</p>
-                  </div>
-
-                  <div class="contain">
-                    <img src={con11} alt="flag" id="flag" />
-                    <p id="name">Nigeria</p>
+                    <p id="name">Sudan</p>
                   </div>
 
                   <div class="contain">
                     <img src={con12} alt="flag" id="flag" />
-                    <p id="name">Nigeria</p>
+                    <p id="name">Ethiopia</p>
                   </div>
                 </div>
               </div>
