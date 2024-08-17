@@ -33,14 +33,18 @@ import inds4 from "../../assets/industry/ind4.png"
 import inds5 from "../../assets/industry/ind5.png"
 import inds6 from "../../assets/industry/ind6.png"
 import bt from "../../assets/industry/bt.png"
-import React, { useState, useEffect,useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 
 
 function Industry() {
-    const [isVisible, setIsVisible] = useState(false);
+
+  // TODO: Top search bar missing in Navbar
+  // TODO: Investing in Tomorrow design not matching
+
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -64,17 +68,18 @@ function Industry() {
       behavior: 'smooth',
     });
   };
- 
-    return (
-        <main class="">
-           
-            <div class="p-4 text-center  industry-banner">
-                <div class="">
-                    <h1 class="text-white country-banner-head mb-5">Industries</h1>
 
-                </div>
-            </div>
-            <div className="px-3 py-4 shadow-lg invest-caro" id="f-owl">
+  return (
+    <main class="">
+
+      <div class="p-4 text-center  industry-banner">
+        <div class="">
+          <h1 class="text-white country-banner-head mb-5">Industries</h1>
+
+        </div>
+      </div>
+
+      <div className="px-3 py-4 shadow-lg invest-caro" id="f-owl">
         <div className="col-12 mb-4">
           <h1>Top Industries</h1>
         </div>
@@ -212,7 +217,7 @@ function Industry() {
             <div className="industry text-center">
               <img src={con1} className="img-fluid industry-img" />
               <p className="mt-2">Nigeria</p>
-           </div>
+            </div>
           </div>
           <div className="item">
             <div className="industry text-center">
@@ -274,84 +279,84 @@ function Industry() {
               <p className="mt-2">Ethiopia</p>
             </div>
           </div>
-         
+
         </OwlCarousel>
       </div>
-            <div className="col-12">
-                <div className="p-5 inv-tmr text-center">
-                    <h1 className="text-center text-white my-5">Investing in Tomorrow </h1>
-                    <p className="country-inves text-start mt-5 mb-5 mx-5 px-5">The future of Africa's industries looks promising, with ongoing investments in infrastructure, technology, and education. These investments are expected to drive further growth and development, positioning Africa as a significant player in the global economy.</p>
-                </div>
+      <div className="col-12">
+        <div className="p-5 inv-tmr text-center">
+          <h1 className="text-center text-white my-5">Investing in Tomorrow </h1>
+          <p className="country-inves text-start mt-5 mb-5 mx-5 px-5">The future of Africa's industries looks promising, with ongoing investments in infrastructure, technology, and education. These investments are expected to drive further growth and development, positioning Africa as a significant player in the global economy.</p>
+        </div>
 
+      </div>
+      <div className="col-12 p-5 mt-5 mb-5">
+        <div className="row">
+          <div className="col-4 ">
+            <div className="br rounded">
+              <img src={inds1} className="w-100" />
+              <div className="p-3 inds-card">
+                <p className="ind-head">Construction</p>
+                <p className="ind-des mb-0">Africa's construction sector is rapidly expanding, fueling infrastructure development.</p>
+              </div>
             </div>
-            <div className="col-12 p-5 mt-5 mb-5">
-                <div className="row">
-                    <div className="col-4 ">
-                        <div className="br rounded">
-                            <img src={inds1} className="w-100"/>
-                            <div className="p-3 inds-card">
-                            <p className="ind-head">Construction</p>
-                            <p className="ind-des mb-0">Africa's construction sector is rapidly expanding, fueling infrastructure development.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-4 ">
-                        <div className="br rounded">
-                            <img src={inds2} className="w-100"/>
-                            <div className="p-3 inds-card">
-                            <p className="ind-head">Transportation</p>
-                            <p className="ind-des mb-0">Africa's transportation industry is rapidly evolving, boosting connectivity and trade.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-4 ">
-                        <div className="br rounded">
-                            <img src={inds3} className="w-100"/>
-                            <div className="p-3 inds-card">
-                            <p className="ind-head">Renewable Energy</p>
-                            <p className="ind-des mb-0">Africa's renewable energy sector is growing quickly, driving sustainable development.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-4 mt-4 ">
-                        <div className="br rounded">
-                            <img src={inds4} className="w-100"/>
-                            <div className="p-3 inds-card">
-                            <p className="ind-head">Healthcare</p>
-                            <p className="ind-des mb-0">Africa's healthcare industry is expanding, improving access and quality of medical services.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-4 mt-4 ">
-                        <div className="br rounded">
-                            <img src={inds5} className="w-100"/>
-                            <div className="p-3 inds-card">
-                            <p className="ind-head ">Education</p>
-                            <p className="ind-des mb-0">Africa's education sector is progressing, enhancing opportunities for learning and development.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-4 mt-4 ">
-                        <div className="br rounded">
-                            <img src={inds6} className="w-100"/>
-                            <div className="p-3 inds-card">
-                            <p className="ind-head">Retail</p>
-                            <p className="ind-des mb-0">Africa's retail industry is thriving, meeting diverse consumer needs and driving economic growth.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div className="col-4 ">
+            <div className="br rounded">
+              <img src={inds2} className="w-100" />
+              <div className="p-3 inds-card">
+                <p className="ind-head">Transportation</p>
+                <p className="ind-des mb-0">Africa's transportation industry is rapidly evolving, boosting connectivity and trade.</p>
+              </div>
             </div>
-            <div>
-      {isVisible && (
-        <button onClick={scrollToTop} className="backToTopButton">
-         <img src={bt} className="img-fluid" height={45}/>
-        </button>
-      )}
-    </div>
-        </main>
-        
-    );
+          </div>
+          <div className="col-4 ">
+            <div className="br rounded">
+              <img src={inds3} className="w-100" />
+              <div className="p-3 inds-card">
+                <p className="ind-head">Renewable Energy</p>
+                <p className="ind-des mb-0">Africa's renewable energy sector is growing quickly, driving sustainable development.</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-4 mt-4 ">
+            <div className="br rounded">
+              <img src={inds4} className="w-100" />
+              <div className="p-3 inds-card">
+                <p className="ind-head">Healthcare</p>
+                <p className="ind-des mb-0">Africa's healthcare industry is expanding, improving access and quality of medical services.</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-4 mt-4 ">
+            <div className="br rounded">
+              <img src={inds5} className="w-100" />
+              <div className="p-3 inds-card">
+                <p className="ind-head ">Education</p>
+                <p className="ind-des mb-0">Africa's education sector is progressing, enhancing opportunities for learning and development.</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-4 mt-4 ">
+            <div className="br rounded">
+              <img src={inds6} className="w-100" />
+              <div className="p-3 inds-card">
+                <p className="ind-head">Retail</p>
+                <p className="ind-des mb-0">Africa's retail industry is thriving, meeting diverse consumer needs and driving economic growth.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        {isVisible && (
+          <button onClick={scrollToTop} className="backToTopButton">
+            <img src={bt} className="img-fluid" height={45} />
+          </button>
+        )}
+      </div>
+    </main>
+
+  );
 }
 
 export default Industry;

@@ -1,7 +1,6 @@
 import "../component/Navbar.css"
 import logo from "../assets/logo.svg";
 import globe from "../assets/globe.png";
-import map from "../assets/map.png";
 import dropmap from "../assets/dropmap.png";
 import carrow from "../assets/carrow.png";
 import list from "../assets/list.png";
@@ -12,12 +11,13 @@ import livestock from "../assets/livestock.jpg";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
 
-
   const navigate = useNavigate();
+
+  //TODO: countries, industries and about dropdown symbols not matching with Figma
 
   const ToCountry = () => {
     navigate("/country");
@@ -25,8 +25,8 @@ function Navbar() {
   const navigatetoRegister = () => {
     navigate("/signup");
   };
-  const navigatetoLogin= () => {
-    navigate("/");
+  const navigatetoLogin = () => {
+    navigate("/login");
   };
 
   return (
@@ -47,10 +47,10 @@ function Navbar() {
                     <img src={globe} className="img-fluid" alt="Globe" />
                   </div>
                   <div>
-                    <button className="btn nav-signup" onClick={navigatetoRegister} >SignUp</button>
+                    <button className="btn nav-signup" onClick={navigatetoRegister}>SignUp</button>
                   </div>
                   <div>
-                    <button className="btn btn-success nav-login-btn px-3" onClick={navigatetoLogin}>Login</button>
+                    <button className="btn btn-success nav-login-btn px-3" onClick={navigatetoLogin}>LOGIN</button>
                   </div>
                 </div>
                 <div className="d-flex justify-content-space-between">
@@ -294,29 +294,29 @@ function Navbar() {
                                         </div>
                                         <hr className="my-2 hrline" />
                                         <div className="in-data">
-                                           <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
-                                        </div>
-                                        <hr className="my-2 hrline"/>
-                                        <div className="in-data">                                      
                                           <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
                                         </div>
-                                        <hr className="my-2 hrline"/>
-                                        <div className="in-data">                                      
+                                        <hr className="my-2 hrline" />
+                                        <div className="in-data">
                                           <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
                                         </div>
-                                        <hr className="my-2 hrline"/>
-                                        <div className="in-data">                                      
+                                        <hr className="my-2 hrline" />
+                                        <div className="in-data">
                                           <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
                                         </div>
-                                        <hr className="my-2 hrline"/>
-                                        <div className="in-data">                                      
+                                        <hr className="my-2 hrline" />
+                                        <div className="in-data">
                                           <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
                                         </div>
-                                        <hr className="my-2 hrline"/>
-                                        <div className="in-data">    
+                                        <hr className="my-2 hrline" />
+                                        <div className="in-data">
                                           <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
                                         </div>
-                                        <hr className="my-2 hrline"/>
+                                        <hr className="my-2 hrline" />
+                                        <div className="in-data">
+                                          <span className="table-data">Industry Name</span><span className="table-data float-end">1000</span>
+                                        </div>
+                                        <hr className="my-2 hrline" />
                                       </div>
 
                                     </div>

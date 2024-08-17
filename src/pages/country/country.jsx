@@ -24,6 +24,18 @@ import { PieChart, Pie, Legend, Tooltip } from "recharts";
 function Country() {
 
 
+    // TODO: Country background color not matching
+    // TODO: Overview tab some inbetween lines are missing
+    // TODO: Investment Support and Resources image missing and design not matching
+    // TODO: Can you move footer content to a separate component and use that component in both places?
+    // TODO: Api integrations
+    // TODO: Imports and Exports background image missing
+    // TODO: Import Substitution background image missing
+    // TODO: Nigeria's Commitment to Regional Trade design not matching with Figma
+    // TODO: READY TO GET STARTED should be changed as per Figma design
+    // TODO: Top search bar missing in Navbar
+
+
     const data01 = [
         { value: 44.4, name: 'Agriculture', fill: '#006401' },
         { value: 31.9, name: 'Industry', fill: '#fe6347' },
@@ -71,11 +83,11 @@ function Country() {
 
 
     return (
-        <main class="">
-            <div class="p-4 text-body-emphasis bg-body-secondary country-banner">
-                <div class="">
-                    <h1 class="text-white country-banner-head mb-5">Nigeria</h1>
-                    <p class="country-banner-text mt-5 text-white">
+        <main className="">
+            <div className="p-4 text-body-emphasis bg-body-secondary country-banner">
+                <div className="">
+                    <h1 className="text-white country-banner-head mb-5">Nigeria</h1>
+                    <p className="country-banner-text mt-5 text-white">
                         Unlocking Opportunities in
                         <br /> Africa’s Largest Economy
                     </p>
@@ -129,8 +141,8 @@ function Country() {
                         </button>
                     </li>
                 </ul>
-                <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-overview" role="tabpanel" aria-labelledby="pills-overview-tab" tabindex="0">
+                <div className="tab-content" id="pills-tabContent">
+                    <div className="tab-pane fade show active" id="pills-overview" role="tabpanel" aria-labelledby="pills-overview-tab" tabIndex="0">
                         <div className="container-fluid">
                             <div className="row ">
                                 <div className="col-sm-12 col-lg-6 p-4 pt-0">
@@ -178,7 +190,7 @@ function Country() {
                                     </div>
                                 </div>
                                 <div className="col-sm-12 col-lg-6 p-4 my-auto pt-0">
-                                  <img src={nigeria} className="img-fluid"/>
+                                    <img src={nigeria} className="img-fluid" />
                                 </div>
 
 
@@ -189,75 +201,75 @@ function Country() {
 
                                 <div className="col-12 bg p-5 py-4 rounded ">
                                     <div className="bg-ce p-3 rounded">
-                                    <OwlCarousel
-                                        className="owl-theme country bg-ce"
-                                        loop
-                                        margin={10}
-                                        nav
-                                        dots={false}
-                                        items={6} // Show 6 items at a time
-                                        responsive={{
-                                            0: {
-                                                items: 1,
-                                            },
-                                            600: {
-                                                items: 2,
-                                            },
-                                            1000: {
-                                                items: 4, // Change the number of items displayed based on the screen width
-                                            },
-                                        }}
-                                    >
-                                        <div className="item">
-                                            <div class="country-card">
-                                                <img src={agriculture} alt="Avatar" className="country-card-img" />
-                                                <div class="country-card-container">
-                                                    <h5 class="country-card-title">Agriculture</h5>
-                                                    <p class="country-card-text mt-2">Agriculture in Africa is the backbone of its economy, employing about 60% of the labor force and contributing significantly to GDP.</p>
+                                        <OwlCarousel
+                                            className="owl-theme country bg-ce"
+                                            loop
+                                            margin={10}
+                                            nav
+                                            dots={false}
+                                            items={6} // Show 6 items at a time
+                                            responsive={{
+                                                0: {
+                                                    items: 1,
+                                                },
+                                                600: {
+                                                    items: 2,
+                                                },
+                                                1000: {
+                                                    items: 4, // Change the number of items displayed based on the screen width
+                                                },
+                                            }}
+                                        >
+                                            <div className="item">
+                                                <div className="country-card">
+                                                    <img src={agriculture} alt="Avatar" className="country-card-img" />
+                                                    <div className="country-card-container">
+                                                        <h5 className="country-card-title">Agriculture</h5>
+                                                        <p className="country-card-text mt-2">Agriculture in Africa is the backbone of its economy, employing about 60% of the labor force and contributing significantly to GDP.</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        <div className="item">
-                                            <div class="country-card" >
-                                                <img src={manfacture} class="country-card-img" alt="..." />
-                                                <div class="country-card-container">
-                                                    <h5 class="country-card-title">Manufacture</h5>
-                                                    <p class="country-card-text">African manufacturing drives job growth and diversification in textiles, food processing, automotive, and electronics with infrastructure and tech investments.</p>
+                                            <div className="item">
+                                                <div className="country-card" >
+                                                    <img src={manfacture} className="country-card-img" alt="..." />
+                                                    <div className="country-card-container">
+                                                        <h5 className="country-card-title">Manufacture</h5>
+                                                        <p className="country-card-text">African manufacturing drives job growth and diversification in textiles, food processing, automotive, and electronics with infrastructure and tech investments.</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className="item">
-                                            <div class="country-card" >
-                                                <img src={services} class="country-card-img" alt="..." />
-                                                <div class="country-card-container">
-                                                    <h5 class="country-card-title">Services</h5>
-                                                    <p class="country-card-text">Services thrive in finance, telecommunication, tourism, tech, supported by infrastructure, offering vast opportunities for growth.</p>
+                                            <div className="item">
+                                                <div className="country-card" >
+                                                    <img src={services} className="country-card-img" alt="..." />
+                                                    <div className="country-card-container">
+                                                        <h5 className="country-card-title">Services</h5>
+                                                        <p className="country-card-text">Services thrive in finance, telecommunication, tourism, tech, supported by infrastructure, offering vast opportunities for growth.</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className="item">
-                                            <div class="country-card" >
-                                                <img src={retail} class="country-card-img" alt="..." />
-                                                <div class="country-card-container">
-                                                    <h5 class="country-card-title">Retail</h5>
-                                                    <p class="country-card-text">African retail sector expands, offering growth in consumer goods, e-commerce, and brick-and-mortar stores, supported by infrastructure and digital advancements.</p>
+                                            <div className="item">
+                                                <div className="country-card" >
+                                                    <img src={retail} className="country-card-img" alt="..." />
+                                                    <div className="country-card-container">
+                                                        <h5 className="country-card-title">Retail</h5>
+                                                        <p className="country-card-text">African retail sector expands, offering growth in consumer goods, e-commerce, and brick-and-mortar stores, supported by infrastructure and digital advancements.</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className="item">
-                                            <div class="country-card" >
-                                                <img src={retail} class="country-card-img" alt="..." />
-                                                <div class="country-card-container">
-                                                    <h5 class="country-card-title">ICT</h5>
-                                                    <p class="country-card-text">ICT in Africa is the backbone of its economy, employing about 60% of the labor force and contributing significantly to GDP.</p>
+                                            <div className="item">
+                                                <div className="country-card" >
+                                                    <img src={retail} className="country-card-img" alt="..." />
+                                                    <div className="country-card-container">
+                                                        <h5 className="country-card-title">ICT</h5>
+                                                        <p className="country-card-text">ICT in Africa is the backbone of its economy, employing about 60% of the labor force and contributing significantly to GDP.</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                    </OwlCarousel>
+                                        </OwlCarousel>
                                     </div>
-                                   
+
                                 </div>
 
 
@@ -346,7 +358,7 @@ function Country() {
 
 
                     </div>
-                    <div class="tab-pane fade" id="pills-economy" role="tabpanel" aria-labelledby="pills-economy-tab" tabindex="0">
+                    <div className="tab-pane fade" id="pills-economy" role="tabpanel" aria-labelledby="pills-economy-tab" tabIndex="0">
                         <div className="container-fluid">
                             <div className="row">
                                 <div className="col-12 p-0">
@@ -380,7 +392,7 @@ function Country() {
                                         }}
                                     >
                                         <div className="item">
-                                            <div class="country-card">
+                                            <div className="country-card">
                                                 <img src={gdp} alt="Avatar" className="country-card-img" height={250} />
                                                 <p className="text-center eco-card-text">GDP</p>
 
@@ -388,29 +400,29 @@ function Country() {
                                         </div>
 
                                         <div className="item">
-                                            <div class="country-card" >
-                                                <img src={gdp} class="country-card-img" alt="..." height={250} />
+                                            <div className="country-card" >
+                                                <img src={gdp} className="country-card-img" alt="..." height={250} />
                                                 <p className="text-center eco-card-text">GDP Growth</p>
 
                                             </div>
                                         </div>
                                         <div className="item">
-                                            <div class="country-card" >
-                                                <img src={gdpcapita} class="country-card-img" alt="..." height={250} />
+                                            <div className="country-card" >
+                                                <img src={gdpcapita} className="country-card-img" alt="..." height={250} />
                                                 <p className="text-center eco-card-text">GDP Per Capita</p>
 
                                             </div>
                                         </div>
                                         <div className="item">
-                                            <div class="country-card" >
-                                                <img src={fdi} class="country-card-img" alt="..." height={250} />
+                                            <div className="country-card" >
+                                                <img src={fdi} className="country-card-img" alt="..." height={250} />
                                                 <p className="text-center eco-card-text">FDI Net Inflow</p>
 
                                             </div>
                                         </div>
                                         <div className="item">
-                                            <div class="country-card" >
-                                                <img src={fdi} class="country-card-img" alt="..." height={250} />
+                                            <div className="country-card" >
+                                                <img src={fdi} className="country-card-img" alt="..." height={250} />
                                                 <p className="text-center eco-card-text">FDI Net Inflow</p>
 
                                             </div>
@@ -469,7 +481,7 @@ function Country() {
                                             Despite crude oil dominating exports to African partners,only 3.3% of<br />
                                             nigeria's total imports came from the continent.</p>
                                         <div className="text-center">
-                                        <button type="button" class="btn btn-outline-white text-center mx-auto px-4 py-2">LEARN MORE</button>
+                                            <button type="button" className="btn btn-outline-white text-center mx-auto px-4 py-2">LEARN MORE</button>
                                         </div>
                                     </div>
 
@@ -565,7 +577,7 @@ function Country() {
                                 </div>
 
                                 <div className="col-12 px-5 my-4">
-                                    <h1 className=" country-heading ">Major Imports</h1>
+                                    <h1 className=" country-heading ">Major Exports</h1>
                                 </div>
 
                                 <div className="col-12 text-center">
@@ -647,7 +659,7 @@ function Country() {
                                     <div className="pt-5 bg-db">
                                         <h1 className="text-start font-gold px-5">Nigeria's Commitment to <br />Regional Trade </h1>
                                         <div className="crafting-content  p-5 text-white">
-                                            <h1 class="mb-5">
+                                            <h1 className="mb-5">
                                                 Crafting Tomorrow's
                                                 <br /> Success Stories Today
                                             </h1>
@@ -681,7 +693,7 @@ function Country() {
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="pills-connect" role="tabpanel" aria-labelledby="pills-connect-tab" tabindex="0">
+                    <div className="tab-pane fade" id="pills-connect" role="tabpanel" aria-labelledby="pills-connect-tab" tabIndex="0">
                         <div className="container-fluid">
                             <div className="row">
                                 <div className="col-12 p-0">
@@ -693,7 +705,7 @@ function Country() {
                                     <h1 className=" country-heading ">Airports & Seaports</h1>
                                 </div>
                                 <div className="col-12 px-5 my-4 text-center">
-                                    <img src={ship} className="img-fluid"/>
+                                    <img src={ship} className="img-fluid" />
                                 </div>
                                 <div className="col-12 px-5 my-4">
                                     <h1 className=" country-heading ">Nigeria’s standing in Africa</h1>
@@ -721,7 +733,7 @@ function Country() {
                                         }}
                                     >
                                         <div className="item">
-                                            <div class="country-card">
+                                            <div className="country-card">
                                                 <img src={gdp} alt="Avatar" className="country-card-img" height={250} />
                                                 <p className="text-center eco-card-text" id="cont">GDP Growth rate in African Countries in 2021</p>
 
@@ -729,29 +741,29 @@ function Country() {
                                         </div>
 
                                         <div className="item">
-                                            <div class="country-card" >
-                                                <img src={gdp} class="country-card-img" alt="..." height={250} />
+                                            <div className="country-card" >
+                                                <img src={gdp} className="country-card-img" alt="..." height={250} />
                                                 <p className="text-center eco-card-text" id="cont">African Countries with highest GDPs, 2021</p>
 
                                             </div>
                                         </div>
                                         <div className="item">
-                                            <div class="country-card" >
-                                                <img src={gdpcapita} class="country-card-img" alt="..." height={250} />
+                                            <div className="country-card" >
+                                                <img src={gdpcapita} className="country-card-img" alt="..." height={250} />
                                                 <p className="text-center eco-card-text" id="cont">Highest Per Capita GDPs in</p>
 
                                             </div>
                                         </div>
                                         <div className="item">
-                                            <div class="country-card" >
-                                                <img src={fdi} class="country-card-img" alt="..." height={250} />
+                                            <div className="country-card" >
+                                                <img src={fdi} className="country-card-img" alt="..." height={250} />
                                                 <p className="text-center eco-card-text" id="cont">FDI Net Inflow in Africa, 2022</p>
 
                                             </div>
                                         </div>
                                         <div className="item">
-                                            <div class="country-card" >
-                                                <img src={fdi} class="country-card-img" alt="..." height={250} />
+                                            <div className="country-card" >
+                                                <img src={fdi} className="country-card-img" alt="..." height={250} />
                                                 <p className="text-center eco-card-text" id="cont">FDI Net Inflow</p>
 
                                             </div>
@@ -809,7 +821,7 @@ function Country() {
                                 <p className="mt-4">Email:info@adam-i.jp</p>
 
                                 <p className="copy mt-4">
-                                    Copyright ©2023 Invest Africa. All rights reserved.
+                                    Copyright ©2024 Invest Africa. All rights reserved.
                                 </p>
                             </div>
                         </div>

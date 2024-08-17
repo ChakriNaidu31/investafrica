@@ -35,109 +35,119 @@ import insta from "../../assets/insta.png";
 import x from "../../assets/x.png";
 import youtube from "../../assets/youtube.png";
 import OwlCarousel from "react-owl-carousel";
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "../home/home.css"
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import { useNavigate } from "react-router-dom";
+
 function Home() {
-    const [search, setSearch] = useState("");
-    const [suggest, setSuggest] = useState(false);
-    const [company, setCompany] = useState([]);
-    const navigate = useNavigate();
-    const navigatetoRegister = () => {
-      navigate("/signup");
-    };
-    useEffect(() => {
-        const element = document.querySelector(".search");
-        if (element) {
-            const realelement = element.querySelector("#sticky");
-            if (realelement) {
-                const tab = realelement.querySelector("#table");
-                if (tab) {
-                    const pos = tab.getBoundingClientRect().top + window.scrollY;
 
-                    window.onscroll = () => {
-                        if (window.scrollY > pos) {
-                            realelement.style.position = "fixed";
-                            realelement.style.top = "-50px";
-                            tab.style.borderRadius = "10px";
+  // TODO: Why invest in africa color mismatch
+  // TODO: Success stories design not matching with Figma
+  // TODO: Footer address one line missing. Also address not matching with Figma. Lot of spacing in between and all lines should not be white
+  // TODO: Check browser console errors and clear
+  // TODO: Api integrations
 
-                            tab.style.border = "1px solid #E0E0E0";
-                        } else {
-                            realelement.style.position = "";
-                            realelement.style.top = "";
-                            tab.style.border = "";
-                        }
-                    };
-                } else {
-                    console.error("Table element not found");
-                }
+  const [search, setSearch] = useState("");
+  const [suggest, setSuggest] = useState(false);
+  const [company, setCompany] = useState([]);
+  
+  const navigate = useNavigate();
+  
+  const navigatetoRegister = () => {
+    navigate("/signup");
+  };
+
+  useEffect(() => {
+    const element = document.querySelector(".search");
+    if (element) {
+      const realelement = element.querySelector("#sticky");
+      if (realelement) {
+        const tab = realelement.querySelector("#table");
+        if (tab) {
+          const pos = tab.getBoundingClientRect().top + window.scrollY;
+
+          window.onscroll = () => {
+            if (window.scrollY > pos) {
+              realelement.style.position = "fixed";
+              realelement.style.top = "-50px";
+              tab.style.borderRadius = "10px";
+
+              tab.style.border = "1px solid #E0E0E0";
             } else {
-                console.error("Sticky element not found");
+              realelement.style.position = "";
+              realelement.style.top = "";
+              tab.style.border = "";
             }
+          };
         } else {
-            console.error("Search element not found");
+          console.error("Table element not found");
         }
-    }, []);
-
+      } else {
+        console.error("Sticky element not found");
+      }
+    } else {
+      console.error("Search element not found");
+    }
+  }, []);
 
   return (
     <div>
-      <main class="">
-        <div class="p-4 text-body-emphasis bg-body-secondary banner ">
-          <div class="invest-container">
-            <h1 class="text-white banner-head">INVEST IN AFRICA</h1>
-            <p class="banner-text my-3 text-white">
+      <main className="">
+        <div className="p-4 text-body-emphasis bg-body-secondary banner ">
+          <div className="invest-container">
+            <h1 className="text-white banner-head">INVEST IN AFRICA</h1>
+            <p className="banner-text my-3 text-white">
               Shaping Tomorrow Together,
               <br /> Invest in Africa's Potential.
             </p>
             <div className="search">
-         
-            <div id="sticky">
-            <table id="table">
-                    <tbody>
-                        <tr>
-                            <td id="searchbar" className="w-130">
-                              
-                                <select className="form-select border-0" aria-label="Default select example">
-                                    <option defaultValue>COUNTRIES</option>
-                                    <option value="1">Industries</option>
-                                    <option value="2">Technology</option>
-                                    <option value="3">Countries</option>
-                                </select>
-                            </td>
-                            <td id="searchbox" className="d-flex mt-3">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search search-icon-style" viewBox="0 0 16 16">
-  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-</svg>
-                                <input type="text" id="input" placeholder="Search" value={search}  onFocus={()=>setSuggest(true)} onBlur={()=>setSuggest(false)}/>
-                            </td>
-                            <td id="button">
-                                <button id="rbutton" onClick={()=>{console.log(search)}}> SEARCH</button>
-                            </td>
-                        </tr>
-                    </tbody>
+
+              <div id="sticky">
+                <table id="table">
+                  <tbody>
+                    <tr>
+                      <td id="searchbar" className="w-130">
+
+                        <select className="form-select border-0" defaultValue={""}>
+                          <option value="">COUNTRIES</option>
+                          <option value="1">Industries</option>
+                          <option value="2">Technology</option>
+                          <option value="3">Countries</option>
+                        </select>
+                      </td>
+                      <td id="searchbox" className="d-flex mt-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search search-icon-style" viewBox="0 0 16 16">
+                          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                        </svg>
+                        <input type="text" id="input" placeholder="Search" onFocus={() => setSuggest(true)} onBlur={() => setSuggest(false)} />
+                      </td>
+                      <td id="button">
+                        <button id="rbutton" onClick={() => { console.log(search) }}> SEARCH</button>
+                      </td>
+                    </tr>
+                  </tbody>
                 </table>
-             
-            </div>
-            <div className="mt-3">
+
+              </div>
+              <div className="mt-3">
                 <table id="suggest">
-                    <tbody>
-                        <tr>
-                            <td>Frequently search:</td>
-                        
-                            <button type="button" class="btn btn-outline-secondary m-l-10">Agriculture</button>
-                            <button type="button" class="btn btn-outline-secondary m-l-10">Infrastructure</button>
-                            <button type="button" class="btn btn-outline-secondary m-l-10">Tourism</button>
-                               
-                        </tr>
-                    </tbody>
+                  <tbody>
+                    <tr>
+                      <td>Frequently searched:</td>
+
+                      <button type="button" className="btn btn-outline-secondary m-l-10">Agriculture</button>
+                      <button type="button" className="btn btn-outline-secondary m-l-10">Infrastructure</button>
+                      <button type="button" className="btn btn-outline-secondary m-l-10">Tourism</button>
+
+                    </tr>
+                  </tbody>
                 </table>
+              </div>
             </div>
-            </div>
-            
-            
+
+
           </div>
         </div>
       </main>
@@ -145,21 +155,23 @@ function Home() {
       <div className="col-12 bg-green p-3 invest-container">
         <div className="row ">
           <div className="col-sm-6 col=-md-6 col-lg-3">
-            <div class="card my-3">
-              <div class="card-body position-relative">
-                <h5 class="card-title text-center">WHY INVEST IN AFRICA?</h5>
-                <p class="card-text">
-                  Pro Business Youthful Population Growing Economies
+            <div className="card my-3">
+              <div className="card-body position-relative">
+                <h5 className="card-title text-center">Why Invest In Africa?</h5>
+                <p className="card-text">
+                  Pro Business
+                  <br />Youthful Population
+                  <br />Growing Economies
                 </p>
               </div>
             </div>
           </div>
 
           <div className="col-sm-6 col-md-6 col-lg-3">
-            <div class="card my-3">
-              <div class="card-body position-relative">
-                <h5 class="card-title text-center">WORLD OF <br></br> AFRICA</h5>
-                <p class="card-text">
+            <div className="card my-3">
+              <div className="card-body position-relative">
+                <h5 className="card-title text-center">World of <br></br> Africa</h5>
+                <p className="card-text">
                   A continent of diversity and beauty where cultures collide,
                   nature flourishes, and business opportunities abound.
                 </p>
@@ -168,23 +180,26 @@ function Home() {
           </div>
 
           <div className="col-sm-6 col-md-6 col-lg-3">
-            <div class="card my-3">
-              <div class="card-body position-relative">
-                <h5 class="card-title text-center">
+            <div className="card my-3">
+              <div className="card-body position-relative">
+                <h5 className="card-title text-center">
                   Crafting Tomorrow's Success
                 </h5>
-                <p class="card-text">
-                  Human Capital Natural Resources Finance Infrastructure
+                <p className="card-text">
+                  Human Capital
+                  <br />Natural Resources
+                  <br />Finance
+                  <br />Infrastructure
                 </p>
               </div>
             </div>
           </div>
 
           <div className="col-sm-6 col-md-6 col-lg-3">
-            <div class="card my-3">
-              <div class="card-body position-relative">
-                <h5 class="card-title text-center">Contact Us</h5>
-                <p class="card-text">
+            <div className="card my-3">
+              <div className="card-body position-relative">
+                <h5 className="card-title text-center">Contact Us</h5>
+                <p className="card-text">
                   Join our business and be part of something extraordinary!
                 </p>
               </div>
@@ -195,7 +210,7 @@ function Home() {
 
       <div className="blog-section p-3 invest-container">
         <div className="col-12 my-5 invest-container">
-          <h1>Why invest in africa</h1>
+          <h1>Why Invest in Africa?</h1>
         </div>
         <div className="col-12 invest-container">
           <div className="row invest-container">
@@ -210,7 +225,6 @@ function Home() {
               </p>
             </div>
           </div>
-          <p></p>
         </div>
         <div className="col-12 sm-d-g invest-container">
           <div className="row invest-container">
@@ -225,7 +239,6 @@ function Home() {
               <img src={cp2} className="img-fluid mb-3" />
             </div>
           </div>
-          <p></p>
         </div>
         <div className="col-12 invest-container">
           <div className="row invest-container">
@@ -240,7 +253,6 @@ function Home() {
               </p>
             </div>
           </div>
-          <p></p>
         </div>
       </div>
 
@@ -372,57 +384,62 @@ function Home() {
                 </form>
 
                 <div id="scroll">
-                  <div class="contain">
+                  <div className="contain">
                     <img src={con1} alt="flag" id="flag" />
                     <p id="name">Nigeria</p>
                   </div>
 
-                  <div class="contain">
+                  <div className="contain">
                     <img src={con2} alt="flag" id="flag" />
-                    <p id="name">Nigeria</p>
-                  </div>
-
-                  <div class="contain">
-                    <img src={con3} alt="flag" id="flag" />
                     <p id="name">Morocco</p>
                   </div>
 
-                  <div class="contain">
+                  <div className="contain">
+                    <img src={con3} alt="flag" id="flag" />
+                    <p id="name">Egypt</p>
+                  </div>
+
+                  <div className="contain">
                     <img src={con4} alt="flag" id="flag" />
                     <p id="name">Ghana</p>
                   </div>
 
-                  <div class="contain">
+                  <div className="contain">
                     <img src={con5} alt="flag" id="flag" />
                     <p id="name">Kenya</p>
                   </div>
 
-                  <div class="contain">
+                  <div className="contain">
                     <img src={con6} alt="flag" id="flag" />
                     <p id="name">Libya</p>
                   </div>
 
-                  <div class="contain">
+                  <div className="contain">
                     <img src={con7} alt="flag" id="flag" />
                     <p id="name">Mali</p>
                   </div>
 
-                  <div class="contain">
+                  <div className="contain">
                     <img src={con8} alt="flag" id="flag" />
-                    <p id="name">Nigera</p>
+                    <p id="name">Niger</p>
                   </div>
 
-                  <div class="contain">
+                  <div className="contain">
                     <img src={con9} alt="flag" id="flag" />
                     <p id="name">Senegal</p>
                   </div>
 
-                  <div class="contain">
+                  <div className="contain">
                     <img src={con10} alt="flag" id="flag" />
                     <p id="name">Sudan</p>
                   </div>
 
-                  <div class="contain">
+                  <div className="contain">
+                    <img src={con11} alt="flag" id="flag" />
+                    <p id="name">Sudan</p>
+                  </div>
+
+                  <div className="contain">
                     <img src={con12} alt="flag" id="flag" />
                     <p id="name">Ethiopia</p>
                   </div>
@@ -443,12 +460,12 @@ function Home() {
             className="img-fluid h-100 w-100 position-absolute"
           />
           <div className="crafting-content position-relative p-5 text-white">
-            <h1 class="mb-5">
+            <h1 className="mb-5">
               Crafting Tomorrow's
               <br /> Success Stories Today
             </h1>
             <p className="crafting-text mt-5">
-              <span className="crafing-head">-human Captial:</span> investing in
+              <span className="crafing-head">-Human Captial:</span> investing in
               Africa's human capital promises access to a<br />
               dynamic,rapidly growing workforce primed for innovation
             </p>
@@ -483,9 +500,9 @@ function Home() {
           <h1 className="mb-5 font-gold mt-5">Success Stories</h1>
         </div>
 
-        <div id="carouselExample" class="carousel slide">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
+        <div id="carouselExample" className="carousel slide">
+          <div className="carousel-inner">
+            <div className="carousel-item active">
               <div className="item bg-cement rounded">
                 <div className="col-12 px-5 py-4">
                   <div className="row">
@@ -510,7 +527,7 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div class="carousel-item">
+            <div className="carousel-item">
               <div className="item bg-cement rounded">
                 <div className="col-12 px-5 py-4">
                   <div className="row">
@@ -535,7 +552,7 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div class="carousel-item">
+            <div className="carousel-item">
               <div className="item bg-cement rounded">
                 <div className="col-12 px-5 py-4">
                   <div className="row">
@@ -562,22 +579,22 @@ function Home() {
             </div>
           </div>
           <button
-            class="carousel-control-prev"
+            className="carousel-control-prev"
             type="button"
             data-bs-target="#carouselExample"
             data-bs-slide="prev"
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
           </button>
           <button
-            class="carousel-control-next"
+            className="carousel-control-next"
             type="button"
             data-bs-target="#carouselExample"
             data-bs-slide="next"
           >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
           </button>
         </div>
       </div>
@@ -624,7 +641,7 @@ function Home() {
                 <p className="mt-4">Email:info@adam-i.jp</p>
 
                 <p className="copy mt-4">
-                  Copyright ©2023 Invest Africa. All rights reserved.
+                  Copyright ©2024 Invest Africa. All rights reserved.
                 </p>
               </div>
             </div>

@@ -34,6 +34,11 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 
 function Agriculture() {
 
+
+    // TODO: Top heading not matching with Figma
+    // TODO: subheading missing
+    // TODO: last view profile button on page is not clickable because "Go to top" button is overlapping
+
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -185,7 +190,7 @@ function Agriculture() {
                     <div className="col-6">
                         <div className="px-3 py-4 shadow-lg invest-caro mb-50" s >
                             <div className="col-12 mb-4">
-                                <h1>Search by Countries</h1>
+                                <h1>Top Countries</h1>
                             </div>
                             <OwlCarousel
                                 className="owl-theme"
@@ -397,12 +402,8 @@ function Agriculture() {
 
 
                         <div className="countries-con border p-3 rounded mt-4">
-                            <p className="text-center">SUB CATEGORIES</p>
+                            <p className="text-center">COMPANY SIZE</p>
                             <div>
-                                <div class="d-flex w-100 py-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search search-icon-style" id="bise" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path></svg>
-                                    <input type="text" className="w-100 px-5 py-2 " id="input" placeholder="Search" value="" />
-                                </div>
                                 <div class="mb-3 form-check">
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                                     <label class="form-check-label" for="exampleCheck1">Small</label>
@@ -470,7 +471,7 @@ function Agriculture() {
                                 </div>
                             </div>
                         </div>
-                        <div className="countries-con border p-3 rounded mt-4">
+                        {/* <div className="countries-con border p-3 rounded mt-4">
                             <p className="text-center">OTHER INDUSTRIES</p>
                             <div className="col-12">
                                 <div className="row">
@@ -482,7 +483,7 @@ function Agriculture() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="col-9">
                         <div className="ag-card border rounded">

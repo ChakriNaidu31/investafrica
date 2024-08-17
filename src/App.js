@@ -9,6 +9,9 @@ import Industry from "./pages/industry/industry";
 import Agriculture from "./pages/Agriculture/Agriculture";
 
 function App() {
+
+// TODO: On clicking logo, page should redirect to baseroute (http://localhost:3000/)
+
   const location = useLocation();
 
   // Define routes where Navbar and the specific div should be displayed
@@ -19,7 +22,7 @@ function App() {
     <div className="app">
       {showNavbar && <Navbar />}
       <Routes>
-        <Route path="/"  element={ <Navigate to="/home" /> } />
+        <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route
@@ -47,7 +50,7 @@ function App() {
           }
         />
 
-<Route
+        <Route
           path="/agriculture"
           element={
             <div className="mt-100">
