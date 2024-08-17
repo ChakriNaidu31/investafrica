@@ -1,5 +1,4 @@
 import "../Agriculture/Agriculture.css"
-import gdp from "../../assets/country/gdp.png"
 import ind1 from "../../assets/ind1.jpg";
 import ind2 from "../../assets/ind2.jpg";
 import ind3 from "../../assets/ind3.jpg";

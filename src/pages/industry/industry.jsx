@@ -1,5 +1,4 @@
 import "../industry/industry.css"
-import gdp from "../../assets/country/gdp.png"
 import ind1 from "../../assets/ind1.jpg";
 import ind2 from "../../assets/ind2.jpg";
 import ind3 from "../../assets/ind3.jpg";
@@ -33,7 +32,7 @@ import inds4 from "../../assets/industry/ind4.png"
 import inds5 from "../../assets/industry/ind5.png"
 import inds6 from "../../assets/industry/ind6.png"
 import bt from "../../assets/industry/bt.png"
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
@@ -270,6 +269,12 @@ function Industry() {
           <div className="item">
             <div className="industry text-center">
               <img src={con10} className="img-fluid industry-img" />
+              <p className="mt-2">Sudan</p>
+            </div>
+          </div>
+          <div className="item">
+            <div className="industry text-center">
+              <img src={con11} className="img-fluid industry-img" />
               <p className="mt-2">Sudan</p>
             </div>
           </div>

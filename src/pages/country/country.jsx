@@ -1,11 +1,9 @@
 import "../country/country.css"
-import countrymap from "../../assets/country/countrymap.png"
 import manfacture from "../../assets/country/manfacture.png"
 import agriculture from "../../assets/country/agriculture.png"
 import retail from "../../assets/country/retail.png"
 import { useNavigate } from "react-router-dom";
 import gdp from "../../assets/country/gdp.png"
-import gdpgrowth from "../../assets/country/gdpgrowth.png"
 import fdi from "../../assets/country/fdi.png"
 import gdpcapita from "../../assets/country/gdpcapita.png"
 import services from "../../assets/country/services.png"
@@ -18,8 +16,8 @@ import x from "../../assets/x.png";
 import ship from "../../assets/industry/ship.png";
 import nigeria from "../../assets/africacountries/nigeria.svg";
 import youtube from "../../assets/youtube.png";
-import React, { useEffect, useState } from 'react';
-import { PieChart, Pie, Legend, Tooltip } from "recharts";
+import React, { useState } from 'react';
+import { PieChart, Pie, Tooltip } from "recharts";
 
 function Country() {
 
@@ -71,9 +69,6 @@ function Country() {
     ];
 
 
-
-
-    const [search, setSearch] = useState("");
 
     const navigate = useNavigate();
     const navigatetoRegister = () => {
