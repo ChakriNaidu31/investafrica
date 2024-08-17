@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import "./App.css";
 import Navbar from "./component/Navbar";
 import Home from "./pages/home/home";
@@ -19,7 +19,8 @@ function App() {
     <div className="app">
       {showNavbar && <Navbar />}
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/"  element={ <Navigate to="/home" /> } />
+        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route
           path="/home"
