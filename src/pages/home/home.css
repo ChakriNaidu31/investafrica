@@ -64,6 +64,10 @@
     background: #008E39;
    
   }
+  .heading-style{
+    color: 
+    #006239;
+  }
   .card {
     height: 385px !important;
     border: none !important;
@@ -266,10 +270,17 @@
     color: #FFFFFF;
     text-align: right;
   }
-  .address p {
-    line-height: 27px;
+ .sucess-style{
+  background-color: white;
+  padding: 15px;
+  border-radius: 20px;
+  height: 100%;
+  text-align: center;
+  font-size: x-large;
+ }
+  .fs-sucess{
+    font-size: xxx-large;
   }
-  
   .copy {
     font-family: Inter;
       font-size: 20px;
