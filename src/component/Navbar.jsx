@@ -12,6 +12,7 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
 
 function Navbar() {
 
@@ -31,17 +32,25 @@ function Navbar() {
   const navigatetoLogin = () => {
     navigate("/login");
   };
-
+  const navigatetoHome = () => {
+    navigate("/home");
+  };
+  const [search, setSearch] = useState("");
+  const [suggest, setSuggest] = useState(false);
+  const [company, setCompany] = useState([]);
   return (
     <nav className="nav-bar navbar-expand-lg">
       <div className="container-fluid">
         <div className="row">
-          <div className="col-6">
+          <div className="col-1">
             <a className="" href="#">
-              <img src={logo} className="logo" alt="Logo" />
+              <img src={logo} className="logo" alt="Logo" onClick={navigatetoHome}/>
             </a>
           </div>
-          <div className="col-6 d-flex">
+          <div className="col-8">
+   
+          </div>
+          <div className="col-3 d-flex">
             <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
               <div className="">
                 <div className="d-flex justify-content-end">

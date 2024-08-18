@@ -87,9 +87,9 @@ function Home() {
           window.onscroll = () => {
             if (window.scrollY > pos) {
               realelement.style.position = "fixed";
+
               realelement.style.top = "-50px";
               tab.style.borderRadius = "10px";
-
               tab.style.border = "1px solid #E0E0E0";
             } else {
               realelement.style.position = "";
@@ -143,10 +143,7 @@ function Home() {
                         <input type="text" id="input" placeholder="Search" onFocus={() => setSuggest(true)} onBlur={() => setSuggest(false)} />
                       </td>
                       <td id="button">
-                        <div>
                         <button id="rbutton" onClick={() => { console.log(search) }}> SEARCH</button>
-
-                        </div>
                       </td>
                     </tr>
                   </tbody>
@@ -158,9 +155,9 @@ function Home() {
                 <tbody>
                     <tr>
                       <td>Frequently searched:</td>
-<div><button type="button" className="btn btn-outline-secondary m-l-10">Agriculture</button></div>
-<div> <button type="button" className="btn btn-outline-secondary m-l-10">Infrastructure</button></div>
-<div><button type="button" className="btn btn-outline-secondary m-l-10">Tourism</button></div>
+<button type="button" className="btn btn-outline-secondary m-l-10">Agriculture</button>
+<button type="button" className="btn btn-outline-secondary m-l-10">Infrastructure</button>
+<button type="button" className="btn btn-outline-secondary m-l-10">Tourism</button>
                       
                      
                       

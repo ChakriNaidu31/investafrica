@@ -26,6 +26,9 @@ img.img-fluid.nav-country-img {
     height: 100px;
     width: 100px;
 }
+.scroll-condi{
+    visibility: hidden;
+}
 .lang {
     font-family: Inter;
 font-size: 20px;
