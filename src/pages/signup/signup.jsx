@@ -205,13 +205,13 @@ function SignUp() {
                                             </div>
 
                                             {selectedOption === 'user' && (
-                                                <div className="col-12 user">
+                                                <div className="col-12 user ">
                                                     <div className="row">
                                                         <div className="col-lg-4 my-auto col-sm-12 text-end mb-2">
                                                             <label htmlFor="countrySelect" className="form-label signin-label">Country/Region:</label>
                                                         </div>
                                                         <div className="col-lg-8 col-sm-12 mb-2">
-                                                            <select id="countrySelect" className="form-select signup-text" defaultValue={""} onChange={(e) => setCountry(e.target.value)}>
+                                                            <select id="countrySelect" className="form-select signup-text user-color" placeholder="Choose Country" defaultValue={""} onChange={(e) => setCountry(e.target.value)}>
                                                                 <option value="" disabled>Choose Country</option>
                                                                 <option value="1">Africa</option>
                                                                 <option value="2">South Africa</option>
@@ -223,41 +223,41 @@ function SignUp() {
                                                             <label htmlFor="fullName" className="form-label signin-label">Full name:</label>
                                                         </div>
                                                         <div className="col-lg-8 col-sm-12 mb-2">
-                                                            <input type="text" className="form-control signup-text" id="fullName" placeholder="Full name" onInput={(e) => setFullName(e.target.value)} />
+                                                            <input type="text" className="form-control signup-text user-color" id="fullName" placeholder="Full name" onInput={(e) => setFullName(e.target.value)} />
                                                         </div>
                                                         <div className="col-lg-4 my-auto col-sm-12 text-end mb-2">
                                                             <label htmlFor="password" className="form-label signin-label">Password:</label>
                                                         </div>
                                                         <div className="col-lg-8 col-sm-12 mb-2">
-                                                            <input type="password" className="form-control signup-text" id="password" placeholder="************" onInput={(e) => validatePassword(e.target.value)} />
+                                                            <input type="password" className="form-control signup-text user-color" id="password" placeholder="************" onInput={(e) => validatePassword(e.target.value)} />
                                                             {passwordError && <div className="text-danger">{passwordError}</div>}
                                                         </div>
                                                         <div className="col-lg-4 my-auto col-sm-12 text-end mb-2">
                                                             <label htmlFor="confirmPassword" className="form-label signin-label">Confirm Password:</label>
                                                         </div>
                                                         <div className="col-lg-8 col-sm-12 mb-2">
-                                                            <input type="password" className="form-control signup-text" id="confirmPassword" placeholder="************" onInput={(e) => validateConfirmPassword(e.target.value)} />
+                                                            <input type="password" className="form-control signup-text user-color" id="confirmPassword" placeholder="************" onInput={(e) => validateConfirmPassword(e.target.value)} />
                                                             {confirmPasswordError && <div className="text-danger">{confirmPasswordError}</div>}
                                                         </div>
                                                         <div className="col-lg-4 my-auto col-sm-12 text-end mb-2">
                                                             <label htmlFor="companyEmail" className="form-label signin-label">Verify email address:</label>
                                                         </div>
                                                         <div className="col-lg-8 col-sm-12 mb-2">
-                                                            <input type="email" className="form-control signup-text" id="companyEmail" placeholder="name@example.com" onInput={(e) => validateEmail(e.target.value)} />
+                                                            <input type="email" className="form-control signup-text user-color" id="companyEmail" placeholder="name@example.com" onInput={(e) => validateEmail(e.target.value)} />
                                                             {emailError && <div className="text-danger">{emailError}</div>}
                                                         </div>
                                                         <div className="col-lg-4 my-auto col-sm-12 text-end mb-2">
                                                             <label htmlFor="confirmCompanyEmail" className="form-label signin-label">Confirm email address:</label>
                                                         </div>
                                                         <div className="col-lg-8 col-sm-12 mb-2">
-                                                            <input type="email" className="form-control signup-text" id="confirmCompanyEmail" placeholder="name@example.com" onInput={(e) => validateConfirmEmail(e.target.value)} />
+                                                            <input type="email" className="form-control signup-text user-color" id="confirmCompanyEmail" placeholder="name@example.com" onInput={(e) => validateConfirmEmail(e.target.value)} />
                                                             {confirmEmailError && <div className="text-danger">{confirmEmailError}</div>}
                                                         </div>
                                                         <div className="col-lg-4 my-auto col-sm-12 text-end mb-2">
                                                             <label htmlFor="companyTel" className="form-label signin-label">Tel:</label>
                                                         </div>
                                                         <div className="col-lg-8 col-sm-12 mb-2">
-                                                            <input type="tel" className="form-control signup-text" id="companyTel" placeholder="+123 4567 8901" onInput={(e) => setTel(e.target.value)} />
+                                                            <input type="tel" className="form-control signup-text user-color" id="companyTel" placeholder="+123 4567 8901" onInput={(e) => setTel(e.target.value)} />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -270,7 +270,7 @@ function SignUp() {
                                                             <label htmlFor="countrySelect" className="form-label signin-label">Country/Region:</label>
                                                         </div>
                                                         <div className="col-lg-8 col-sm-12 mb-2">
-                                                            <select id="countrySelect" className="form-select signup-text" defaultValue={""} onChange={(e) => setCountry(e.target.value)}>
+                                                            <select id="countrySelect" className="form-select user-color signup-text" defaultValue={""} onChange={(e) => setCountry(e.target.value)}>
                                                                 <option value="">Choose Country</option>
                                                                 <option value="1">Africa</option>
                                                                 <option value="2">South Africa</option>
@@ -281,25 +281,25 @@ function SignUp() {
                                                             <label htmlFor="cityName" className="form-label signin-label">City Name:</label>
                                                         </div>
                                                         <div className="col-lg-8 col-sm-12 mb-2">
-                                                            <input type="text" className="form-control signup-text" id="cityName" placeholder="Paris" onInput={(e) => setCityName(e.target.value)} />
+                                                            <input type="text" className="form-control signup-text user-color" id="cityName" placeholder="Paris" onInput={(e) => setCityName(e.target.value)} />
                                                         </div>
                                                         <div className="col-lg-4 my-auto col-sm-12 text-end mb-2">
                                                             <label htmlFor="postCode" className="form-label signin-label">Post Code:</label>
                                                         </div>
                                                         <div className="col-lg-8 col-sm-12 mb-2">
-                                                            <input type="text" className="form-control signup-text" id="postCode" placeholder="75001" onInput={(e) => setPostCode(e.target.value)} />
+                                                            <input type="text" className="form-control signup-text user-color" id="postCode" placeholder="75001" onInput={(e) => setPostCode(e.target.value)} />
                                                         </div>
                                                         <div className="col-lg-4 my-auto col-sm-12 text-end mb-2">
                                                             <label htmlFor="companyName" className="form-label signin-label">Company Name:</label>
                                                         </div>
                                                         <div className="col-lg-8 col-sm-12 mb-2">
-                                                            <input type="text" className="form-control signup-text" id="companyName" placeholder="GreenHarvest Farms" onInput={(e) => setCompanyName(e.target.value)} />
+                                                            <input type="text" className="form-control signup-text user-color" id="companyName" placeholder="GreenHarvest Farms" onInput={(e) => setCompanyName(e.target.value)} />
                                                         </div>
                                                         <div className="col-lg-4 my-auto col-sm-12 text-end mb-2">
                                                             <label htmlFor="businessTypeSelect" className="form-label signin-label">Business Type:</label>
                                                         </div>
                                                         <div className="col-lg-8 col-sm-12 mb-2">
-                                                            <select id="businessTypeSelect" className="form-select signup-text" defaultValue={""} onChange={(e) => setBusinessType(e.target.value)}>
+                                                            <select id="businessTypeSelect" className="form-select signup-text user-color" defaultValue={""} onChange={(e) => setBusinessType(e.target.value)}>
                                                                 <option value="">Business Type:</option>
                                                                 <option value="1">IT</option>
                                                                 <option value="2">Agriculture</option>
@@ -310,47 +310,47 @@ function SignUp() {
                                                             <label htmlFor="employeeCount" className="form-label signin-label">Number of Employees:</label>
                                                         </div>
                                                         <div className="col-lg-8 col-sm-12 mb-2">
-                                                            <input type="text" className="form-control signup-text" id="employeeCount" placeholder="200-250" onInput={(e) => setNumberOfEmployees(e.target.value)} />
+                                                            <input type="text" className="form-control signup-text user-color" id="employeeCount" placeholder="200-250" onInput={(e) => setNumberOfEmployees(e.target.value)} />
                                                         </div>
                                                         <div className="col-lg-4 my-auto col-sm-12 text-end mb-2">
                                                             <label htmlFor="establishmentYear" className="form-label signin-label">Year of Establishment:</label>
                                                         </div>
                                                         <div className="col-lg-8 col-sm-12 mb-2">
-                                                            <input type="text" className="form-control signup-text" id="establishmentYear" placeholder="2009" onInput={(e) => setYearOfEstablishment(e.target.value)} />
+                                                            <input type="text" className="form-control signup-text user-color" id="establishmentYear" placeholder="2009" onInput={(e) => setYearOfEstablishment(e.target.value)} />
                                                         </div>
                                                         <div className="col-lg-4 my-auto col-sm-12 text-end mb-2">
                                                             <label htmlFor="password" className="form-label signin-label">Password:</label>
                                                         </div>
                                                         <div className="col-lg-8 col-sm-12 mb-2">
-                                                            <input type="password" className="form-control signup-text" id="password" placeholder="************" onInput={(e) => validatePassword(e.target.value)} />
+                                                            <input type="password" className="form-control signup-text user-color" id="password" placeholder="************" onInput={(e) => validatePassword(e.target.value)} />
                                                             {passwordError && <div className="text-danger">{passwordError}</div>}
                                                         </div>
                                                         <div className="col-lg-4 my-auto col-sm-12 text-end mb-2">
                                                             <label htmlFor="confirmPassword" className="form-label signin-label">Confirm Password:</label>
                                                         </div>
                                                         <div className="col-lg-8 col-sm-12 mb-2">
-                                                            <input type="password" className="form-control signup-text" id="confirmPassword" placeholder="************" onInput={(e) => validateConfirmPassword(e.target.value)} />
+                                                            <input type="password" className="form-control signup-text user-color" id="confirmPassword" placeholder="************" onInput={(e) => validateConfirmPassword(e.target.value)} />
                                                             {confirmPasswordError && <div className="text-danger">{confirmPasswordError}</div>}
                                                         </div>
                                                         <div className="col-lg-4 my-auto col-sm-12 text-end mb-2">
                                                             <label htmlFor="companyEmail" className="form-label signin-label">Verify email address:</label>
                                                         </div>
                                                         <div className="col-lg-8 col-sm-12 mb-2">
-                                                            <input type="email" className="form-control signup-text" id="companyEmail" placeholder="name@example.com" onInput={(e) => validateEmail(e.target.value)} />
+                                                            <input type="email" className="form-control signup-text user-color" id="companyEmail" placeholder="name@example.com" onInput={(e) => validateEmail(e.target.value)} />
                                                             {emailError && <div className="text-danger">{emailError}</div>}
                                                         </div>
                                                         <div className="col-lg-4 my-auto col-sm-12 text-end mb-2">
                                                             <label htmlFor="confirmCompanyEmail" className="form-label signin-label">Confirm email address:</label>
                                                         </div>
                                                         <div className="col-lg-8 col-sm-12 mb-2">
-                                                            <input type="email" className="form-control signup-text" id="confirmCompanyEmail" placeholder="name@example.com" onInput={(e) => validateConfirmEmail(e.target.value)} />
+                                                            <input type="email" className="form-control signup-text user-color" id="confirmCompanyEmail" placeholder="name@example.com" onInput={(e) => validateConfirmEmail(e.target.value)} />
                                                             {confirmEmailError && <div className="text-danger">{confirmEmailError}</div>}
                                                         </div>
                                                         <div className="col-lg-4 my-auto col-sm-12 text-end mb-2">
                                                             <label htmlFor="userTel" className="form-label signin-label">Tel:</label>
                                                         </div>
                                                         <div className="col-lg-8 col-sm-12 mb-2">
-                                                            <input type="tel" className="form-control signup-text" id="userTel" placeholder="+123 4567 8901" onInput={(e) => setTel(e.target.value)} />
+                                                            <input type="tel" className="form-control signup-text user-color" id="userTel" placeholder="+123 4567 8901" onInput={(e) => setTel(e.target.value)} />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -361,7 +361,7 @@ function SignUp() {
 
                                 <div className="row mt-4">
                                     <div className="col-12 text-center">
-                                        <button type="submit" className="btn btn-primary px-5">Submit</button>
+                                    <button className="btn py-2 px-5 signup-btn mt-3 w-auto mx-auto" type="submit">Register</button>
                                     </div>
                                 </div>
                             </form>

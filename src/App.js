@@ -10,7 +10,7 @@ import Agriculture from "./pages/Agriculture/Agriculture";
 
 function App() {
 
-// TODO: On clicking logo, page should redirect to baseroute (http://localhost:3000/)
+//(done) TODO: On clicking logo, page should redirect to baseroute (http://localhost:3000/)
 
   const location = useLocation();
 
