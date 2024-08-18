@@ -32,7 +32,9 @@
 .form-label {
     margin-bottom: 1rem !important;
 }
-
+.user-color{
+    color: gray !important;
+}
 
 .form-check-input:checked {
     background-color: #000 !important;
