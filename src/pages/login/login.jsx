@@ -30,8 +30,7 @@ function Login() {
       data: formData
     })
       .then((res) => {
-        console.log(res.data);
-        localStorage.setItem("ia_user", JSON.stringify(res.data));
+        localStorage.setItem("ia_user", JSON.stringify(res.data?.token));
         navigate("/home");
       })
       .catch((err) => {
