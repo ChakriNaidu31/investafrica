@@ -7,7 +7,7 @@ import Login from "./pages/login/login";
 import SignUp from "./pages/signup/signup";
 import Industry from "./pages/industry/industry";
 import Agriculture from "./pages/Agriculture/Agriculture";
-
+import { ToastContainer } from 'react-toastify';
 function App() {
 
 //(done) TODO: On clicking logo, page should redirect to baseroute (http://localhost:3000/)
@@ -59,6 +59,7 @@ function App() {
           }
         />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

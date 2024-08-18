@@ -4,6 +4,7 @@ import globe from "../../assets/globe.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
+import { ToastrService } from '../../toastrService';
 
 function Login() {
 
@@ -11,6 +12,7 @@ function Login() {
   // (done) TODO: For password control, add validation to have minimum 8 characters (Atleast 1 uppercase, 1 lowercase, 1 digit and 1 symbol) 
   // (done) TODO: Remove all console logs when responses handled properly.
   // TODO: API integration for forgot password and reset password
+  // (done) TODO: Toastr Implementation
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -20,7 +22,8 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
+    ToastrService.success('Login was successful!');
+    ToastrService.error('Password is incorrect!', { autoClose: 5000 });
     let isValid = true;
 
     // Email validation
