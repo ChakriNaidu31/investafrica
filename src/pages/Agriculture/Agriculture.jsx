@@ -34,9 +34,9 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 function Agriculture() {
 
 
-    // TODO: Top heading not matching with Figma
-    // TODO: subheading missing
-    // TODO: last view profile button on page is not clickable because "Go to top" button is overlapping
+    // (done)TODO: Top heading not matching with Figma
+    // (done)TODO: subheading missing
+    // (done)TODO: last view profile button on page is not clickable because "Go to top" button is overlapping
 
     const [isVisible, setIsVisible] = useState(false);
 
@@ -66,10 +66,12 @@ function Agriculture() {
 
     return (
         <main class="">
-            <div class="p-4 text-center ag-banner">
+            <div class="p-4 text-start ag-banner">
                 <div class="">
                     <h1 class="text-white country-banner-head mb-5">Agriculture</h1>
-
+                    <p className="banner-text my-3 text-white">
+                    Agriculture is the backbone of<br/> Africa's economy and development
+            </p>
                 </div>
             </div>
 
@@ -484,7 +486,7 @@ function Agriculture() {
                             </div>
                         </div> */}
                     </div>
-                    <div className="col-9">
+                    <div className="col-9 mb-5">
                         <div className="ag-card border rounded">
                             <div className="row">
                                 <div className="col-3">

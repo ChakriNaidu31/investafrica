@@ -23,15 +23,15 @@ import Footer from "../../component/footer";
 function Country() {
 
 
-    // TODO: Country background color not matching
-    // TODO: Overview tab some inbetween lines are missing
-    // TODO: Investment Support and Resources image missing and design not matching
-    // TODO: Can you move footer content to a separate component and use that component in both places?
+    // (done)TODO: Country background color not matching
+    // (done)TODO: Overview tab some inbetween lines are missing
+    // (unable to take img)TODO: Investment Support and Resources image missing and design not matching
+    // (done)TODO: Can you move footer content to a separate component and use that component in both places?
     // TODO: Api integrations
-    // TODO: Imports and Exports background image missing
-    // TODO: Import Substitution background image missing
-    // TODO: Nigeria's Commitment to Regional Trade design not matching with Figma
-    // TODO: READY TO GET STARTED should be changed as per Figma design
+    // (unable to take img)TODO: Imports and Exports background image missing
+    // (unable to take img)TODO: Import Substitution background image missing
+    // (done)TODO: Nigeria's Commitment to Regional Trade design not matching with Figma
+    // (done)TODO: READY TO GET STARTED should be changed as per Figma design
     // TODO: Top search bar missing in Navbar
 
 
@@ -143,7 +143,7 @@ function Country() {
                             <div className="row ">
                                 <div className="col-sm-12 col-lg-6 p-4 pt-0">
                                     <div className="row">
-                                        <div className="col-sm-12 col-lg-6 p-5">
+                                        <div className="col-sm-12 col-lg-5 p-5">
                                             <div className="country-overview-detail">
                                                 <div className="country-overview-head">
                                                     <p>Land Area</p>
@@ -153,7 +153,10 @@ function Country() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="col-sm-12 col-lg-6 p-5">
+                                        <div className="col-lg-2 my-auto text-center">
+                                            <div className="line border">c</div>
+                                        </div>
+                                        <div className="col-sm-12 col-lg-5 p-5">
                                             <div className="country-overview-detail">
                                                 <div className="country-overview-head">
                                                     <p>Population</p>
@@ -163,7 +166,26 @@ function Country() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="col-sm-12 col-lg-6 p-5">
+
+
+
+                                        <div className="col-sm-12 col-lg-5 px-5">
+                                        <div className="line hr border">c</div>
+                                        </div>
+                                        <div className="col-lg-2 my-auto text-center">
+                                            {/* <div className="line border">c</div> */}
+                                        </div>
+                                        <div className="col-sm-12 col-lg-5 px-5">
+                                        <div className="line hr border">c</div>
+                                        </div>
+
+
+
+
+
+
+
+                                        <div className="col-sm-12 col-lg-5 p-5">
                                             <div className="country-overview-detail">
                                                 <div className="country-overview-head">
                                                     <p>GDP</p>
@@ -173,7 +195,10 @@ function Country() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="col-sm-12 col-lg-6 p-5">
+                                        <div className="col-lg-2 my-auto text-center">
+                                            <div className="line border">c</div>
+                                        </div>
+                                        <div className="col-sm-12 col-lg-5 p-5">
                                             <div className="country-overview-detail">
                                                 <div className="country-overview-head">
                                                     <p>Labor Force</p>
@@ -186,7 +211,7 @@ function Country() {
                                     </div>
                                 </div>
                                 <div className="col-sm-12 col-lg-6 p-4 my-auto pt-0">
-                                    <img src={nigeria} className="img-fluid" />
+                                    <img src={nigeria} className="img-fluid bg-f" />
                                 </div>
 
 
@@ -653,12 +678,9 @@ function Country() {
                                 </div>
                                 <div className="col-12 p-0">
                                     <div className="pt-5 bg-db">
-                                        <h1 className="text-start font-gold px-5">Nigeria's Commitment to <br />Regional Trade </h1>
-                                        <div className="crafting-content  p-5 text-white">
-                                            <h1 className="mb-5">
-                                                Crafting Tomorrow's
-                                                <br /> Success Stories Today
-                                            </h1>
+                                        <h1 className="text-start font-gold m-50 px-5 f-48">Nigeria's Commitment to <br />Regional Trade </h1>
+                                        <div className="crafting-content m-50 p-5 pt-0 text-white">
+                                           
                                             <p className="crafting-text mt-5">
                                                 <span className="crafing-head">-Nigeria's Diplomatic Alliances:</span> Nigeria is part of two Regional Economic Communities (RECs) -<br />
                                                 the Economic Community of West Africa (ECOWAS) and the Community of Sahel-Saharan<br /> States (CEN-SAD). Nigeria deposited its instrument of ratification and schedule of tariff<br /> concessions, along with other ECOWAS member states.
@@ -774,7 +796,57 @@ function Country() {
                     </div>
                 </div>
             </div>
-<Footer></Footer>
+            <div>
+            <div className="col-12 ready text-center py-5">
+        <h1 className="text-white fw-bold mt-5">CONTACT US</h1>
+        <p className="text-white mt-4">
+        Partner with us to build Prosperity for Nigeria.
+        </p>
+        <button className="btn btn-success mt-5 px-3 py-2 footer-btn con" onClick={navigatetoRegister}>CONTACT</button>
+      </div>
+
+      <div className="col-12 p-4 bg-green">
+        <div className="row">
+          <div className="col-lg-3 col-sm-12">
+            <div className="social text-white">
+              <div className="media mt-3">
+                <img src={fb} className="social-media-img me-3" />
+                <span>Facebook</span>
+              </div>
+              <div className="media mt-3">
+                <img src={insta} className="social-media-img me-3" />
+                <span>Instagram</span>
+              </div>
+              <div className="media mt-3">
+                <img src={x} className="social-media-img me-3" />
+                <span>X</span>
+              </div>
+              <div className="media mt-3">
+                <img src={youtube} className="social-media-img me-3" />
+                <span>Youtube</span>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-9 col-sm-12 my-auto">
+            <div className="address float-end ">
+              <div className="mt-3">
+                <p className="mt-4">Global IT Park1188-2, Urusa, Minami</p>
+
+                <p className="mt-4">UonumaNiigata 9497302 Japan</p>
+
+                <p className="mt-4">Tel: (+81)25-788-0665</p>
+
+                <p className="mt-4">Email:info@adam-i.jp</p>
+
+                <p className="copy mt-4">
+                  Copyright ©2024 Invest Africa. All rights reserved.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
         </main>
     );
 }
