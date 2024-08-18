@@ -40,6 +40,7 @@ import "../home/home.css"
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Home() {
 
@@ -52,12 +53,32 @@ function Home() {
   const [search, setSearch] = useState("");
   const [suggest, setSuggest] = useState(false);
   const [company, setCompany] = useState([]);
-  
+
+  const [successStories, setSuccessStories] = useState([]);
+  const [countries, setCountries] = useState([]);
+  const [industries, setIndustries] = useState([]);
+
   const navigate = useNavigate();
-  
+
   const navigatetoRegister = () => {
     navigate("/signup");
   };
+
+  const fetchHomeDetails = async () => {
+    axios({
+      url: `http://localhost:3001/home/details`,
+      method: "GET",
+    })
+      .then((res) => {
+        setCountries(res.data?.countries);
+        setIndustries(res.data?.industries);
+        setSuccessStories(res.data?.successStories);
+      })
+      .catch((err) => {
+        // TODO: Handle error
+        console.log(err);
+      });
+  }
 
   useEffect(() => {
     const element = document.querySelector(".search");
@@ -90,6 +111,9 @@ function Home() {
     } else {
       console.error("Search element not found");
     }
+
+    fetchHomeDetails();
+
   }, []);
 
   return (
@@ -502,7 +526,29 @@ function Home() {
 
         <div id="carouselExample" className="carousel slide">
           <div className="carousel-inner">
-            <div className="carousel-item active">
+            {successStories.map((story, i) => {
+              return <div className="carousel-item active">
+                <div className="item bg-cement rounded">
+                  <div className="col-12 px-5 py-4">
+                    <div className="row">
+                      <div className="col-lg-2 col-sm-12">
+                        <img src={propic} className="profile-pic" />
+                      </div>
+                      <div className="col-lg-2  col-sm-12 my-auto text-center">
+                        <h4 className="mt-2 fw-bold">{story.name}</h4>
+                        <p>{story.title} of {story.company}</p>
+                      </div>
+                      <div className="col-lg-8  col-sm-12 my-auto">
+                        <span>
+                          {story.testimonial_text}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            })}
+            {/* <div className="carousel-item active">
               <div className="item bg-cement rounded">
                 <div className="col-12 px-5 py-4">
                   <div className="row">
@@ -576,7 +622,7 @@ function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
           <button
             className="carousel-control-prev"
