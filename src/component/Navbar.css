@@ -195,3 +195,6 @@ margin-top: 8px !important;
     border-radius: 4px !important;
     padding: 0px 7px !important;
 }
+.dropdown-toggle::after {
+    display: none !important;
+}

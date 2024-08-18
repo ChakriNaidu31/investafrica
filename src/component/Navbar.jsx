@@ -8,6 +8,7 @@ import crop from "../assets/crop.jpg";
 import horti from "../assets/horti.jpg";
 import ques from "../assets/ques.png";
 import livestock from "../assets/livestock.jpg";
+import drip from "../assets/drip.png";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
@@ -73,7 +74,7 @@ function Navbar() {
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
-                      Countries
+                      Countries<img src={drip} className="ms-2"/>
                     </button>
                     <div className="dropdown-menu p-4 text-body-secondary w-100">
                       <div className="container">
@@ -241,7 +242,7 @@ function Navbar() {
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
-                      Industries
+                      Industries<img src={drip} className="ms-2"/>
                     </button>
                     <div className="dropdown-menu px-4 pt-0 pb-0 text-body-secondary w-100">
                       <div className="container">
@@ -418,7 +419,7 @@ function Navbar() {
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
-                      About
+                      About<img src={drip} className="ms-2"/>
                     </button>
                     <div className="dropdown-menu p-4 text-body-secondary w-100">
                       <div className="container">
