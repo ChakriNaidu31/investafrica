@@ -40,7 +40,7 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 
 function Industry() {
 
-  // TODO: Top search bar missing in Navbar
+  // (done) TODO: Top search bar missing in Navbar
   // (done) TODO: Investing in Tomorrow design not matching
 
   const [isVisible, setIsVisible] = useState(false);

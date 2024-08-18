@@ -14,10 +14,11 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
-
+import { useLocation } from "react-router-dom";
 function Navbar() {
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   //TODO: countries, industries and about dropdown symbols not matching with Figma
 
@@ -36,10 +37,28 @@ function Navbar() {
   const navigatetoHome = () => {
     navigate("/home");
   };
+  const [isHomePage, setIsHomePage] = useState(false);
   const [search, setSearch] = useState("");
   const [suggest, setSuggest] = useState(false);
   const [company, setCompany] = useState([]);
+
+  useEffect(() => {
+    handleUrlChange();
+  }, [location]);
+  const handleUrlChange = () => {
+    checkUrl();
+  };
+  const checkUrl = () => {
+    if(window.location.href.includes('home')){
+      setIsHomePage(true);
+    }
+    else{
+      setIsHomePage(false);
+    }
+  };
+  
   return (
+    
     <nav className="nav-bar navbar-expand-lg">
       <div className="container-fluid">
         <div className="row">
@@ -49,7 +68,31 @@ function Navbar() {
             </a>
           </div>
           <div className="col-8">
-   
+            
+          {!isHomePage && 
+          <div>
+            <div className="d-flex align-items-baseline search-style">
+              <div className=" searchbar w-130">
+              <select className="form-select border-0" defaultValue={""}>
+            <option value="">COUNTRIES</option>
+            <option value="1">Industries</option>
+            <option value="2">Technology</option>
+            <option value="3">Countries</option>
+          </select>
+                </div >
+            <div className="d-flex mt-3 searchbox">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search search-icon-style" viewBox="0 0 16 16">
+                          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                        </svg>
+                        <input type="text" className="inputs" placeholder="Search" onFocus={() => setSuggest(true)} onBlur={() => setSuggest(false)} />
+            </div>
+            <div>
+            <button className="rbutton" onClick={() => { console.log(search) }}> SEARCH</button>
+            </div>
+            </div>
+         
+       </div>
+          }
           </div>
           <div className="col-3 d-flex">
             <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
