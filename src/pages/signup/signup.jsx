@@ -361,7 +361,7 @@ function SignUp() {
 
                                 <div className="row mt-4">
                                     <div className="col-12 text-center">
-                                        <button type="submit" className="btn btn-primary px-5">Submit</button>
+                                    <button className="btn py-2 px-5 signup-btn mt-3 w-auto mx-auto" type="submit">Register</button>
                                     </div>
                                 </div>
                             </form>
