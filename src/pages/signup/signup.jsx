@@ -46,7 +46,7 @@ function SignUp() {
         formData.append("tel", tel);
 
         if (selectedOption === 'user') {
-            formData.append("fullName", fullName);
+            formData.append("companyName", fullName);
         } else if (selectedOption === 'company') {
             formData.append("cityName", cityName);
             formData.append("postCode", postCode);
