@@ -104,3 +104,6 @@
 input#flexCheckDefault {
     border: 2px solid rgba(232, 222, 209, 1) !important;
 }
+.text-danger {
+    font-size: 13px;
+}

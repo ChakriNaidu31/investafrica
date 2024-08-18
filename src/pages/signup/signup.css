@@ -10,24 +10,24 @@
 }
 
 .form-signup input[type="email"] {
-    margin-bottom: 15px;
+    margin-bottom: 0;
 
 }
 .form-signup input[type="text"] {
-    margin-bottom: 15px;
+    margin-bottom: 0;
 
 }
 .form-signup input[type="tel"] {
-    margin-bottom: 15px;
+    margin-bottom: 0;
 
 }
 
 .form-signup input[type="password"] {
-    margin-bottom: 15px;
+    margin-bottom: 0;
 
 }
 .form-signup select {
-    margin-bottom: 15px;
+    margin-bottom: 0;
 }
 .form-label {
     margin-bottom: 1rem !important;
@@ -139,4 +139,7 @@ button.btn.signup-btn.mt-3 {
     line-height: 30px !important;
     background: #14AA47 !important;
     color: #fff !important;
+}
+select.select-placeholder {
+color: yellow !important;
 }
