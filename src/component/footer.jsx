@@ -44,13 +44,14 @@ function Footer() {
           <div className="col-lg-9 col-sm-12 my-auto">
             <div className="address float-end ">
               <div className="mt-3">
-                <p className="mt-4">Global IT Park1188-2, Urusa, Minami</p>
+                <p>Adam Innovations Co., Ltd</p>
+                <p className="">Global IT Park1188-2, Urusa, Minami</p>
 
-                <p className="mt-4">UonumaNiigata 9497302 Japan</p>
+                <p className="">UonumaNiigata 9497302 Japan</p>
 
-                <p className="mt-4">Tel: (+81)25-788-0665</p>
+                <p className="">Tel: (+81)25-788-0665</p>
 
-                <p className="mt-4">Email:info@adam-i.jp</p>
+                <p className="">Email:info@adam-i.jp</p>
 
                 <p className="copy mt-4">
                   Copyright ©2024 Invest Africa. All rights reserved.

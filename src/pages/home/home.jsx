@@ -41,9 +41,9 @@ import Footer from "../../component/footer";
 
 function Home() {
 
-  // TODO: Why invest in africa color mismatch
-  // TODO: Success stories design not matching with Figma
-  // TODO: Footer address one line missing. Also address not matching with Figma. Lot of spacing in between and all lines should not be white
+  // (done) TODO: Why invest in africa color mismatch
+  // (done) TODO: Success stories design not matching with Figma
+  // (done) TODO: Footer address one line missing. Also address not matching with Figma. Lot of spacing in between and all lines should not be white
   // TODO: Check browser console errors and clear
   // TODO: Api integrations
 
@@ -143,7 +143,10 @@ function Home() {
                         <input type="text" id="input" placeholder="Search" onFocus={() => setSuggest(true)} onBlur={() => setSuggest(false)} />
                       </td>
                       <td id="button">
+                        <div>
                         <button id="rbutton" onClick={() => { console.log(search) }}> SEARCH</button>
+
+                        </div>
                       </td>
                     </tr>
                   </tbody>
@@ -152,13 +155,15 @@ function Home() {
               </div>
               <div className="mt-3">
                 <table id="suggest">
-                  <tbody>
+                <tbody>
                     <tr>
                       <td>Frequently searched:</td>
-
-                      <button type="button" className="btn btn-outline-secondary m-l-10">Agriculture</button>
-                      <button type="button" className="btn btn-outline-secondary m-l-10">Infrastructure</button>
-                      <button type="button" className="btn btn-outline-secondary m-l-10">Tourism</button>
+<div><button type="button" className="btn btn-outline-secondary m-l-10">Agriculture</button></div>
+<div> <button type="button" className="btn btn-outline-secondary m-l-10">Infrastructure</button></div>
+<div><button type="button" className="btn btn-outline-secondary m-l-10">Tourism</button></div>
+                      
+                     
+                      
 
                     </tr>
                   </tbody>
@@ -229,7 +234,7 @@ function Home() {
 
       <div className="blog-section p-3 invest-container">
         <div className="col-12 my-5 invest-container">
-          <h1>Why Invest in Africa?</h1>
+          <h1 className="heading-style">Why Invest in Africa?</h1>
         </div>
         <div className="col-12 invest-container">
           <div className="row invest-container">
@@ -543,19 +548,20 @@ function Home() {
                 </div>
               </div>
             })}
-            {/* <div className="carousel-item active">
+             <div className="carousel-item active">
               <div className="item bg-cement rounded">
                 <div className="col-12 px-5 py-4">
                   <div className="row">
-                    <div className="col-lg-2 col-sm-12">
+                    <div className="col-lg-3 col-sm-12">
                       <img src={propic} className="profile-pic" />
                     </div>
-                    <div className="col-lg-2  col-sm-12 my-auto text-center">
-                      <h4 className="mt-2 fw-bold">John Doe</h4>
+                    <div className="col-lg-3 col-sm-12 my-auto text-center">
+                      <h4 className="mt-2 fw-bold fs-sucess">John Doe</h4>
                       <p>CEO of Company</p>
                     </div>
-                    <div className="col-lg-8  col-sm-12 my-auto">
-                      <span>
+                    <div className="col-lg-6  col-sm-12"> 
+                      <div className="sucess-style">
+                      <span className="fw-bold">
                         I found more than a continent; I discovered a journey of
                         opportunity. With perseverance, I turned challenges into
                         triumphs, building a successful venture from the ground
@@ -563,6 +569,8 @@ function Home() {
                         today, I stand as a testament to the boundless
                         possibilities this continent offers.
                       </span>
+                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -617,7 +625,7 @@ function Home() {
                   </div>
                 </div>
               </div>
-            </div> */}
+            </div> *
           </div>
           <button
             className="carousel-control-prev"

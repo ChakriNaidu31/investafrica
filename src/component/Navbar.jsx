@@ -23,6 +23,9 @@ function Navbar() {
   const ToCountry = () => {
     navigate("/country");
   };
+  const ToIndustry = () => {
+    navigate("/industry");
+  };
   const navigatetoRegister = () => {
     navigate("/signup");
   };
@@ -276,7 +279,7 @@ function Navbar() {
                                       {/* ----------------- */}
                                       <div className="min-scroll">
                                         <div className="in-data active">
-                                          <span className="table-data">Agriculture</span><span className="table-data float-end">1000</span>
+                                          <span className="table-data" onClick={ToIndustry}>Agriculture</span><span className="table-data float-end">1000</span>
                                         </div>
                                         <hr className="my-2 hrline" />
                                         <div className="in-data">

@@ -28,6 +28,17 @@
     text-align: left;
     
 }
+.indust-margin{
+    margin-top: 100px;
+}
+.indust-title{
+font-size: 55px;
+}
+.indust-text{
+    font-size: 45px;
+    line-height: 55px;
+
+}
 .inds-card {
     height: 186px !important;
 }
