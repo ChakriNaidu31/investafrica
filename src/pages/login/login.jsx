@@ -20,9 +20,9 @@ function Login() {
     // TODO: Remove all console logs when responses handled properly.
     // TODO: API integration for forgot password and reset password
 
-    let formData = new FormData();
-    formData.append("emailAddress", email);
-    formData.append("password", password);
+    let formData = {};
+    formData.emailAddress = email;
+    formData.password = password;
 
     axios({
       url: `http://localhost:3001/user/login`,

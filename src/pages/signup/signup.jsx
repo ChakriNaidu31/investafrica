@@ -37,23 +37,23 @@ function SignUp() {
     const handleRegistration = (e) => {
         e.preventDefault();
 
-        let formData = new FormData();
-        formData.append("role", selectedOption);
-        formData.append("country", country);
-        formData.append("password", password);
-        formData.append("confirmPassword", confirmPassword);
-        formData.append("emailAddress", emailAddress);
-        formData.append("tel", tel);
+        let formData = {};
+        formData.role = selectedOption;
+        formData.country = country;
+        formData.password = password;
+        formData.confirmPassword = confirmPassword;
+        formData.emailAddress = emailAddress;
+        formData.tel = tel;
 
         if (selectedOption === 'user') {
-            formData.append("companyName", fullName);
+            formData.companyName = fullName;
         } else if (selectedOption === 'company') {
-            formData.append("cityName", cityName);
-            formData.append("postCode", postCode);
-            formData.append("companyName", companyName);
-            formData.append("businessType", businessType);
-            formData.append("numberOfEmployees", numberOfEmployees);
-            formData.append("yearOfEstablishment", yearOfEstablishment);
+            formData.cityName = cityName;
+            formData.postCode = postCode;
+            formData.companyName = companyName;
+            formData.businessType = businessType;
+            formData.numberOfEmployees = numberOfEmployees;
+            formData.yearOfEstablishment = yearOfEstablishment;
         }
 
         axios({
