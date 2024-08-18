@@ -26,7 +26,7 @@ function Country() {
     // TODO: Country background color not matching
     // TODO: Overview tab some inbetween lines are missing
     // TODO: Investment Support and Resources image missing and design not matching
-    // TODO: Can you move footer content to a separate component and use that component in both places?
+    // (done) TODO: Can you move footer content to a separate component and use that component in both places?
     // TODO: Api integrations
     // TODO: Imports and Exports background image missing
     // TODO: Import Substitution background image missing
