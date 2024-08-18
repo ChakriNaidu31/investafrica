@@ -7,36 +7,65 @@ import { useState } from "react";
 
 function Login() {
 
+  // (done) TODO: Show error messages under each control, if it is not filled and if there's any validation error. Invoke API only if validation succeeds.
+  // (done) TODO: For password control, add validation to have minimum 8 characters (Atleast 1 uppercase, 1 lowercase, 1 digit and 1 symbol) 
+  // (done) TODO: Remove all console logs when responses handled properly.
+  // TODO: API integration for forgot password and reset password
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // TODO: Show error messages under each control, if it is not filled and if there's any validation error. Invoke API only if validation succeeds.
-    // TODO: For password control, add validation to have minimum 8 characters (Atleast 1 uppercase, 1 lowercase, 1 digit and 1 symbol)
-    // TODO: Remove all console logs when responses handled properly.
-    // TODO: API integration for forgot password and reset password
+    let isValid = true;
 
-    let formData = {};
-    formData.emailAddress = email;
-    formData.password = password;
+    // Email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email) {
+      setEmailError("Email is required.");
+      isValid = false;
+    } else if (!emailPattern.test(email)) {
+      setEmailError("Please enter a valid email address.");
+      isValid = false;
+    } else {
+      setEmailError("");
+    }
 
-    axios({
-      url: `http://localhost:3001/user/login`,
-      method: "POST",
-      data: formData
-    })
-      .then((res) => {
-        localStorage.setItem("ia_user", JSON.stringify(res.data?.token));
-        navigate("/home");
+    // Password validation
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
+    if (!password) {
+      setPasswordError("Password is required.");
+      isValid = false;
+    } else if (!passwordPattern.test(password)) {
+      setPasswordError("Password must be at least 8 characters (Atleast 1 uppercase, 1 lowercase, 1 digit and 1 symbol");
+      isValid = false;
+    } else {
+      setPasswordError("");
+    }
+
+    if (isValid) {
+      let formData = {
+        emailAddress: email,
+        password: password,
+      };
+
+      axios({
+        url: `http://localhost:3001/user/login`,
+        method: "POST",
+        data: formData
       })
-      .catch((err) => {
-        // TODO: Handle error
-        console.log(err);
-      });
+        .then((res) => {
+          localStorage.setItem("ia_user", JSON.stringify(res.data?.token));
+          navigate("/home");
+        })
+        .catch((err) => {
+          // TODO: Handle error
+        });
+    }
   };
 
   const navigatetoRegister = () => {
@@ -104,6 +133,7 @@ function Login() {
                     placeholder="Enter email or username"
                     onInput={(e) => setEmail(e.target.value)}
                   />
+                  {emailError && <div className="text-danger mt-1">{emailError}</div>}
                 </div>
                 <div className="mb-3">
                   <label
@@ -115,11 +145,12 @@ function Login() {
                   <span className="float-end login-fg">Forgot your password?</span>
                   <input
                     type="password"
-                    className="form-control login-input"
+                    className="form-control login-input mb-0"
                     id="userPassword"
                     placeholder="Enter password"
                     onInput={(e) => setPassword(e.target.value)}
                   />
+                  {passwordError && <div className="text-danger mt-1">{passwordError}</div>}
                 </div>
                 <div className="form-check text-start my-3">
                   <input
@@ -136,13 +167,13 @@ function Login() {
                   Log in
                 </button>
               </form>
-              <div className="text-center mt-3">
+              <div className="text-center mt-2">
                 <p className="login-inv">New to Invest Africa?</p>
                 <button className="btn login-register py-2 px-4" type="submit" onClick={navigatetoRegister}>
                   Register for an account
                 </button>
               </div>
-              <div className="text-start mt-5">
+              <div className="text-start mt-4">
                 <span className="login-credit">Help?</span>
                 <span className="login-credit ms-4">About us</span>
               </div>
