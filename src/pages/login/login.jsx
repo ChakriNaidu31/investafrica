@@ -8,11 +8,7 @@ import { ToastrService } from '../../toastrService';
 
 function Login() {
 
-  // (done) TODO: Show error messages under each control, if it is not filled and if there's any validation error. Invoke API only if validation succeeds.
-  // (done) TODO: For password control, add validation to have minimum 8 characters (Atleast 1 uppercase, 1 lowercase, 1 digit and 1 symbol) 
-  // (done) TODO: Remove all console logs when responses handled properly.
   // TODO: API integration for forgot password and reset password
-  // (done) TODO: Toastr Implementation
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -22,8 +18,7 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    ToastrService.success('Login was successful!');
-    ToastrService.error('Password is incorrect!', { autoClose: 5000 });
+
     let isValid = true;
 
     // Email validation
@@ -39,12 +34,8 @@ function Login() {
     }
 
     // Password validation
-    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
     if (!password) {
       setPasswordError("Password is required.");
-      isValid = false;
-    } else if (!passwordPattern.test(password)) {
-      setPasswordError("Password must be at least 8 characters (Atleast 1 uppercase, 1 lowercase, 1 digit and 1 symbol");
       isValid = false;
     } else {
       setPasswordError("");
@@ -63,10 +54,12 @@ function Login() {
       })
         .then((res) => {
           localStorage.setItem("ia_user", JSON.stringify(res.data?.token));
+          ToastrService.success('Login successful!');
           navigate("/home");
         })
         .catch((err) => {
-          // TODO: Handle error
+          const errorMessage = err.response?.data?.message || 'Invalid Login';
+          ToastrService.error(errorMessage, { autoClose: 5000 });
         });
     }
   };

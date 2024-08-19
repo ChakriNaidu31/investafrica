@@ -4,13 +4,9 @@ import globe from "../../assets/globe.png";
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { ToastrService } from '../../toastrService';
 
 function SignUp() {
-    //(done) TODO: Design not matching with Figma. All labels should be right aligned as per Figma. 
-    // TODO: Choose country default text color not matching with Figma. 
-    //(done) TODO: Value in password and confirm password fields should match. If not, show error under confirm password field 
-    //(done) TODO: Value in email and confirm email fields should match. If not, show error under confirm email field 
-    //(done) TODO: Add validation for password field to check minimum 8 characters (At least 1 uppercase, 1 lowercase, 1 digit and 1 symbol)
     const navigate = useNavigate();
     const [selectedOption, setSelectedOption] = useState('user');
     const [country, setCountry] = useState('');
@@ -49,7 +45,7 @@ function SignUp() {
     };
 
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&*!()_+=\[{\]};:'",.<>?])[A-Za-z\d@#$%^&*!()_+=\[{\]};:'",.<>?]{8,}$/;
-    const validatePassword = (plainPassword) => {
+    const validatePassword = async (plainPassword) => {
         setPassword(plainPassword);
 
         if (!passwordRegex.test(plainPassword)) {
@@ -61,7 +57,7 @@ function SignUp() {
         validateConfirmPassword(confirmPassword, plainPassword);
     };
 
-    const validateConfirmPassword = (plainConfirmPassword, currentPassword = password) => {
+    const validateConfirmPassword = async (plainConfirmPassword, currentPassword = password) => {
         setConfirmPassword(plainConfirmPassword);
 
         if (plainConfirmPassword !== currentPassword) {
@@ -71,19 +67,19 @@ function SignUp() {
         }
     };
 
-    const validateEmail = (plainEmail) => {
+    const validateEmail = async (plainEmail) => {
         setEmailAddress(plainEmail);
 
         // Simple email regex pattern
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!plainEmail.match(emailPattern)) {
+        if (!emailPattern.test(plainEmail)) {
             setEmailError('Invalid email format.');
         } else {
             setEmailError('');
         }
     };
 
-    const validateConfirmEmail = (plainConfirmEmail) => {
+    const validateConfirmEmail = async (plainConfirmEmail) => {
         setConfirmEmail(plainConfirmEmail);
 
         if (plainConfirmEmail !== emailAddress) {
@@ -93,47 +89,52 @@ function SignUp() {
         }
     };
 
-    const handleRegistration = (e) => {
+    const handleRegistration = async (e) => {
         e.preventDefault();
+
+        await validatePassword(password);
+        await validateEmail(emailAddress);
+        await validateConfirmEmail(confirmEmail);
 
         // Check if there are any validation errors
         if (passwordError || confirmPasswordError || emailError || confirmEmailError) {
             return; // Prevent form submission if there are errors
-        }
+        } else {
+            let formData = {};
+            formData.role = selectedOption;
+            formData.country = country;
+            formData.password = password;
+            formData.confirmPassword = confirmPassword;
+            formData.emailAddress = emailAddress;
+            formData.tel = tel;
 
-        let formData = {};
-        formData.role = selectedOption;
-        formData.country = country;
-        formData.password = password;
-        formData.confirmPassword = confirmPassword;
-        formData.emailAddress = emailAddress;
-        formData.tel = tel;
+            if (selectedOption === 'user') {
+                formData.companyName = fullName;
+            } else if (selectedOption === 'company') {
+                formData.cityName = cityName;
+                formData.postCode = postCode;
+                formData.companyName = companyName;
+                formData.businessType = businessType;
+                formData.numberOfEmployees = numberOfEmployees;
+                formData.yearOfEstablishment = yearOfEstablishment;
+            }
 
-        if (selectedOption === 'user') {
-            formData.companyName = fullName;
-        } else if (selectedOption === 'company') {
-            formData.cityName = cityName;
-            formData.postCode = postCode;
-            formData.companyName = companyName;
-            formData.businessType = businessType;
-            formData.numberOfEmployees = numberOfEmployees;
-            formData.yearOfEstablishment = yearOfEstablishment;
-        }
-
-        axios({
-            url: `http://localhost:3001/user/register`,
-            method: "POST",
-            data: formData
-        })
-            .then((res) => {
-                console.log(res.data);
-                localStorage.setItem("ia_user", JSON.stringify(res.data));
-                navigate("/home");
+            axios({
+                url: `http://localhost:3001/user/register`,
+                method: "POST",
+                data: formData
             })
-            .catch((err) => {
-                // TODO: Handle error
-                console.log(err);
-            });
+                .then((res) => {
+                    localStorage.setItem("ia_user", JSON.stringify(res.data?.token));
+                    ToastrService.success('Login successful!');
+                    navigate("/login");
+                })
+                .catch((err) => {
+                    const errorMessage = err.response?.data?.message || 'Invalid Registration';
+                    ToastrService.error(errorMessage, { autoClose: 5000 });
+                });
+        }
+
     };
 
     const navigatetoLogin = () => {
@@ -217,7 +218,7 @@ function SignUp() {
                                                                 <option value="2">South Africa</option>
                                                                 <option value="3">USA</option>
                                                             </select>
-                                                            
+
                                                         </div>
                                                         <div className="col-lg-4 my-auto col-sm-12 text-end mb-2">
                                                             <label htmlFor="fullName" className="form-label signin-label">Full name:</label>
@@ -361,7 +362,7 @@ function SignUp() {
 
                                 <div className="row mt-4">
                                     <div className="col-12 text-center">
-                                    <button className="btn py-2 px-5 signup-btn mt-3 w-auto mx-auto" type="submit">Register</button>
+                                        <button className="btn py-2 px-5 signup-btn mt-3 w-auto mx-auto" type="submit">Register</button>
                                     </div>
                                 </div>
                             </form>
