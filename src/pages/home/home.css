@@ -553,3 +553,25 @@ input:focus{
   border-radius: 8px;
   padding: 6px 8px;
 }
+
+li.nav-item {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  line-height: 21px;
+  letter-spacing: 0.20999999344348907px;
+  text-align: center;
+  padding: 1.5rem !important;
+  color: #8A7D61 !important;
+  background-color: #fff !important;
+  width: 25%;
+  display: grid;
+}
+.nav-link.active {
+  color: black !important;
+  background-color: #fff !important;
+  font-weight: 700 !important;
+}
+.nav-link {
+  color: #8A7D61 !important;
+  padding: 0 !important;
+}
