@@ -69,7 +69,7 @@ function Login() {
   };
 
   const navigateToHome = () => {
-    navigate("/");
+    navigate("/home");
   };
 
   return (
@@ -77,7 +77,7 @@ function Login() {
       <div className="row">
         <nav className="navbar navbar-expand-lg">
           <div className="container-fluid">
-            <img src={logo} className="" alt="Logo" height={55} />
+            <img src={logo} className="cur-point" alt="Logo" height={55}  onClick={navigateToHome} />
             <button
               className="navbar-toggler"
               type="button"

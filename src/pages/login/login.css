@@ -107,3 +107,6 @@ input#flexCheckDefault {
 .text-danger {
     font-size: 13px;
 }
+.cur-point {
+    cursor: pointer;
+}
