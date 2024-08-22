@@ -78,6 +78,7 @@ function Navbar() {
   // Filter countries based on search input
   const filteredCountries = countries.filter((country) =>
     country.name.toLowerCase().includes(seearch.toLowerCase())
+  
   );
 
   // Use a Set to ensure unique items
@@ -167,7 +168,7 @@ function Navbar() {
         <div className="col-12 mt-5">
           <OwlCarousel
             className="owl-theme"
-            loop
+        
             margin={10}
             dots={false}
             items={6}
