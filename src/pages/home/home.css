@@ -159,11 +159,12 @@
     background: transparent !important;
     color: #000 !important;
   }
+
   #scroll {
     white-space: nowrap;
     display: flex;
     flex-wrap: wrap;
-    justify-content: end;
+    /* justify-content: end; */
     margin: 15px 16px 25px 16px;
     overflow-y: auto;
     height: 500px;
@@ -186,6 +187,7 @@
     line-height: 20px;
     font-size: 20px;
     font-family: Inter;
+    color: #000 !important;
   }
   .bg-gold {
     background: #d4c863;
