@@ -57,6 +57,32 @@ function Navbar() {
     }
   };
   
+  const countries = [
+    { name: "Nigeria", img: dropmap },
+    { name: "Morocco", img: dropmap },
+    { name: "Egypt", img: dropmap },
+    { name: "Ghana", img: dropmap },
+    { name: "Kenya", img: dropmap },
+    { name: "Libya", img: dropmap },
+    { name: "Mali", img: dropmap },
+    { name: "Niger", img: dropmap },
+    { name: "Senegal", img: dropmap },
+    { name: "Sudan", img: dropmap },
+    { name: "Ethiopia", img: dropmap },
+  ];
+  
+
+  
+  const [seearch, setSeearch] = useState("");
+
+  // Filter countries based on search input
+  const filteredCountries = countries.filter((country) =>
+    country.name.toLowerCase().includes(seearch.toLowerCase())
+  );
+
+  // Use a Set to ensure unique items
+  const uniqueCountries = [...new Set(filteredCountries.map(country => country.name))]
+    .map(name => filteredCountries.find(country => country.name === name));
   return (
     
     <nav className="nav-bar navbar-expand-lg">
@@ -120,162 +146,63 @@ function Navbar() {
                       Countries<img src={drip} className="ms-2"/>
                     </button>
                     <div className="dropdown-menu p-4 text-body-secondary w-100">
-                      <div className="container">
-                        <div className="row">
-                          <div className="col-12 mb-4">
-                            <h1 className="nav-menu-header">Countries</h1>
-                          </div>
-                          <div className="col-lg-6 col-sm-12 my-auto">
-                            <form className="d-flex" role="search">
-                              <input
-                                className="form-control py-3"
-                                type="search"
-                                placeholder="Search"
-                                aria-label="Search"
-                              />
+                    <div className="container">
+      <div className="row">
+        <div className="col-12 mb-4">
+          <h1 className="nav-menu-header">Countries</h1>
+        </div>
+        <div className="col-lg-6 col-sm-12 my-auto">
+          <form className="d-flex" role="search">
+            <input
+              className="form-control py-3"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              value={seearch}
+              onChange={(e) => setSeearch(e.target.value)} // Update search state
+            />
+          </form>
+        </div>
 
-                            </form>
-                          </div>
+        <div className="col-12 mt-5">
+          <OwlCarousel
+            className="owl-theme"
+            loop
+            margin={10}
+            dots={false}
+            items={6}
+            responsive={{
+              0: {
+                items: 1.5,
+              },
+              600: {
+                items: 2,
+              },
+              1000: {
+                items: 4.5,
+              },
+            }}
+          >
+            {uniqueCountries.map((country, index) => (
+              <div className="item ht-200" key={index} onClick={ToCountry}>
+                <div className="position-relative">
+                  <img
+                    src={country.img}
+                    className="img-fluid nav-country-img"
+                    alt={country.name}
+                  />
+                  <p className="mt-2 nav-country-text">
+                    {country.name}
+                    <img src={carrow} className="ms-1 carrow" alt="arrow" />
+                  </p>
+                </div>
+              </div>
+            ))}
+          </OwlCarousel>
+        </div>
+      </div>
+    </div>
 
-
-
-                          <div className="col-12 mt-5">
-                            <OwlCarousel
-                              className="owl-theme"
-                              loop
-                              margin={10}
-
-                              dots={false}
-                              items={6} // Show 6 items at a time
-                              responsive={{
-                                0: {
-                                  items: 1.5,
-                                },
-                                600: {
-                                  items: 2,
-                                },
-                                1000: {
-                                  items: 4.5, // Change the number of items displayed based on the screen width
-                                },
-                              }}
-                            >
-                              <div className="item ht-200" onClick={ToCountry}>
-                                <div className="position-relative">
-                                  <img
-                                    src={dropmap}
-                                    className="img-fluid nav-country-img"
-                                  />
-                                  <p className="mt-2 nav-country-text">Nigeria<img src={carrow} className="ms-1 carrow" /></p>
-                                </div>
-                              </div>
-                              <div className="item ht-200">
-                                <div className="position-relative">
-                                  <img
-                                    src={dropmap}
-                                    className="img-fluid nav-country-img"
-                                  />
-                                  <p className="mt-2 nav-country-text">Morocco<img src={carrow} className="ms-1 carrow" /></p>
-                                </div>
-                              </div>
-                              <div className="item ht-200">
-                                <div className="position-relative">
-                                  <img
-                                    src={dropmap}
-                                    className="img-fluid nav-country-img"
-                                  />
-                                  <p className="mt-2 nav-country-text">Egypt<img src={carrow} className="ms-1 carrow" /></p>
-                                </div>
-                              </div>
-                              <div className="item ht-200">
-                                <div className="position-relative">
-                                  <img
-                                    src={dropmap}
-                                    className="img-fluid nav-country-img"
-                                  />
-                                  <p className="mt-2 nav-country-text">Ghana<img src={carrow} className="ms-1 carrow" /></p>
-                                </div>
-                              </div>
-                              <div className="item ht-200">
-                                <div className="position-relative">
-                                  <img
-                                    src={dropmap}
-                                    className="img-fluid nav-country-img"
-                                  />
-                                  <p className="mt-2 nav-country-text">Kenya<img src={carrow} className="ms-1 carrow" /></p>
-                                </div>
-                              </div>
-                              <div className="item ht-200">
-                                <div className="position-relative">
-                                  <img
-                                    src={dropmap}
-                                    className="img-fluid nav-country-img"
-                                  />
-                                  <p className="mt-2 nav-country-text">Libya<img src={carrow} className="ms-1 carrow" /></p>
-                                </div>
-                              </div>
-
-                              <div className="item ht-200">
-                                <div className="position-relative">
-                                  <img
-                                    src={dropmap}
-                                    className="img-fluid nav-country-img"
-                                  />
-                                  <p className="mt-2 nav-country-text">Mali<img src={carrow} className="ms-1 carrow" /></p>
-                                </div>
-                              </div>
-
-                              <div className="item ht-200">
-                                <div className="position-relative">
-                                  <img
-                                    src={dropmap}
-                                    className="img-fluid nav-country-img"
-                                  />
-                                  <p className="mt-2 nav-country-text">Niger<img src={carrow} className="ms-1 carrow" /></p>
-                                </div>
-                              </div>
-
-                              <div className="item ht-200">
-                                <div className="position-relative">
-                                  <img
-                                    src={dropmap}
-                                    className="img-fluid nav-country-img"
-                                  />
-                                  <p className="mt-2 nav-country-text">Senegal<img src={carrow} className="ms-1 carrow" /></p>
-                                </div>
-                              </div>
-
-                              <div className="item ht-200">
-                                <div className="position-relative">
-                                  <img
-                                    src={dropmap}
-                                    className="img-fluid nav-country-img"
-                                  />
-                                  <p className="mt-2 nav-country-text">Sudan<img src={carrow} className="ms-1 carrow" /></p>
-                                </div>
-                              </div>
-
-                              <div className="item ht-200">
-                                <div className="position-relative">
-                                  <img
-                                    src={dropmap}
-                                    className="img-fluid nav-country-img"
-                                  />
-                                  <p className="mt-2 nav-country-text">Sudan<img src={carrow} className="ms-1 carrow" /></p>
-                                </div>
-                              </div>
-                              <div className="item ht-200">
-                                <div className="position-relative">
-                                  <img
-                                    src={dropmap}
-                                    className="img-fluid nav-country-img"
-                                  />
-                                  <p className="mt-2 nav-country-text">Ethiopia<img src={carrow} className="ms-1 carrow" /></p>
-                                </div>
-                              </div>
-                            </OwlCarousel>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                   <div className="ml-10">
