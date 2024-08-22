@@ -198,79 +198,34 @@ function Home() {
                       <button type="button" className="btn btn-outline-secondary m-l-10">Agriculture</button>
                       <button type="button" className="btn btn-outline-secondary m-l-10">Infrastructure</button>
                       <button type="button" className="btn btn-outline-secondary m-l-10">Tourism</button>
-
-
-
-
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
-
-
           </div>
         </div>
       </main>
 
-      <div className="col-12 bg-green p-3 invest-container">
-        <div className="row ">
-          <div className="col-sm-6 col=-md-6 col-lg-3">
-            <div className="card my-3">
-              <div className="card-body position-relative">
-                <h5 className="card-title text-center">Why Invest In Africa?</h5>
-                <p className="card-text">
-                  Pro Business
-                  <br />Youthful Population
-                  <br />Growing Economies
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-sm-6 col-md-6 col-lg-3">
-            <div className="card my-3">
-              <div className="card-body position-relative">
-                <h5 className="card-title text-center">World of <br></br> Africa</h5>
-                <p className="card-text">
-                  A continent of diversity and beauty where cultures collide,
-                  nature flourishes, and business opportunities abound.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-sm-6 col-md-6 col-lg-3">
-            <div className="card my-3">
-              <div className="card-body position-relative">
-                <h5 className="card-title text-center">
-                  Crafting Tomorrow's Success
-                </h5>
-                <p className="card-text">
-                  Human Capital
-                  <br />Natural Resources
-                  <br />Finance
-                  <br />Infrastructure
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-sm-6 col-md-6 col-lg-3">
-            <div className="card my-3">
-              <div className="card-body position-relative">
-                <h5 className="card-title text-center">Contact Us</h5>
-                <p className="card-text">
-                  Join our business and be part of something extraordinary!
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="blog-section p-3 invest-container">
-        <div className="col-12 my-5 invest-container">
+      <div className="col-12 ">
+        <ul class="row nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="col-3 nav-item text-center" role="presentation">
+            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-why" type="button" role="tab" aria-controls="pills-why" aria-selected="true">Why Invest In Africa?</button>
+          </li>
+          <li class="col-3 nav-item" role="presentation">
+            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-world" type="button" role="tab" aria-controls="pills-world" aria-selected="false">World of Africa</button>
+          </li>
+          <li class="col-3 nav-item" role="presentation">
+            <button class="nav-link" id="pills-craft-tab" data-bs-toggle="pill" data-bs-target="#pills-craft" type="button" role="tab" aria-controls="pills-craft" aria-selected="false">Crafting Tomorrow's Success</button>
+          </li>
+          <li class="col-3 nav-item" role="presentation">
+            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact Us</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-why" role="tabpanel" aria-labelledby="pills-why-tab" tabindex="0">
+          <div className="blog-section p-4 invest-container">
+        <div className="col-12 mb-5 mt-2 invest-container">
           <h1 className="heading-style">Why Invest in Africa?</h1>
         </div>
         <div className="col-12 invest-container">
@@ -426,14 +381,16 @@ function Home() {
           </div>
         </OwlCarousel>
       </div>
-
-      <div className="discoverafrica mt-3 bg-gold">
+          </div>
+          <div class="tab-pane fade" id="pills-world" role="tabpanel" aria-labelledby="pills-world-tab" tabindex="0">
+          <div className="discoverafrica mt-3 bg-gold">
         <div className="col-12 ">
-          <div className="row">
+          <div className="row p-4">
             <div className="col-12 pb-4 bg-gold ">
               <h1 className="text-white mt-4 invest-container">Discover Africa</h1>
             </div>
-            {/* <div className="col-lg-5 col-sm-12 p-0 bg-gold py-auto invest-container">
+
+            <div className="col-lg-5 col-sm-12 p-0 bg-gold py-auto invest-container">
               <div className="bg-white pb-3 rounded m-l-50">
                 <form className="d-flex p-3" role="search">
                   <input
@@ -441,113 +398,27 @@ function Home() {
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
+                    value={searchQuery}
+                    onChange={e => setSearchQuery(e.target.value)}
                   />
                 </form>
 
-                <div id="scroll">
-                  <div className="contain" style={getCountryNameStyle('NG')}
-                    onClick={() => handleCountryClick('NG')}>
-                    <img src={con1} alt="flag" id="flag" />
-                    <p id="name"  >Nigeria</p>
-                  </div>
-
-                  <div className="contain" style={getCountryNameStyle('MA')}
-                    onClick={() => handleCountryClick('MA')}>
-                    <img src={con2} alt="flag" id="flag" />
-                    <p id="name">Morocco</p>
-                  </div>
-
-                  <div className="contain" style={getCountryNameStyle('EG')}
-                    onClick={() => handleCountryClick('EG')}>
-                    <img src={con3} alt="flag" id="flag" />
-                    <p id="name">Egypt</p>
-                  </div>
-
-                  <div className="contain" style={getCountryNameStyle('GH')}
-                    onClick={() => handleCountryClick('GH')}>
-                    <img src={con4} alt="flag" id="flag" />
-                    <p id="name">Ghana</p>
-                  </div>
-
-                  <div className="contain" style={getCountryNameStyle('KE')}
-                    onClick={() => handleCountryClick('KE')}>
-                    <img src={con5} alt="flag" id="flag" />
-                    <p id="name">Kenya</p>
-                  </div>
-
-                  <div className="contain" style={getCountryNameStyle('LY')}
-                    onClick={() => handleCountryClick('LY')}>
-                    <img src={con6} alt="flag" id="flag" />
-                    <p id="name">Libya</p>
-                  </div>
-
-                  <div className="contain" style={getCountryNameStyle('MLI')}
-                    onClick={() => handleCountryClick('MLI')}>
-                    <img src={con7} alt="flag" id="flag" />
-                    <p id="name">Mali</p>
-                  </div>
-
-                  <div className="contain" style={getCountryNameStyle('NE')}
-                    onClick={() => handleCountryClick('NE')}>
-                    <img src={con8} alt="flag" id="flag" />
-                    <p id="name">Niger</p>
-                  </div>
-
-                  <div className="contain" style={getCountryNameStyle('SN')}
-                    onClick={() => handleCountryClick('SN')}>
-                    <img src={con9} alt="flag" id="flag" />
-                    <p id="name">Senegal</p>
-                  </div>
-
-                  <div className="contain" style={getCountryNameStyle('SD')}
-                    onClick={() => handleCountryClick('SD')}>
-                    <img src={con10} alt="flag" id="flag" />
-                    <p id="name">Sudan</p>
-                  </div>
-
-                  <div className="contain" style={getCountryNameStyle('ZW')}
-                    onClick={() => handleCountryClick('ZW')}>
-                    <img src={con11} alt="flag" id="flag" />
-                    <p id="name">Zimbabwa</p>
-                  </div>
-
-                  <div className="contain" style={getCountryNameStyle('ET')}
-                    onClick={() => handleCountryClick('ET')}>
-                    <img src={con12} alt="flag" id="flag" />
-                    <p id="name">Ethiopia</p>
-                  </div>
+                <div id="scroll" className="px-3">
+                  {filteredCountries.map(country => (
+                    <div
+                      key={country.code}
+                      className="contain"
+                      style={getCountryNameStyle(country.code)}
+                      onClick={() => handleCountryClick(country.code)}
+                      onMouseEnter={() => handleCountryClick(country.code)}
+                    >
+                      <img src={country.flag} alt="flag" id="flag" />
+                      <p id="name">{country.name}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div> */}
-             <div className="col-lg-5 col-sm-12 p-0 bg-gold py-auto invest-container">
-      <div className="bg-white pb-3 rounded m-l-50">
-        <form className="d-flex p-3" role="search">
-          <input
-            className="form-control"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-            value={searchQuery}
-            onChange={e => setSearchQuery(e.target.value)}
-          />
-        </form>
-
-        <div id="scroll" className="px-3">
-          {filteredCountries.map(country => (
-            <div
-              key={country.code}
-              className="contain"
-              style={getCountryNameStyle(country.code)}
-              onClick={() => handleCountryClick(country.code)}
-              onMouseEnter={() => handleCountryClick(country.code)}
-            >
-              <img src={country.flag} alt="flag" id="flag" />
-              <p id="name">{country.name}</p>
             </div>
-          ))}
-        </div>
-      </div>
-    </div>
             <div className="col-lg-7 col-sm-12 p-0 bg-gold mb-5 ">
               <svg className="img-fluid"
                 xmlns="http://www.w3.org/2000/svg"
@@ -923,14 +794,15 @@ function Home() {
           </div>
         </div>
       </div>
-
-      <div className="crafting mb-50" >
+          </div>
+          <div class="tab-pane fade" id="pills-craft" role="tabpanel" aria-labelledby="pills-craft-tab" tabindex="0">
+          <div className="crafting mb-50" >
         <div className="col-12 ">
           <img
             src={banner}
             className="img-fluid h-100 w-100 position-absolute"
           />
-          <div className="crafting-content position-relative p-5 text-white">
+          <div className="crafting-content position-relative p-5 mx-3 text-white">
             <h1 className="mb-5">
               Crafting Tomorrow's
               <br /> Success Stories Today
@@ -1094,6 +966,91 @@ function Home() {
           </button>
         </div>
       </div>
+          </div>
+          <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+          <div className="blog-section p-4 invest-container">
+        <div className="col-12 mb-5 mt-2 invest-container">
+          <h1 className="heading-style">Contact Us</h1>
+        </div>
+        <div className="col-12 invest-container">
+        <div className="address text-secondary text-start">
+              <div className="mt-3">
+                <p>Adam Innovations Co., Ltd</p>
+                <p className="">Global IT Park1188-2, Urusa, Minami</p>
+
+                <p className="">UonumaNiigata 9497302 Japan</p>
+
+                <p className="">Tel: (+81)25-788-0665</p>
+
+                <p className="">Email:info@adam-i.jp</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          </div>
+        </div>
+        {/* <div className="row ">
+          <div className="col-sm-6 col=-md-6 col-lg-3">
+            <div className="card my-3">
+              <div className="card-body position-relative">
+                <h5 className="card-title text-center">Why Invest In Africa?</h5>
+                <p className="card-text">
+                  Pro Business
+                  <br />Youthful Population
+                  <br />Growing Economies
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-sm-6 col-md-6 col-lg-3">
+            <div className="card my-3">
+              <div className="card-body position-relative">
+                <h5 className="card-title text-center">World of <br></br> Africa</h5>
+                <p className="card-text">
+                  A continent of diversity and beauty where cultures collide,
+                  nature flourishes, and business opportunities abound.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-sm-6 col-md-6 col-lg-3">
+            <div className="card my-3">
+              <div className="card-body position-relative">
+                <h5 className="card-title text-center">
+                  Crafting Tomorrow's Success
+                </h5>
+                <p className="card-text">
+                  Human Capital
+                  <br />Natural Resources
+                  <br />Finance
+                  <br />Infrastructure
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-sm-6 col-md-6 col-lg-3">
+            <div className="card my-3">
+              <div className="card-body position-relative">
+                <h5 className="card-title text-center">Contact Us</h5>
+                <p className="card-text">
+                  Join our business and be part of something extraordinary!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div> */}
+      </div>
+
+    
+
+      
+
+     
+
+     
       <Footer></Footer>
     </div>
   );
