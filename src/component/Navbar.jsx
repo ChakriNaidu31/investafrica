@@ -28,6 +28,9 @@ function Navbar() {
   const ToIndustry = () => {
     navigate("/industry");
   };
+  const ToAgriculture = () => {
+    navigate("/agriculture");
+  };
   const navigatetoRegister = () => {
     navigate("/signup");
   };
@@ -58,17 +61,17 @@ function Navbar() {
   };
   
   const countries = [
-    { name: "Nigeria", img: dropmap },
-    { name: "Morocco", img: dropmap },
-    { name: "Egypt", img: dropmap },
-    { name: "Ghana", img: dropmap },
-    { name: "Kenya", img: dropmap },
-    { name: "Libya", img: dropmap },
-    { name: "Mali", img: dropmap },
-    { name: "Niger", img: dropmap },
-    { name: "Senegal", img: dropmap },
-    { name: "Sudan", img: dropmap },
-    { name: "Ethiopia", img: dropmap },
+    {id:'1', name: "Nigeria", img: dropmap },
+    { id:'2',name: "Morocco", img: dropmap },
+    { id:'3',name: "Egypt", img: dropmap },
+    { id:'4',name: "Ghana", img: dropmap },
+    { id:'5',name: "Kenya", img: dropmap },
+    { id:'6',name: "Libya", img: dropmap },
+    { id:'7',name: "Mali", img: dropmap },
+    { id:'8',name: "Niger", img: dropmap },
+    { id:'9',name: "Senegal", img: dropmap },
+    { id:'10',name: "Sudan", img: dropmap },
+    { id:'11',name: "Ethiopia", img: dropmap },
   ];
   
 
@@ -81,9 +84,10 @@ function Navbar() {
   
   );
 
+
   // Use a Set to ensure unique items
-  const uniqueCountries = [...new Set(filteredCountries.map(country => country.name))]
-    .map(name => filteredCountries.find(country => country.name === name));
+  // const uniqueCountries = [...new Set(filteredCountries.map(country => country.name))]
+  //   .map(name => filteredCountries.find(country => country.name === name));
   return (
     
     <nav className="nav-bar navbar-expand-lg">
@@ -184,8 +188,8 @@ function Navbar() {
               },
             }}
           >
-            {uniqueCountries.map((country, index) => (
-              <div className="item ht-200" key={index} onClick={ToCountry}>
+            {filteredCountries.map((country) => (
+              <div className="item ht-200" key={country.id} onClick={ToCountry}>
                 <div className="position-relative">
                   <img
                     src={country.img}
@@ -229,7 +233,7 @@ function Navbar() {
                                     <p>Discover</p>
                                   </div>
                                   <div className="col-12 mt-2">
-                                    <button className="btn btn-discover"><img src={list} className="img-fluid me-2" /> Top Categories</button>
+                                    <button className="btn btn-discover"><img src={list} className="img-fluid me-2" onClick={ToIndustry}/> Top Categories</button>
                                   </div>
                                   <div className="col-12 mt-2">
                                     <button className="btn btn-discover"><img src={list} className="img-fluid me-2" /> All list</button>
@@ -259,7 +263,7 @@ function Navbar() {
                                       {/* ----------------- */}
                                       <div className="min-scroll">
                                         <div className="in-data active">
-                                          <span className="table-data" onClick={ToIndustry}>Agriculture</span><span className="table-data float-end">1000</span>
+                                          <span className="table-data" onClick={ToAgriculture}>Agriculture</span><span className="table-data float-end">1000</span>
                                         </div>
                                         <hr className="my-2 hrline" />
                                         <div className="in-data">
