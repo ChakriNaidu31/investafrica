@@ -90,7 +90,7 @@ function Navbar() {
       <div className="container-fluid">
         <div className="row">
           <div className="col-1">
-            <a className="" href="#">
+            <a className="">
               <img src={logo} className="logo" alt="Logo" onClick={navigatetoHome}/>
             </a>
           </div>
