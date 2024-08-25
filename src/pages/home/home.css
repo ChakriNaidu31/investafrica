@@ -568,10 +568,19 @@ li.nav-item {
 }
 .nav-link.active {
   color: black !important;
-  background-color: #fff !important;
+  background-color: #25DD6E!important;
   font-weight: 700 !important;
 }
 .nav-link {
   color: #8A7D61 !important;
+  background-color: #25DD6E!important;
+
   padding: 0 !important;
+}
+
+
+path:hover{
+  background: #008E39 !important;
+  color: red !important;
+  transform: rotateX('45');
 }
