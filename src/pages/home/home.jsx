@@ -70,8 +70,8 @@ import con50 from "../../assets/con50.png";
 import con51 from "../../assets/con51.png";
 import propic from "../../assets/propic.png";
 import OwlCarousel from "react-owl-carousel";
-import React, { useEffect, useState } from 'react';
-import "../home/home.css"
+import React, { useEffect, useState } from "react";
+import "../home/home.css";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import { useNavigate } from "react-router-dom";
@@ -79,7 +79,6 @@ import axios from "axios";
 import Footer from "../../component/footer";
 
 function Home() {
-
   // (done) TODO: Why invest in africa color mismatch
   // (done) TODO: Success stories design not matching with Figma
   // (done) TODO: Footer address one line missing. Also address not matching with Figma. Lot of spacing in between and all lines should not be white
@@ -96,8 +95,6 @@ function Home() {
 
   const navigate = useNavigate();
 
-
-
   const fetchHomeDetails = async () => {
     axios({
       url: `http://localhost:3001/home/details`,
@@ -112,7 +109,7 @@ function Home() {
         // TODO: Handle error
         console.log(err);
       });
-  }
+  };
 
   useEffect(() => {
     const element = document.querySelector(".search");
@@ -147,9 +144,7 @@ function Home() {
     }
 
     fetchHomeDetails();
-
   }, []);
-
 
   const [selectedCountry, setSelectedCountry] = useState(null);
 
@@ -162,12 +157,12 @@ function Home() {
   // Get the style for the country name based on whether it's selected
   const getCountryNameStyle = (countryCode) => {
     return {
-      cursor: 'pointer',
-      color: selectedCountry === countryCode ? 'blue' : 'black', // Change color on selection
+      cursor: "pointer",
+      color: selectedCountry === countryCode ? "blue" : "black", // Change color on selection
     };
   };
 
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
 
   // Array of countries with their details
   const countriess = [
@@ -220,7 +215,7 @@ function Home() {
   ];
 
   // Filter countries based on search query
-  const filteredCountries = countriess.filter(country =>
+  const filteredCountries = countriess.filter((country) =>
     country.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
@@ -235,14 +230,15 @@ function Home() {
               <br /> Invest in Africa's Potential.
             </p>
             <div className="search">
-
               <div id="sticky">
                 <table id="table">
                   <tbody>
                     <tr>
                       <td id="searchbar" className="w-130">
-
-                        <select className="form-select border-0" defaultValue={""}>
+                        <select
+                          className="form-select border-0"
+                          defaultValue={""}
+                        >
                           <option value="">COUNTRIES</option>
                           <option value="1">Industries</option>
                           <option value="2">Technology</option>
@@ -250,27 +246,62 @@ function Home() {
                         </select>
                       </td>
                       <td id="searchbox" className="d-flex mt-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search search-icon-style" viewBox="0 0 16 16">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          className="bi bi-search search-icon-style"
+                          viewBox="0 0 16 16"
+                        >
                           <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                         </svg>
-                        <input type="text" id="input" placeholder="Search" onFocus={() => setSuggest(true)} onBlur={() => setSuggest(false)} />
+                        <input
+                          type="text"
+                          id="input"
+                          placeholder="Search"
+                          onFocus={() => setSuggest(true)}
+                          onBlur={() => setSuggest(false)}
+                        />
                       </td>
                       <td id="button">
-                        <button id="rbutton" onClick={() => { console.log(search) }}> SEARCH</button>
+                        <button
+                          id="rbutton"
+                          onClick={() => {
+                            console.log(search);
+                          }}
+                        >
+                          {" "}
+                          SEARCH
+                        </button>
                       </td>
                     </tr>
                   </tbody>
                 </table>
-
               </div>
               <div className="mt-3">
                 <table id="suggest">
                   <tbody>
                     <tr>
                       <td>Frequently searched:</td>
-                      <button type="button" className="btn btn-outline-secondary m-l-10">Agriculture</button>
-                      <button type="button" className="btn btn-outline-secondary m-l-10">Infrastructure</button>
-                      <button type="button" className="btn btn-outline-secondary m-l-10">Tourism</button>
+                      <button
+                        type="button"
+                        className="btn btn-outline-secondary m-l-10"
+                      >
+                        Agriculture
+                      </button>
+                      <button
+                        type="button"
+                        className="btn btn-outline-secondary m-l-10"
+                      >
+                        Infrastructure
+                      </button>
+                      <button
+                        type="button"
+                        className="btn btn-outline-secondary m-l-10"
+                      >
+                        Tourism
+                      </button>
                     </tr>
                   </tbody>
                 </table>
@@ -279,189 +310,368 @@ function Home() {
           </div>
         </div>
       </main>
+      {/* <div className="col-12 bg-green p-3 invest-container">
+        <div className="row nav nav-pills mb-3" id="pills-tab" role="tablist ">
+          <div
+            class="col-sm-6 col-md-6 col-lg-3 text-center"
+            role="presentation"
+          >
+            <div className="card my-3">
+              <div
+                className=" active card-body position-relative"
+                id="pills-home-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-why"
+                role="tab"
+                aria-controls="pills-why"
+                aria-selected="true"
+              >
+                <h5 className="card-title text-center">
+                  Why Invest In Africa?
+                </h5>
+                <p className="card-text">
+                  Pro Business
+                  <br />
+                  Youthful Population
+                  <br />
+                  Growing Economies
+                </p>
+              </div>
+            </div>
+          </div>
 
+          <div className="col-sm-6 col-md-6 col-lg-3">
+            <div className="card my-3">
+              <div className="card-body position-relative">
+                <h5 className="card-title text-center">
+                  World of <br></br> Africa
+                </h5>
+                <p className="card-text">
+                  A continent of diversity and beauty where cultures collide,
+                  nature flourishes, and business opportunities abound.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-sm-6 col-md-6 col-lg-3">
+            <div className="card my-3">
+              <div className="card-body position-relative">
+                <h5 className="card-title text-center">
+                  Crafting Tomorrow's Success
+                </h5>
+                <p className="card-text">
+                  Human Capital
+                  <br />
+                  Natural Resources
+                  <br />
+                  Finance
+                  <br />
+                  Infrastructure
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-sm-6 col-md-6 col-lg-3">
+            <div className="card my-3">
+              <div className="card-body position-relative">
+                <h5 className="card-title text-center">Contact Us</h5>
+                <p className="card-text">
+                  Join our business and be part of something extraordinary!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */}
       <div className="col-12 ">
-        <ul class="row nav nav-pills mb-3" id="pills-tab" role="tablist">
-          <li class="col-3 nav-item text-center" role="presentation">
-            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-why" type="button" role="tab" aria-controls="pills-why" aria-selected="true">Why Invest In Africa?</button>
+        <div className="invest-container bg-green ">
+        <ul
+          class="row  nav nav-pills mb-3"
+          id="pills-tab"
+          role="tablist"
+        >
+          <li class="col-3 text-center" role="presentation">
+            <div className="card my-3">
+              <div
+                className=" nav-link active card-body position-relative"
+                id="pills-home-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-why"
+                type="button"
+                role="tab"
+                aria-controls="pills-why"
+                aria-selected="true"
+              >
+                <h5 className="card-title text-center">
+                  Why Invest In Africa?
+                </h5>
+                <p className="card-text">
+                  Pro Business
+                  <br />
+                  Youthful Population
+                  <br />
+                  Growing Economies
+                </p>
+              </div>
+            </div>
           </li>
-          <li class="col-3 nav-item" role="presentation">
-            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-world" type="button" role="tab" aria-controls="pills-world" aria-selected="false">World of Africa</button>
+          <li class="col-3 text-center" role="presentation">
+            <div className="card my-3">
+              <div
+                class="nav-link card-body position-relative"
+                id="pills-profile-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-world"
+                type="button"
+                role="tab"
+                aria-controls="pills-world"
+                aria-selected="false"
+              >
+                <h5 className="card-title text-center">
+                  World of <br></br> Africa
+                </h5>
+                <p className="card-text">
+                  A continent of diversity and beauty where cultures collide,
+                  nature flourishes, and business opportunities abound.
+                </p>
+              </div>
+            </div>
           </li>
-          <li class="col-3 nav-item" role="presentation">
-            <button class="nav-link" id="pills-craft-tab" data-bs-toggle="pill" data-bs-target="#pills-craft" type="button" role="tab" aria-controls="pills-craft" aria-selected="false">Crafting Tomorrow's Success</button>
+          <li class="col-3 text-center" role="presentation">
+          <div className="card my-3">
+              <div
+                class="nav-link card-body position-relative"
+                id="pills-craft-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-craft"
+                type="button"
+                role="tab"
+                aria-controls="pills-craft"
+                aria-selected="false"
+              >
+              <h5 className="card-title text-center">
+                  Crafting Tomorrow's Success
+                </h5>
+                <p className="card-text">
+                  Human Capital
+                  <br />
+                  Natural Resources
+                  <br />
+                  Finance
+                  <br />
+                  Infrastructure
+                </p>
+              </div>
+            </div>
+
+      
           </li>
-          <li class="col-3 nav-item" role="presentation">
-            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact Us</button>
+          <li class="col-3 text-center" role="presentation">
+          <div className="card my-3">
+              <div
+                class="nav-link card-body position-relative"
+                id="pills-contact-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-contact"
+                type="button"
+                role="tab"
+                aria-controls="pills-contact"
+                aria-selected="false"
+              >
+             <h5 className="card-title text-center">Contact Us</h5>
+                <p className="card-text">
+                  Join our business and be part of something extraordinary!
+                </p>
+              </div>
+            </div>
+            
           </li>
         </ul>
+        </div>
+        
         <div class="tab-content" id="pills-tabContent">
-          <div class="tab-pane fade show active" id="pills-why" role="tabpanel" aria-labelledby="pills-why-tab" tabindex="0">
-          <div className="blog-section p-4 invest-container">
-        <div className="col-12 mb-5 mt-2 invest-container">
-          <h1 className="heading-style">Why Invest in Africa?</h1>
-        </div>
-        <div className="col-12 invest-container">
-          <div className="row invest-container">
-            <div className="col-lg-4 col-sm-12">
-              <img src={cp1} className="img-fluid mb-3" />
+          <div
+            class="tab-pane fade show active"
+            id="pills-why"
+            role="tabpanel"
+            aria-labelledby="pills-why-tab"
+            tabindex="0"
+          >
+            <div className="blog-section p-4 invest-container">
+              <div className="col-12 mb-5 mt-2 invest-container">
+                <h1 className="heading-style">Why Invest in Africa?</h1>
+              </div>
+              <div className="col-12 invest-container">
+                <div className="row invest-container">
+                  <div className="col-lg-4 col-sm-12">
+                    <img src={cp1} className="img-fluid mb-3" />
+                  </div>
+                  <div className="col-lg-8 col-sm-12 my-auto">
+                    <p className="content-text">
+                      Business-friendly environment with political stability,
+                      resilient economy, dynamic investor friendly environment
+                      and Government incentives.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 sm-d-g invest-container">
+                <div className="row invest-container">
+                  <div className="col-lg-8 col-sm-12 my-auto sm-o-2">
+                    <p className="content-text">
+                      Tap into a burgeoning youth market brimming with 1.46
+                      billion potential consumers, a demographic primed for
+                      dynamic growth and innovation.
+                    </p>
+                  </div>
+                  <div className="col-lg-4 col-sm-12 text-end sm-o-1">
+                    <img src={cp2} className="img-fluid mb-3" />
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 invest-container">
+                <div className="row invest-container">
+                  <div className="col-lg-4 col-sm-12">
+                    <img src={cp3} className="img-fluid mb-3" />
+                  </div>
+                  <div className="col-lg-8 col-sm-12 my-auto">
+                    <p className="content-text">
+                      Leverage a robust economic landscape with a GDP of $108
+                      billion, reflecting a flourishing market ripe for
+                      lucrative investment opportunities.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="col-lg-8 col-sm-12 my-auto">
-              <p className="content-text">
-                Business-friendly environment with political stability,
-                resilient economy, dynamic investor friendly environment and
-                Government incentives.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="col-12 sm-d-g invest-container">
-          <div className="row invest-container">
-            <div className="col-lg-8 col-sm-12 my-auto sm-o-2">
-              <p className="content-text">
-                Tap into a burgeoning youth market brimming with 1.46 billion
-                potential consumers, a demographic primed for dynamic growth and
-                innovation.
-              </p>
-            </div>
-            <div className="col-lg-4 col-sm-12 text-end sm-o-1">
-              <img src={cp2} className="img-fluid mb-3" />
-            </div>
-          </div>
-        </div>
-        <div className="col-12 invest-container">
-          <div className="row invest-container">
-            <div className="col-lg-4 col-sm-12">
-              <img src={cp3} className="img-fluid mb-3" />
-            </div>
-            <div className="col-lg-8 col-sm-12 my-auto">
-              <p className="content-text">
-                Leverage a robust economic landscape with a GDP of $108 billion,
-                reflecting a flourishing market ripe for lucrative investment
-                opportunities.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div className="px-3 py-4 shadow-lg invest-caro mb-50">
-        <div className="col-12 mb-4">
-          <h1>Top Industries</h1>
-        </div>
-        <OwlCarousel
-          className="owl-theme"
-          loop
-          margin={10}
-          nav
-          dots={false}
-          items={6} // Show 6 items at a time
-          responsive={{
-            0: {
-              items: 2,
-            },
-            600: {
-              items: 2,
-            },
-            1000: {
-              items: 6, // Change the number of items displayed based on the screen width
-            },
-          }}
-        >
-          <div className="item">
-            <div className="industry text-center">
-              <img src={ind1} className="img-fluid industry-img" />
-              <p className="mt-2">Agriculture</p>
+            <div className="px-3 py-4 shadow-lg invest-caro mb-50">
+              <div className="col-12 mb-4">
+                <h1>Top Industries</h1>
+              </div>
+              <OwlCarousel
+                className="owl-theme"
+                loop
+                margin={10}
+                nav
+                dots={false}
+                items={6} // Show 6 items at a time
+                responsive={{
+                  0: {
+                    items: 2,
+                  },
+                  600: {
+                    items: 2,
+                  },
+                  1000: {
+                    items: 6, // Change the number of items displayed based on the screen width
+                  },
+                }}
+              >
+                <div className="item">
+                  <div className="industry text-center">
+                    <img src={ind1} className="img-fluid industry-img" />
+                    <p className="mt-2">Agriculture</p>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="industry text-center">
+                    <img src={ind2} className="img-fluid industry-img" />
+                    <p className="mt-2">Banking</p>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="industry text-center">
+                    <img src={ind3} className="img-fluid industry-img" />
+                    <p className="mt-2">Manufacturing</p>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="industry text-center">
+                    <img src={ind4} className="img-fluid industry-img" />
+                    <p className="mt-2">Mining</p>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="industry text-center">
+                    <img src={ind5} className="img-fluid industry-img" />
+                    <p className="mt-2">Oil & Gas</p>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="industry text-center">
+                    <img src={ind6} className="img-fluid industry-img" />
+                    <p className="mt-2">Retail</p>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="industry text-center">
+                    <img src={ind7} className="img-fluid industry-img" />
+                    <p className="mt-2">Tourism</p>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="industry text-center">
+                    <img src={ind8} className="img-fluid industry-img" />
+                    <p className="mt-2">Agriculture</p>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="industry text-center">
+                    <img src={ind9} className="img-fluid industry-img" />
+                    <p className="mt-2">Banking</p>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="industry text-center">
+                    <img src={ind10} className="img-fluid industry-img" />
+                    <p className="mt-2">Manufacturing</p>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="industry text-center">
+                    <img src={ind11} className="img-fluid industry-img" />
+                    <p className="mt-2">Mining</p>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="industry text-center">
+                    <img src={ind12} className="img-fluid industry-img" />
+                    <p className="mt-2">Oil & Gas</p>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="industry text-center">
+                    <img src={ind13} className="img-fluid industry-img" />
+                    <p className="mt-2">Retail</p>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="industry text-center">
+                    <img src={ind14} className="img-fluid industry-img" />
+                    <p className="mt-2">Tourism</p>
+                  </div>
+                </div>
+              </OwlCarousel>
             </div>
           </div>
-          <div className="item">
-            <div className="industry text-center">
-              <img src={ind2} className="img-fluid industry-img" />
-              <p className="mt-2">Banking</p>
-            </div>
-          </div>
-          <div className="item">
-            <div className="industry text-center">
-              <img src={ind3} className="img-fluid industry-img" />
-              <p className="mt-2">Manufacturing</p>
-            </div>
-          </div>
-          <div className="item">
-            <div className="industry text-center">
-              <img src={ind4} className="img-fluid industry-img" />
-              <p className="mt-2">Mining</p>
-            </div>
-          </div>
-          <div className="item">
-            <div className="industry text-center">
-              <img src={ind5} className="img-fluid industry-img" />
-              <p className="mt-2">Oil & Gas</p>
-            </div>
-          </div>
-          <div className="item">
-            <div className="industry text-center">
-              <img src={ind6} className="img-fluid industry-img" />
-              <p className="mt-2">Retail</p>
-            </div>
-          </div>
-          <div className="item">
-            <div className="industry text-center">
-              <img src={ind7} className="img-fluid industry-img" />
-              <p className="mt-2">Tourism</p>
-            </div>
-          </div>
-          <div className="item">
-            <div className="industry text-center">
-              <img src={ind8} className="img-fluid industry-img" />
-              <p className="mt-2">Agriculture</p>
-            </div>
-          </div>
-          <div className="item">
-            <div className="industry text-center">
-              <img src={ind9} className="img-fluid industry-img" />
-              <p className="mt-2">Banking</p>
-            </div>
-          </div>
-          <div className="item">
-            <div className="industry text-center">
-              <img src={ind10} className="img-fluid industry-img" />
-              <p className="mt-2">Manufacturing</p>
-            </div>
-          </div>
-          <div className="item">
-            <div className="industry text-center">
-              <img src={ind11} className="img-fluid industry-img" />
-              <p className="mt-2">Mining</p>
-            </div>
-          </div>
-          <div className="item">
-            <div className="industry text-center">
-              <img src={ind12} className="img-fluid industry-img" />
-              <p className="mt-2">Oil & Gas</p>
-            </div>
-          </div>
-          <div className="item">
-            <div className="industry text-center">
-              <img src={ind13} className="img-fluid industry-img" />
-              <p className="mt-2">Retail</p>
-            </div>
-          </div>
-          <div className="item">
-            <div className="industry text-center">
-              <img src={ind14} className="img-fluid industry-img" />
-              <p className="mt-2">Tourism</p>
-            </div>
-          </div>
-        </OwlCarousel>
-      </div>
-          </div>
-          <div class="tab-pane fade" id="pills-world" role="tabpanel" aria-labelledby="pills-world-tab" tabindex="0">
-          <div className="discoverafrica mt-3 bg-gold">
-        <div className="col-12 ">
-          <div className="row p-4">
-            <div className="col-12 pb-4 bg-gold ">
-              <h1 className="text-white mt-4 invest-container">Discover Africa</h1>
-            </div>
+          <div
+            class="tab-pane fade"
+            id="pills-world"
+            role="tabpanel"
+            aria-labelledby="pills-world-tab"
+            tabindex="0"
+          >
+            <div className="discoverafrica bg-gold">
+              <div className="col-12 ">
+                <div className="row p-4">
+                  <div className="col-12 pb-4 bg-gold ">
+                    <h1 className="text-white mt-4 invest-container">
+                      Discover Africa
+                    </h1>
+                  </div>
 
             <div className="col-lg-4 col-sm-12 p-0 bg-gold py-auto invest-container">
               <div className="bg-white pb-3 rounded m-l-50">
@@ -906,262 +1116,227 @@ function Home() {
         </div>
       </div>
           </div>
-          <div class="tab-pane fade" id="pills-craft" role="tabpanel" aria-labelledby="pills-craft-tab" tabindex="0">
-          <div className="crafting mb-50" >
-        <div className="col-12 ">
-          <img
-            src={banner}
-            className="img-fluid h-100 w-100 position-absolute"
-          />
-          <div className="crafting-content position-relative p-5 mx-3 text-white">
-            <h1 className="mb-5">
-              Crafting Tomorrow's
-              <br /> Success Stories Today
-            </h1>
-            <p className="crafting-text mt-5">
-              <span className="crafing-head">-Human Captial:</span> investing in
-              Africa's human capital promises access to a<br />
-              dynamic,rapidly growing workforce primed for innovation
-            </p>
-
-            <p className="crafting-text mt-5">
-              <span className="crafing-head">-Natural Resources:</span> Africa's
-              rich natural resources offer lucrative
-              <br />
-              opportunities for sustainable extraction and value-added
-              processing.
-            </p>
-
-            <p className="crafting-text mt-5">
-              <span className="crafing-head">-Finance:</span> Africa's expanding
-              financial sector presents unique investment
-              <br />
-              prospects in fintech and inclusive banking services.
-            </p>
-
-            <p className="crafting-text mt-5">
-              <span className="crafing-head">-Infrastructure:</span> Investing
-              in Africa's infrastructure development is key to
-              <br />
-              unlocking economic potential and ensuring high-yield returns.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="success p-5 bg-blue mt-3">
-        <div className="col-12 mt-3">
-          <h1 className="mb-5 font-gold mt-5">Success Stories</h1>
-        </div>
-
-        <div id="carouselExample" className="carousel slide">
-          <div className="carousel-inner">
-            {successStories.map((story, i) => {
-              return <div className="carousel-item active">
-                <div className="item bg-cement rounded">
-                  <div className="col-12 px-5 py-4">
-                    <div className="row">
-                      <div className="col-lg-2 col-sm-12">
-                        <img src={propic} className="profile-pic" />
-                      </div>
-                      <div className="col-lg-2  col-sm-12 my-auto text-center">
-                        <h4 className="mt-2 fw-bold">{story.name}</h4>
-                        <p>{story.title} of {story.company}</p>
-                      </div>
-                      <div className="col-lg-8  col-sm-12 my-auto">
-                        <span>
-                          {story.testimonial_text}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            })}
-            <div className="carousel-item active">
-              <div className="item bg-cement rounded">
-                <div className="col-12 px-5 py-4">
-                  <div className="row">
-                    <div className="col-lg-3 col-sm-12">
-                      <img src={propic} className="profile-pic" />
-                    </div>
-                    <div className="col-lg-3 col-sm-12 my-auto text-center">
-                      <h4 className="mt-2 fw-bold fs-sucess">John Doe</h4>
-                      <p>CEO of Company</p>
-                    </div>
-                    <div className="col-lg-6  col-sm-12">
-                      <div className="sucess-style">
-                        <span className="fw-bold">
-                          I found more than a continent; I discovered a journey of
-                          opportunity. With perseverance, I turned challenges into
-                          triumphs, building a successful venture from the ground
-                          up. Africa's dynamic landscape fueled my ambition, and
-                          today, I stand as a testament to the boundless
-                          possibilities this continent offers.
-                        </span>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="item bg-cement rounded">
-                <div className="col-12 px-5 py-4">
-                  <div className="row">
-                    <div className="col-lg-2 col-sm-12">
-                      <img src={propic} className="profile-pic" />
-                    </div>
-                    <div className="col-lg-2  col-sm-12 my-auto text-center">
-                      <h4 className="mt-2 fw-bold">John Doe</h4>
-                      <p>CEO of Company</p>
-                    </div>
-                    <div className="col-lg-8  col-sm-12 my-auto">
-                      <span>
-                        I found more than a continent; I discovered a journey of
-                        opportunity. With perseverance, I turned challenges into
-                        triumphs, building a successful venture from the ground
-                        up. Africa's dynamic landscape fueled my ambition, and
-                        today, I stand as a testament to the boundless
-                        possibilities this continent offers.
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="item bg-cement rounded">
-                <div className="col-12 px-5 py-4">
-                  <div className="row">
-                    <div className="col-lg-2 col-sm-12">
-                      <img src={propic} className="profile-pic" />
-                    </div>
-                    <div className="col-lg-2  col-sm-12 my-auto text-center">
-                      <h4 className="mt-2 fw-bold">John Doe</h4>
-                      <p>CEO of Company</p>
-                    </div>
-                    <div className="col-lg-8  col-sm-12 my-auto">
-                      <span>
-                        I found more than a continent; I discovered a journey of
-                        opportunity. With perseverance, I turned challenges into
-                        triumphs, building a successful venture from the ground
-                        up. Africa's dynamic landscape fueled my ambition, and
-                        today, I stand as a testament to the boundless
-                        possibilities this continent offers.
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> *
-          </div>
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="prev"
+          <div
+            class="tab-pane fade"
+            id="pills-craft"
+            role="tabpanel"
+            aria-labelledby="pills-craft-tab"
+            tabindex="0"
           >
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="next"
+            <div className="crafting mb-50">
+              <div className="col-12 ">
+                <img
+                  src={banner}
+                  className="img-fluid h-100 w-100 position-absolute"
+                />
+                <div className="crafting-content position-relative p-5 mx-3 text-white">
+                  <h1 className="mb-5">
+                    Crafting Tomorrow's
+                    <br /> Success Stories Today
+                  </h1>
+                  <p className="crafting-text mt-5">
+                    <span className="crafing-head">-Human Captial:</span>{" "}
+                    investing in Africa's human capital promises access to a
+                    <br />
+                    dynamic,rapidly growing workforce primed for innovation
+                  </p>
+
+                  <p className="crafting-text mt-5">
+                    <span className="crafing-head">-Natural Resources:</span>{" "}
+                    Africa's rich natural resources offer lucrative
+                    <br />
+                    opportunities for sustainable extraction and value-added
+                    processing.
+                  </p>
+
+                  <p className="crafting-text mt-5">
+                    <span className="crafing-head">-Finance:</span> Africa's
+                    expanding financial sector presents unique investment
+                    <br />
+                    prospects in fintech and inclusive banking services.
+                  </p>
+
+                  <p className="crafting-text mt-5">
+                    <span className="crafing-head">-Infrastructure:</span>{" "}
+                    Investing in Africa's infrastructure development is key to
+                    <br />
+                    unlocking economic potential and ensuring high-yield
+                    returns.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="success p-5 bg-blue mt-3">
+              <div className="col-12 mt-3">
+                <h1 className="mb-5 font-gold mt-5">Success Stories</h1>
+              </div>
+
+              <div id="carouselExample" className="carousel slide">
+                <div className="carousel-inner">
+                  {successStories.map((story, i) => {
+                    return (
+                      <div className="carousel-item active">
+                        <div className="item bg-cement rounded">
+                          <div className="col-12 px-5 py-4">
+                            <div className="row">
+                              <div className="col-lg-2 col-sm-12">
+                                <img src={propic} className="profile-pic" />
+                              </div>
+                              <div className="col-lg-2  col-sm-12 my-auto text-center">
+                                <h4 className="mt-2 fw-bold">{story.name}</h4>
+                                <p>
+                                  {story.title} of {story.company}
+                                </p>
+                              </div>
+                              <div className="col-lg-8  col-sm-12 my-auto">
+                                <span>{story.testimonial_text}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                  <div className="carousel-item active">
+                    <div className="item bg-cement rounded">
+                      <div className="col-12 px-5 py-4">
+                        <div className="row">
+                          <div className="col-lg-3 col-sm-12">
+                            <img src={propic} className="profile-pic" />
+                          </div>
+                          <div className="col-lg-3 col-sm-12 my-auto text-center">
+                            <h4 className="mt-2 fw-bold fs-sucess">John Doe</h4>
+                            <p>CEO of Company</p>
+                          </div>
+                          <div className="col-lg-6  col-sm-12">
+                            <div className="sucess-style">
+                              <span className="fw-bold">
+                                I found more than a continent; I discovered a
+                                journey of opportunity. With perseverance, I
+                                turned challenges into triumphs, building a
+                                successful venture from the ground up. Africa's
+                                dynamic landscape fueled my ambition, and today,
+                                I stand as a testament to the boundless
+                                possibilities this continent offers.
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="carousel-item">
+                    <div className="item bg-cement rounded">
+                      <div className="col-12 px-5 py-4">
+                        <div className="row">
+                          <div className="col-lg-2 col-sm-12">
+                            <img src={propic} className="profile-pic" />
+                          </div>
+                          <div className="col-lg-2  col-sm-12 my-auto text-center">
+                            <h4 className="mt-2 fw-bold">John Doe</h4>
+                            <p>CEO of Company</p>
+                          </div>
+                          <div className="col-lg-8  col-sm-12 my-auto">
+                            <span>
+                              I found more than a continent; I discovered a
+                              journey of opportunity. With perseverance, I
+                              turned challenges into triumphs, building a
+                              successful venture from the ground up. Africa's
+                              dynamic landscape fueled my ambition, and today, I
+                              stand as a testament to the boundless
+                              possibilities this continent offers.
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="carousel-item">
+                    <div className="item bg-cement rounded">
+                      <div className="col-12 px-5 py-4">
+                        <div className="row">
+                          <div className="col-lg-2 col-sm-12">
+                            <img src={propic} className="profile-pic" />
+                          </div>
+                          <div className="col-lg-2  col-sm-12 my-auto text-center">
+                            <h4 className="mt-2 fw-bold">John Doe</h4>
+                            <p>CEO of Company</p>
+                          </div>
+                          <div className="col-lg-8  col-sm-12 my-auto">
+                            <span>
+                              I found more than a continent; I discovered a
+                              journey of opportunity. With perseverance, I
+                              turned challenges into triumphs, building a
+                              successful venture from the ground up. Africa's
+                              dynamic landscape fueled my ambition, and today, I
+                              stand as a testament to the boundless
+                              possibilities this continent offers.
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>{" "}
+                  *
+                </div>
+                <button
+                  className="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExample"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    className="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="visually-hidden">Previous</span>
+                </button>
+                <button
+                  className="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExample"
+                  data-bs-slide="next"
+                >
+                  <span
+                    className="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="pills-contact"
+            role="tabpanel"
+            aria-labelledby="pills-contact-tab"
+            tabindex="0"
           >
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-          </button>
+            {/* <div className="blog-section p-4 invest-container">
+              <div className="col-12 mb-5 mt-2 invest-container">
+                <h1 className="heading-style">Contact Us</h1>
+              </div>
+              <div className="col-12 invest-container">
+                <div className="address text-secondary text-start">
+                  <div className="mt-3">
+                    <p>Adam Innovations Co., Ltd</p>
+                    <p className="">Global IT Park1188-2, Urusa, Minami</p>
+
+                    <p className="">UonumaNiigata 9497302 Japan</p>
+
+                    <p className="">Tel: (+81)25-788-0665</p>
+
+                    <p className="">Email:info@adam-i.jp</p>
+                  </div>
+                </div>
+              </div>
+            </div> */}
+          </div>
         </div>
       </div>
-          </div>
-          <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
-          <div className="blog-section p-4 invest-container">
-        <div className="col-12 mb-5 mt-2 invest-container">
-          <h1 className="heading-style">Contact Us</h1>
-        </div>
-        <div className="col-12 invest-container">
-        <div className="address text-secondary text-start">
-              <div className="mt-3">
-                <p>Adam Innovations Co., Ltd</p>
-                <p className="">Global IT Park1188-2, Urusa, Minami</p>
 
-                <p className="">UonumaNiigata 9497302 Japan</p>
-
-                <p className="">Tel: (+81)25-788-0665</p>
-
-                <p className="">Email:info@adam-i.jp</p>
-              </div>
-            </div>
-          </div>
-          </div>
-          </div>
-        </div>
-        {/* <div className="row ">
-          <div className="col-sm-6 col=-md-6 col-lg-3">
-            <div className="card my-3">
-              <div className="card-body position-relative">
-                <h5 className="card-title text-center">Why Invest In Africa?</h5>
-                <p className="card-text">
-                  Pro Business
-                  <br />Youthful Population
-                  <br />Growing Economies
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-sm-6 col-md-6 col-lg-3">
-            <div className="card my-3">
-              <div className="card-body position-relative">
-                <h5 className="card-title text-center">World of <br></br> Africa</h5>
-                <p className="card-text">
-                  A continent of diversity and beauty where cultures collide,
-                  nature flourishes, and business opportunities abound.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-sm-6 col-md-6 col-lg-3">
-            <div className="card my-3">
-              <div className="card-body position-relative">
-                <h5 className="card-title text-center">
-                  Crafting Tomorrow's Success
-                </h5>
-                <p className="card-text">
-                  Human Capital
-                  <br />Natural Resources
-                  <br />Finance
-                  <br />Infrastructure
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-sm-6 col-md-6 col-lg-3">
-            <div className="card my-3">
-              <div className="card-body position-relative">
-                <h5 className="card-title text-center">Contact Us</h5>
-                <p className="card-text">
-                  Join our business and be part of something extraordinary!
-                </p>
-              </div>
-            </div>
-          </div>
-        </div> */}
-      </div>
-
-    
-
-      
-
-     
-
-     
       <Footer></Footer>
     </div>
   );
