@@ -44,7 +44,7 @@ function Footer() {
           <div className="col-lg-9 col-sm-12 my-auto">
             <div className="address float-end ">
               <div className="mt-3">
-                <p>Adam Innovations Co., Ltd</p>
+                <p><b>Adam Innovations Co., Ltd</b></p>
                 <p className="">Global IT Park1188-2, Urusa, Minami</p>
 
                 <p className="">UonumaNiigata 9497302 Japan</p>

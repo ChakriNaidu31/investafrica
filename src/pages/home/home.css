@@ -165,9 +165,10 @@
     display: flex;
     flex-wrap: wrap;
     /* justify-content: end; */
-    margin: 15px 16px 25px 16px;
+    /* margin: 15px 16px 25px 16px; */
     overflow-y: auto;
     height: 500px;
+    padding: 10px;
     text-align: center;
   }
   .contain {
@@ -188,6 +189,8 @@
     font-size: 20px;
     font-family: Inter;
     color: #000 !important;
+    text-wrap: wrap;
+    width: 150px;
   }
   .bg-gold {
     background: #d4c863;
@@ -267,7 +270,6 @@
   .address {
     font-family: Inter;
     font-size: 18px;
-    font-weight: 500;
     line-height: 21.78px;
     color: #FFFFFF;
     text-align: right;
@@ -583,4 +585,7 @@ path:hover{
   background: #008E39 !important;
   color: red !important;
   transform: rotateX('45');
+}
+.invest-containers{
+  padding: 0 20px;
 }

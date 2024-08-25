@@ -36,14 +36,18 @@ import React, { useState, useEffect } from 'react';
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-
+import { useNavigate } from "react-router-dom";
 
 function Industry() {
-
+  const navigate = useNavigate();
   // (done) TODO: Top search bar missing in Navbar
   // (done) TODO: Investing in Tomorrow design not matching
 
   const [isVisible, setIsVisible] = useState(false);
+
+  const ToAgriculture = () => {
+    navigate("/agriculture");
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -102,10 +106,10 @@ function Industry() {
             },
           }}
         >
-          <div className="item">
+          <div className="item" onClick={ToAgriculture}>
             <div className="industry text-center">
               <img src={ind1} className="img-fluid industry-img" />
-              <p className="mt-2">Agriculture</p>
+              <p className="mt-2" >Agriculture</p>
             </div>
           </div>
           <div className="item">

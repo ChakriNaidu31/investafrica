@@ -389,7 +389,7 @@ function Home() {
         </div>
       </div> */}
       <div className="col-12 ">
-        <div className="invest-container bg-green ">
+        <div className="invest-containers bg-green ">
         <ul
           class="row  nav nav-pills mb-3"
           id="pills-tab"
