@@ -1,7 +1,7 @@
 import "../signup/signup.css";
 import logo from "../../assets/logo.svg";
 import globe from "../../assets/globe.png";
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastrService } from '../../toastrService';
@@ -143,6 +143,9 @@ function SignUp() {
     const navigatetoHome = () => {
         navigate("/home");
     };
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scrolls to the top
+      }, []);
 
     return (
         <div className="container-fluid">

@@ -3,7 +3,7 @@ import logo from "../../assets/logo.svg";
 import globe from "../../assets/globe.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { ToastrService } from '../../toastrService';
 
 function Login() {
@@ -63,6 +63,9 @@ function Login() {
         });
     }
   };
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scrolls to the top
+  }, []);
 
   const navigatetoRegister = () => {
     navigate("/signup");
