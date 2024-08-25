@@ -51,7 +51,7 @@ function Footer() {
 
                 <p className="">Tel: (+81)25-788-0665</p>
 
-                <p className="">Email:info@adam-i.jp</p>
+                <p className=""><a className="text-white text-decoration-none" href="mailto:info@adam-i.jp">Email:info@adam-i.jp</a></p>
 
                 <p className="copy mt-4">
                   Copyright ©2024 Invest Africa. All rights reserved.
