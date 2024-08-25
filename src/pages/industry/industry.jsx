@@ -291,10 +291,7 @@ function Industry() {
         <div className="p-5 inv-tmr text-center">
           <h1 className="text-center text-white my-5 indust-title">Investing in Tomorrow </h1>
           <div className="indust-margin">
-          <p className="country-inves text-start mt-5 mb-5 mx-5 px-5 indust-text">The future of Africa's industries looks promising, with ongoing <br>
-          </br>investments in infrastructure, technology, and education. <br>
-          </br>These investments are expected to drive further growth and <br>
-          </br>development, positioning Africa as a significant player in the <br></br>global economy.</p>
+          <p className="country-inves text-start mt-5 mb-5 mx-5 px-5 indust-text">The future of Africa's industries looks promising, with ongoing investments in infrastructure, technology, and education. These investments are expected to drive further growth and development, positioning Africa as a significant player in the global economy.</p>
           </div>
           
         </div>
