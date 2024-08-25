@@ -145,3 +145,6 @@ button.btn.signup-btn.mt-3 {
 select.select-placeholder {
 color: yellow !important;
 }
+.cur-point {
+    cursor: pointer;
+}

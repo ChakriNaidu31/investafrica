@@ -25,6 +25,7 @@ img.img-fluid.nav-country-img {
 .logo {
     height: 100px;
     width: 100px;
+    cursor: pointer;
 }
 .search-style{
     border: 1px solid #E0E0E0;

@@ -303,40 +303,40 @@ function Agriculture() {
                                         <label class="form-check-label" for="exampleCheck1">Nigera</label>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Keyna</label>
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck2" />
+                                        <label class="form-check-label" for="exampleCheck2">Keyna</label>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Morocco</label>
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck3" />
+                                        <label class="form-check-label" for="exampleCheck3">Morocco</label>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Mali</label>
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck4" />
+                                        <label class="form-check-label" for="exampleCheck4">Mali</label>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Sudan</label>
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck5" />
+                                        <label class="form-check-label" for="exampleCheck5">Sudan</label>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Ghana</label>
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck6" />
+                                        <label class="form-check-label" for="exampleCheck6">Ghana</label>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Zambia</label>
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck7" />
+                                        <label class="form-check-label" for="exampleCheck7">Zambia</label>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Zimbabwe</label>
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck8" />
+                                        <label class="form-check-label" for="exampleCheck8">Zimbabwe</label>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Togo</label>
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck9" />
+                                        <label class="form-check-label" for="exampleCheck9">Togo</label>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Uganda</label>
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck10" />
+                                        <label class="form-check-label" for="exampleCheck10">Uganda</label>
                                     </div>
                                     <div className="text-center">
                                         <p className="btn mb-0 text-center text-primary"><small>View more</small></p>
@@ -355,44 +355,44 @@ function Agriculture() {
                                 </div>
                                 <div className="scroll-min">
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Crop Production</label>
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck11" />
+                                        <label class="form-check-label" for="exampleCheck11">Crop Production</label>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Fisheries </label>
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck12" />
+                                        <label class="form-check-label" for="exampleCheck12">Fisheries </label>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Forestry</label>
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck13" />
+                                        <label class="form-check-label" for="exampleCheck13">Forestry</label>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Livestock</label>
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck14" />
+                                        <label class="form-check-label" for="exampleCheck14">Livestock</label>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Services</label>
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck15" />
+                                        <label class="form-check-label" for="exampleCheck15">Services</label>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Machinery and Equipment</label>
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck16" />
+                                        <label class="form-check-label" for="exampleCheck16">Machinery and Equipment</label>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Sub category</label>
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck17" />
+                                        <label class="form-check-label" for="exampleCheck17">Sub category</label>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Sub category</label>
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck18" />
+                                        <label class="form-check-label" for="exampleCheck18">Sub category</label>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Sub category</label>
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck19" />
+                                        <label class="form-check-label" for="exampleCheck19">Sub category</label>
                                     </div>
                                     <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                        <label class="form-check-label" for="exampleCheck1">Sub category</label>
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck20" />
+                                        <label class="form-check-label" for="exampleCheck20">Sub category</label>
                                     </div>
                                     <div className="text-center">
                                         <p className="btn mb-0 text-center text-primary"><small>View more</small></p>
@@ -406,16 +406,16 @@ function Agriculture() {
                             <p className="text-center">COMPANY SIZE</p>
                             <div>
                                 <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                    <label class="form-check-label" for="exampleCheck1">Small</label>
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck21" />
+                                    <label class="form-check-label" for="exampleCheck21">Small</label>
                                 </div>
                                 <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                    <label class="form-check-label" for="exampleCheck1">Medium </label>
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck22" />
+                                    <label class="form-check-label" for="exampleCheck22">Medium </label>
                                 </div>
                                 <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                    <label class="form-check-label" for="exampleCheck1">Large</label>
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck23" />
+                                    <label class="form-check-label" for="exampleCheck23">Large</label>
                                 </div>
                             </div>
                         </div>
@@ -424,32 +424,32 @@ function Agriculture() {
                             <p className="text-center">NUMBER OF EMPLOYEES</p>
                             <div>
                                 <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                    <label class="form-check-label" for="exampleCheck1">0~50</label>
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck24" />
+                                    <label class="form-check-label" for="exampleCheck24">0~50</label>
                                 </div>
                                 <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                    <label class="form-check-label" for="exampleCheck1">50~100 </label>
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck25" />
+                                    <label class="form-check-label" for="exampleCheck25">50~100 </label>
                                 </div>
                                 <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                    <label class="form-check-label" for="exampleCheck1">100~250</label>
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck26" />
+                                    <label class="form-check-label" for="exampleCheck26">100~250</label>
                                 </div>
                                 <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                    <label class="form-check-label" for="exampleCheck1">250~500</label>
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck27" />
+                                    <label class="form-check-label" for="exampleCheck27">250~500</label>
                                 </div>
                                 <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                    <label class="form-check-label" for="exampleCheck1">500~1000 </label>
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck28" />
+                                    <label class="form-check-label" for="exampleCheck28">500~1000 </label>
                                 </div>
                                 <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                    <label class="form-check-label" for="exampleCheck1">1000~2000</label>
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck29" />
+                                    <label class="form-check-label" for="exampleCheck29">1000~2000</label>
                                 </div>
                                 <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                    <label class="form-check-label" for="exampleCheck1">2000+</label>
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck30" />
+                                    <label class="form-check-label" for="exampleCheck30">2000+</label>
                                 </div>
                             </div>
                         </div>
@@ -459,7 +459,7 @@ function Agriculture() {
                             <div className="col-12">
                                 <div className="row">
                                     <div className="col-2 my-auto">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck31" />
                                     </div>
                                     <div className="col-5">
                                         <label for="exampleInputEmail1" class="form-label mb-2">From</label>

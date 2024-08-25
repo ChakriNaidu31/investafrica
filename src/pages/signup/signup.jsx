@@ -140,13 +140,16 @@ function SignUp() {
     const navigatetoLogin = () => {
         navigate("/");
     };
+    const navigatetoHome = () => {
+        navigate("/home");
+    };
 
     return (
         <div className="container-fluid">
             <div className="row">
                 <nav className="navbar navbar-expand-lg">
                     <div className="container-fluid">
-                        <img src={logo} className="" alt="Logo" height={55} />
+                        <img src={logo} className="cur-point" alt="Logo" height={55} onClick={navigatetoHome} />
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
