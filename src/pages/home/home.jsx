@@ -111,7 +111,10 @@ function Home() {
       });
   };
 
+
+
   useEffect(() => {
+    window.scrollTo(0, 0);
     const element = document.querySelector(".search");
     if (element) {
       const realelement = element.querySelector("#sticky");

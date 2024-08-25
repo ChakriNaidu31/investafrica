@@ -50,6 +50,7 @@ function Industry() {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
         setIsVisible(true);
