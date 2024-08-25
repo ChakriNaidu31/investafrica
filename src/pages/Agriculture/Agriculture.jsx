@@ -32,6 +32,7 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 
 function Agriculture() {
+   
 
 
     // (done)TODO: Top heading not matching with Figma
@@ -41,6 +42,7 @@ function Agriculture() {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
+        window.scrollTo(0, 0); 
       const toggleVisibility = () => {
         if (window.pageYOffset > 800) {
           setIsVisible(true);

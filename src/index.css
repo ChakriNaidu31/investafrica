@@ -5,3 +5,6 @@
     left: 9%;
     top: 4%;
 }
+html {
+    scroll-behavior: smooth;
+  }
