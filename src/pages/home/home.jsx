@@ -111,6 +111,10 @@ function Home() {
       });
   };
 
+  const navigatetoRegister = () => {
+    navigate("/signup");
+  };
+
 
 
   useEffect(() => {
@@ -1338,6 +1342,13 @@ function Home() {
             </div> */}
           </div>
         </div>
+      </div>
+      <div className="col-12 ready text-center py-5">
+        <h1 className="text-white fw-bold mt-5">READY TO GET STARTED?</h1>
+        <p className="text-white mt-4">
+          Invest in the future of Africa by signing up today!
+        </p>
+        <button className="btn btn-success mt-5 px-3 py-2 footer-btn" onClick={navigatetoRegister}>SIGN UP</button>
       </div>
 
       <Footer></Footer>

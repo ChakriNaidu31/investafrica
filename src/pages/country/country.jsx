@@ -808,47 +808,7 @@ function Country() {
         <button className="btn btn-success mt-5 px-3 py-2 footer-btn con" onClick={navigatetoRegister}>CONTACT</button>
       </div>
 
-      <div className="col-12 p-4 bg-green">
-        <div className="row">
-          <div className="col-lg-3 col-sm-12">
-            <div className="social text-white">
-              <div className="media mt-3">
-                <img src={fb} className="social-media-img me-3" />
-                <span>Facebook</span>
-              </div>
-              <div className="media mt-3">
-                <img src={insta} className="social-media-img me-3" />
-                <span>Instagram</span>
-              </div>
-              <div className="media mt-3">
-                <img src={x} className="social-media-img me-3" />
-                <span>X</span>
-              </div>
-              <div className="media mt-3">
-                <img src={youtube} className="social-media-img me-3" />
-                <span>Youtube</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-9 col-sm-12 my-auto">
-            <div className="address float-end ">
-              <div className="mt-3">
-                <p className="mt-4">Global IT Park1188-2, Urusa, Minami</p>
-
-                <p className="mt-4">UonumaNiigata 9497302 Japan</p>
-
-                <p className="mt-4">Tel: (+81)25-788-0665</p>
-
-                <p className="mt-4">Email:info@adam-i.jp</p>
-
-                <p className="copy mt-4">
-                  Copyright ©2024 Invest Africa. All rights reserved.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+     <Footer></Footer>
         </div>
         </main>
     );
